@@ -1,0 +1,11 @@
+{
+  "dataset_id": "bank-vendor-scope-five-v1.0",
+  "case_count": 5,
+  "status": "design draft; not published to Weave or evaluated",
+  "files": {
+    "assessment_catalog.json": "c7b76d6c74cdab028a9d78205798d08f75c92aac3794f6fb5f9b58067d5b3c0d",
+    "cases.jsonl": "a2eb2a9705dfff2f0344fbb549375f94a21bac3704670359612e6b39c9b5ac1a",
+    "expected_findings.json": "69774814bf7098e69f3904d6ad58b516e9d75e8186a26d3e1fdfe9463b24f91c"
+  },
+  "separation": "Only input is passed to application.predict; expected_findings and business_risk are evaluator-only. Join by case_id when publishing the versioned Weave dataset."
+}

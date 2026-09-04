@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.env
+.env.*
+!.env.example
+wandb/
+wandb_v1_*.txt
+review_output/
+*.pyc

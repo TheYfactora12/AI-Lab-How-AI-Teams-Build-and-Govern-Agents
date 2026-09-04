@@ -1,0 +1,4 @@
+wandb==0.29.0
+weave==0.53.8
+openai==2.54.0
+pydantic==2.13.5

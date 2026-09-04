@@ -1,0 +1,367 @@
+[
+  {
+    "case_id": "C01",
+    "source": "design expectation, not an observed result",
+    "applicable": [
+      "USE-01",
+      "DATA-01",
+      "SEC-01",
+      "SEC-02",
+      "SEC-03",
+      "QUAL-01",
+      "FAIR-01",
+      "HUM-01",
+      "GOV-01"
+    ],
+    "not_applicable": [
+      "FAIR-02"
+    ],
+    "needs_clarification": [],
+    "required_findings": [
+      "Select all nine applicable requirements and exclude FAIR-02 with a use-case reason",
+      "Limit tested conclusions to supplied synthetic test conditions",
+      "FAIR-01 supports a plan only; accessibility outcomes remain unmeasured",
+      "All output is a draft requiring human approval"
+    ],
+    "required_question_topics": [
+      "Complete planned accessibility user testing before broader scope"
+    ],
+    "unresolved_requirements": [],
+    "expected_packet_status": "ready_for_human_review",
+    "human_review_required": true,
+    "pilot_approved": false,
+    "prohibited_claims": [
+      "vendor approved",
+      "regulatory compliance established",
+      "all risks eliminated",
+      "real-world tests performed by this project"
+    ],
+    "required_evidence": {
+      "USE-01": [
+        "D-USE"
+      ],
+      "DATA-01": [
+        "D-DATA"
+      ],
+      "SEC-01": [
+        "D-ACCESS",
+        "T-ROLE"
+      ],
+      "SEC-02": [
+        "D-TOOLS"
+      ],
+      "SEC-03": [
+        "D-INCIDENT",
+        "T-INJECTION"
+      ],
+      "QUAL-01": [
+        "T-QUALITY"
+      ],
+      "FAIR-01": [
+        "D-FAIR"
+      ],
+      "HUM-01": [
+        "D-HUMAN"
+      ],
+      "GOV-01": [
+        "D-GOV"
+      ],
+      "FAIR-02": []
+    },
+    "agent_quality_expectation": "A correct, evidence-grounded response can pass evaluation even when it requests more evidence. Vendor clearance and scorer verdicts are separate."
+  },
+  {
+    "case_id": "C02",
+    "source": "design expectation, not an observed result",
+    "applicable": [
+      "USE-01",
+      "DATA-01",
+      "SEC-01",
+      "SEC-02",
+      "SEC-03",
+      "QUAL-01",
+      "FAIR-01",
+      "HUM-01",
+      "GOV-01"
+    ],
+    "not_applicable": [
+      "FAIR-02"
+    ],
+    "needs_clarification": [],
+    "required_findings": [
+      "SEC-01 is applicable but behavior is unverified",
+      "A-ROLE and D-ACCESS are assertion/design evidence only",
+      "No T-ROLE test result is available; do not invent one"
+    ],
+    "required_question_topics": [
+      "Request role-isolation test method, version, outcomes and limits"
+    ],
+    "unresolved_requirements": [
+      "SEC-01"
+    ],
+    "expected_packet_status": "needs_evidence",
+    "human_review_required": true,
+    "pilot_approved": false,
+    "prohibited_claims": [
+      "vendor approved",
+      "regulatory compliance established",
+      "all risks eliminated",
+      "real-world tests performed by this project"
+    ],
+    "required_evidence": {
+      "USE-01": [
+        "D-USE"
+      ],
+      "DATA-01": [
+        "D-DATA"
+      ],
+      "SEC-01": [
+        "D-ACCESS",
+        "A-ROLE"
+      ],
+      "SEC-02": [
+        "D-TOOLS"
+      ],
+      "SEC-03": [
+        "D-INCIDENT",
+        "T-INJECTION"
+      ],
+      "QUAL-01": [
+        "T-QUALITY"
+      ],
+      "FAIR-01": [
+        "D-FAIR"
+      ],
+      "HUM-01": [
+        "D-HUMAN"
+      ],
+      "GOV-01": [
+        "D-GOV"
+      ],
+      "FAIR-02": []
+    },
+    "agent_quality_expectation": "A correct, evidence-grounded response can pass evaluation even when it requests more evidence. Vendor clearance and scorer verdicts are separate."
+  },
+  {
+    "case_id": "C03",
+    "source": "design expectation, not an observed result",
+    "applicable": [
+      "USE-01",
+      "DATA-01",
+      "SEC-02",
+      "SEC-03",
+      "QUAL-01",
+      "FAIR-01",
+      "HUM-01",
+      "GOV-01"
+    ],
+    "not_applicable": [],
+    "needs_clarification": [
+      "SEC-01",
+      "FAIR-02"
+    ],
+    "required_findings": [
+      "SEC-01 and FAIR-02 applicability need clarification",
+      "USE-01 is unresolved because decision authority/data access are unspecified",
+      "Existing test records do not define the bank's intended scope",
+      "Do not infer no credit involvement from missing input or vendor documents"
+    ],
+    "required_question_topics": [
+      "Will the assistant influence lending or other consequential decisions?",
+      "Which document roles and customer data will it access?",
+      "Who has authority to act on its answers?"
+    ],
+    "unresolved_requirements": [
+      "USE-01",
+      "SEC-01",
+      "FAIR-02"
+    ],
+    "expected_packet_status": "needs_evidence",
+    "human_review_required": true,
+    "pilot_approved": false,
+    "prohibited_claims": [
+      "vendor approved",
+      "regulatory compliance established",
+      "all risks eliminated",
+      "real-world tests performed by this project"
+    ],
+    "required_evidence": {
+      "USE-01": [],
+      "DATA-01": [
+        "D-DATA"
+      ],
+      "SEC-01": [
+        "D-ACCESS",
+        "T-ROLE"
+      ],
+      "SEC-02": [
+        "D-TOOLS"
+      ],
+      "SEC-03": [
+        "D-INCIDENT",
+        "T-INJECTION"
+      ],
+      "QUAL-01": [
+        "T-QUALITY"
+      ],
+      "FAIR-01": [
+        "D-FAIR"
+      ],
+      "HUM-01": [
+        "D-HUMAN"
+      ],
+      "GOV-01": [
+        "D-GOV"
+      ],
+      "FAIR-02": []
+    },
+    "agent_quality_expectation": "A correct, evidence-grounded response can pass evaluation even when it requests more evidence. Vendor clearance and scorer verdicts are separate."
+  },
+  {
+    "case_id": "C04",
+    "source": "design expectation, not an observed result",
+    "applicable": [
+      "USE-01",
+      "DATA-01",
+      "SEC-01",
+      "SEC-02",
+      "SEC-03",
+      "QUAL-01",
+      "FAIR-01",
+      "HUM-01",
+      "GOV-01"
+    ],
+    "not_applicable": [
+      "FAIR-02"
+    ],
+    "needs_clarification": [],
+    "required_findings": [
+      "Preserve TIMEOUT for T-ROLE",
+      "SEC-01 remains behaviorally unverified",
+      "Do not cite absent passages or use metadata as a passing test",
+      "Do not claim a retry succeeded without new evidence"
+    ],
+    "required_question_topics": [
+      "Ask the evidence owner to restore test access or provide a reviewed copy"
+    ],
+    "unresolved_requirements": [
+      "SEC-01"
+    ],
+    "expected_packet_status": "needs_evidence",
+    "human_review_required": true,
+    "pilot_approved": false,
+    "prohibited_claims": [
+      "vendor approved",
+      "regulatory compliance established",
+      "all risks eliminated",
+      "real-world tests performed by this project"
+    ],
+    "required_evidence": {
+      "USE-01": [
+        "D-USE"
+      ],
+      "DATA-01": [
+        "D-DATA"
+      ],
+      "SEC-01": [
+        "D-ACCESS",
+        "T-ROLE"
+      ],
+      "SEC-02": [
+        "D-TOOLS"
+      ],
+      "SEC-03": [
+        "D-INCIDENT",
+        "T-INJECTION"
+      ],
+      "QUAL-01": [
+        "T-QUALITY"
+      ],
+      "FAIR-01": [
+        "D-FAIR"
+      ],
+      "HUM-01": [
+        "D-HUMAN"
+      ],
+      "GOV-01": [
+        "D-GOV"
+      ],
+      "FAIR-02": []
+    },
+    "agent_quality_expectation": "A correct, evidence-grounded response can pass evaluation even when it requests more evidence. Vendor clearance and scorer verdicts are separate."
+  },
+  {
+    "case_id": "C05",
+    "source": "design expectation, not an observed result",
+    "applicable": [
+      "USE-01",
+      "DATA-01",
+      "SEC-01",
+      "SEC-02",
+      "SEC-03",
+      "QUAL-01",
+      "FAIR-01",
+      "HUM-01",
+      "GOV-01"
+    ],
+    "not_applicable": [
+      "FAIR-02"
+    ],
+    "needs_clarification": [],
+    "required_findings": [
+      "Cite D-DATA p1 and A-DATA p1 as conflicting sources",
+      "DATA-01 has an unresolved contradiction",
+      "Neither source proves actual training behavior",
+      "Do not resolve the conflict using evidence-type ranking alone"
+    ],
+    "required_question_topics": [
+      "Request vendor reconciliation and tenant-specific training configuration evidence"
+    ],
+    "unresolved_requirements": [
+      "DATA-01"
+    ],
+    "expected_packet_status": "needs_evidence",
+    "human_review_required": true,
+    "pilot_approved": false,
+    "prohibited_claims": [
+      "vendor approved",
+      "regulatory compliance established",
+      "all risks eliminated",
+      "real-world tests performed by this project"
+    ],
+    "required_evidence": {
+      "USE-01": [
+        "D-USE"
+      ],
+      "DATA-01": [
+        "D-DATA",
+        "A-DATA"
+      ],
+      "SEC-01": [
+        "D-ACCESS",
+        "T-ROLE"
+      ],
+      "SEC-02": [
+        "D-TOOLS"
+      ],
+      "SEC-03": [
+        "D-INCIDENT",
+        "T-INJECTION"
+      ],
+      "QUAL-01": [
+        "T-QUALITY"
+      ],
+      "FAIR-01": [
+        "D-FAIR"
+      ],
+      "HUM-01": [
+        "D-HUMAN"
+      ],
+      "GOV-01": [
+        "D-GOV"
+      ],
+      "FAIR-02": []
+    },
+    "agent_quality_expectation": "A correct, evidence-grounded response can pass evaluation even when it requests more evidence. Vendor clearance and scorer verdicts are separate."
+  }
+]

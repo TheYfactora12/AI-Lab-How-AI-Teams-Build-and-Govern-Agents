@@ -1,0 +1,103 @@
+{
+  "catalog_id": "bank-ai-scope-v1.0",
+  "source": "AI-assisted synthetic design for user review; not a legal standard",
+  "assessment_date": "2026-09-04",
+  "rules": {
+    "applicability": "always -> applicable; conditional true -> applicable; false -> not_applicable; null -> needs_clarification",
+    "freshness": "Assessment date must be on/after issued_on and on/before valid_through. These are synthetic review windows, not regulatory deadlines.",
+    "behavior_verification": "Only an available, current, matching-vendor, matching-use-case, matching-system-version test with matching requirement ID, method, result=pass and stated limits supports tested_in_scope. This means reported tested behavior in the supplied synthetic record, not independent real-world validation.",
+    "no_inference": "A missing record, retrieval error, plan, policy or assertion cannot establish tested behavior."
+  },
+  "requirements": [
+    {
+      "id": "USE-01",
+      "area": "use_and_impact",
+      "title": "Define users, data access, tools and decision authority",
+      "applies_when": "always",
+      "minimum_evidence_type": "documented_support",
+      "owner": "bank_risk_owner",
+      "evidence_needed": "Approved intended-use profile and prohibited decisions"
+    },
+    {
+      "id": "DATA-01",
+      "area": "data_and_privacy",
+      "title": "Account for prompt and document data handling",
+      "applies_when": "always",
+      "minimum_evidence_type": "documented_support",
+      "owner": "privacy_reviewer",
+      "evidence_needed": "Data flow, training terms, retention, deletion, region, support access and subprocessors"
+    },
+    {
+      "id": "SEC-01",
+      "area": "security",
+      "title": "Role-restricted retrieval respects user entitlements",
+      "applies_when": "restricted_documents",
+      "minimum_evidence_type": "observed_test_result",
+      "owner": "bank_security",
+      "evidence_needed": "Role-isolation test with method, version, result and limitations"
+    },
+    {
+      "id": "SEC-02",
+      "area": "security",
+      "title": "Integrations enforce read-only permissions",
+      "applies_when": "always",
+      "minimum_evidence_type": "documented_support",
+      "owner": "bank_it",
+      "evidence_needed": "Connector inventory and permission configuration; a policy alone is not enforcement proof"
+    },
+    {
+      "id": "SEC-03",
+      "area": "security",
+      "title": "Untrusted retrieved instructions do not control the assistant",
+      "applies_when": "always",
+      "minimum_evidence_type": "observed_test_result",
+      "owner": "bank_security",
+      "evidence_needed": "Document-injection test and incident response contact/process"
+    },
+    {
+      "id": "QUAL-01",
+      "area": "model_quality",
+      "title": "Answers are supported, current and abstain on missing evidence",
+      "applies_when": "always",
+      "minimum_evidence_type": "observed_test_result",
+      "owner": "policy_owner",
+      "evidence_needed": "Tests for citations, stale sources, ambiguous questions and retrieval failure"
+    },
+    {
+      "id": "FAIR-01",
+      "area": "fairness_and_accessibility",
+      "title": "Review employee wording and accessibility needs",
+      "applies_when": "always",
+      "minimum_evidence_type": "documented_support",
+      "owner": "accessibility_owner",
+      "evidence_needed": "Relevant user needs, evaluation plan and known limitations"
+    },
+    {
+      "id": "HUM-01",
+      "area": "human_oversight",
+      "title": "Assign escalation, feedback and stop authority",
+      "applies_when": "always",
+      "minimum_evidence_type": "documented_support",
+      "owner": "bank_risk_owner",
+      "evidence_needed": "Named accountable roles and fallback process"
+    },
+    {
+      "id": "GOV-01",
+      "area": "vendor_governance",
+      "title": "Manage vendor changes, outages and exit",
+      "applies_when": "always",
+      "minimum_evidence_type": "documented_support",
+      "owner": "vendor_risk_owner",
+      "evidence_needed": "Version/change notices, continuity, export and deletion arrangements"
+    },
+    {
+      "id": "FAIR-02",
+      "area": "fairness_and_accessibility",
+      "title": "Assess discrimination in credit decisions",
+      "applies_when": "credit_decisions",
+      "minimum_evidence_type": "observed_test_result",
+      "owner": "model_risk_owner",
+      "evidence_needed": "Credit decision role and appropriate outcome testing; do not apply automatically to policy lookup"
+    }
+  ]
+}
