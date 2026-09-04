@@ -4,6 +4,8 @@ This index records the substantive project context supplied or developed in our 
 
 ## Current project
 
+The user reaffirmed that the official certificate repository is the build specification. [Certificate alignment](../CERTIFICATE_ALIGNMENT.md) maps required artifacts, distinguishes supporting extensions, and records unresolved behavior/coverage gaps. Do not treat implemented infrastructure as proof that all acceptance behavior passes.
+
 Public-source extension: [intake and traceability guide](../PUBLIC_DOCUMENT_REVIEW.md), [registry](../data/public_sources.json), and [frozen download manifest](../data/public_source_manifest.json). Two public SOC 3 PDFs and one vendor AI data-use page were collected. This extension verifies provenance and does not replace the completed synthetic comparison or claim real-vendor risk ratings.
 
 Kevin challenged the initial evaluation's coverage: the workflow should measure task-level automation versus human review across application risk and evidence conditions. [Automation routing design](../AUTOMATION_ROUTING_DESIGN.md) records the clarification, 15 scenario families, proposed metrics and weighting principles. It is a next-experiment design; existing V1/V2 results are preserved, and no broader routing results are claimed.

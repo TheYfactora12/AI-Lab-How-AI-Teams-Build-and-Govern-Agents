@@ -4,6 +4,8 @@ An Evaluation Builder certificate project reviewing a fictional bank's proposed 
 
 ## Review these first
 
+**Build specification:** [official certificate alignment and remaining acceptance gaps](CERTIFICATE_ALIGNMENT.md). The Evaluation Builder instructions govern the submission; public-source intake and broader routing ideas support that bounded scope.
+
 [Public-document intake](PUBLIC_DOCUMENT_REVIEW.md) adds three downloaded sources, frozen fingerprints, structural tests and a separate Weave provenance workflow. It includes a beginner demonstration route and clearly marks the remaining public-document assessment work.
 
 New scope clarification: [automation boundaries and scenario matrix](AUTOMATION_ROUTING_DESIGN.md) defines the next experiment: which review tasks may complete automatically, which need human judgment, and which must block. This proposed expansion has not been run.
