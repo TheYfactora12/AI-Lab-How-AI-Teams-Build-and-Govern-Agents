@@ -131,6 +131,8 @@ These are living upstream links, not pinned snapshots. The published local datas
 
 The user supplied a JSON-QA evaluation example using a Weave model, dataset and exact-answer scorer. It informed the execution pattern, not our banking dataset or results. Its dataset reference was `weave:///wandb/json-qa/object/json-qa:v3`; it was not run for this project. The training accuracy/loss snippets and Public API exports were also reference examples, not experiments performed here. A Weave call ID must not be substituted for a W&B Models run ID.
 
+The user also supplied the OpenAI-hosted variant of that JSON-QA example, using `gpt-4.1-nano`, `openai.OpenAI()` and `OPENAI_API_KEY` ([key-management link supplied](https://platform.openai.com/api-keys)). This is recorded as reference material, not a requested provider migration or an executed test. The controlled bank-review comparison retains the W&B Serverless Inference model and W_B authentication used by the existing baseline.
+
 ## Banking and market context consulted
 
 - [Federal Reserve: Third-Party Risk Management guide for community banks](https://www.federalreserve.gov/supervisionreg/srletters/SR2402.htm): context for a consulting workflow, not a claim that our catalog satisfies regulatory obligations.

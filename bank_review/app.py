@@ -1,9 +1,10 @@
-"""V1 model-powered assessment; all input data must be synthetic for this demo."""
+"""Controlled V1/V2 assessment; only the evidence gate changes."""
 import json
 import os
 import weave
 from openai import OpenAI
 from bank_review.schema import Assessment
+from bank_review.gate import apply_evidence_gate
 
 PROJECT = "kevinmedeiros-masterclass/ai-lab-agent-governance"
 MODEL = "OpenPipe/Qwen3-14B-Instruct"
@@ -52,8 +53,10 @@ class VendorReviewer(weave.Model):
 
     @weave.op()
     def predict(self, input: dict) -> dict:
-        if self.application_version != "v1":
-            raise ValueError("Only V1 is implemented; V2 gate remains planned")
+        if self.application_version not in ("v1", "v2"):
+            raise ValueError("Unknown application version")
         packet = prepare_evidence(input)
         result = generate_assessment(packet, self.catalog, self.model)
+        if self.application_version == "v2":
+            return apply_evidence_gate(input, result)
         return {**result, "gate_record": {"applied": False, "reason": "V1 baseline"}}
