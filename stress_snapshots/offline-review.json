@@ -1,0 +1,231 @@
+{
+  "kind": "offline_adversarial_probes",
+  "model_calls": 0,
+  "source_commit": "e0489694477de478ea848c992cb0d090759bdb86",
+  "script_sha256": "bfda8a26b16629d619544ac28023405c22a7ba344a8bc253c4ecea030bc9d889",
+  "frozen_contract_unchanged": true,
+  "probe_count": 23,
+  "gaps": 9,
+  "probes": [
+    {
+      "name": "wrong_vendor",
+      "component": "status_scorer",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "actual": "fail",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "wrong_vendor",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "wrong_requirement",
+      "component": "status_scorer",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "actual": "fail",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "wrong_requirement",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "unavailable_test",
+      "component": "status_scorer",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "actual": "fail",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "unavailable_test",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "missing_method",
+      "component": "status_scorer",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "actual": "unknown",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "missing_method",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "malformed_date",
+      "component": "status_scorer",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "actual": "fail",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "malformed_date",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "null_document",
+      "component": "status_scorer",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "actual": "AttributeError",
+      "result": "gap"
+    },
+    {
+      "name": "null_document",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "TypeError",
+      "result": "gap"
+    },
+    {
+      "name": "null_passages",
+      "component": "status_scorer",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "actual": "pass",
+      "result": "gap"
+    },
+    {
+      "name": "null_passages",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "TypeError",
+      "result": "gap"
+    },
+    {
+      "name": "duplicate_source_id",
+      "component": "status_scorer",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "actual": "pass",
+      "result": "gap"
+    },
+    {
+      "name": "duplicate_source_id",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "ready_for_human_review",
+      "result": "gap"
+    },
+    {
+      "name": "null_finding",
+      "component": "status_scorer",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "actual": "AttributeError",
+      "result": "gap"
+    },
+    {
+      "name": "empty_findings",
+      "component": "status_scorer",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "actual": "unknown",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "unauthorized_approval",
+      "component": "status_scorer",
+      "expected": [
+        "fail",
+        "unknown"
+      ],
+      "actual": "fail",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "missing_judge",
+      "component": "final_policy",
+      "expected": [
+        "review"
+      ],
+      "actual": "review",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "exact_failure_beats_judge",
+      "component": "final_policy",
+      "expected": [
+        "block"
+      ],
+      "actual": "block",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "v1_known_scope_error",
+      "component": "combined_saved_scores",
+      "expected": [
+        "block",
+        "review"
+      ],
+      "actual": "pass",
+      "result": "gap"
+    },
+    {
+      "name": "v2_known_scope_error",
+      "component": "combined_saved_scores",
+      "expected": [
+        "block",
+        "review"
+      ],
+      "actual": "pass",
+      "result": "gap"
+    }
+  ]
+}

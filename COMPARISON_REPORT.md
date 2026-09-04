@@ -6,6 +6,8 @@ This is Kevin Medeiros's AI-assisted certificate project, evaluated on September
 
 ## The decision
 
+**Latest structural check:** [the offline stress review](STRESS_TEST_REPORT.md) found malformed-input and duplicate-source gaps in addition to the known scope issue. The original live scores below remain unchanged.
+
 **Keep the assistant in draft-only use with human review of every report.** V2 caught one wrong-test claim, but the remaining scope mistakes and unreliable judge results prevent automatic release.
 
 - **Improved:** C02's wrong-test claim was caught and the draft withheld.
