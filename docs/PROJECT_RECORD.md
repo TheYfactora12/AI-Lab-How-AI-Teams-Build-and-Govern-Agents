@@ -35,6 +35,7 @@ One V1 model sample has run. Five cases have been published. A live AI judge, V2
 | [Original V1 sample](../review_snapshots/v1-C01.json) | Actual unedited C01 output and scores |
 | [Publication receipt](../review_snapshots/publication.json) | Exact code SHA, dataset reference, hashes and run status |
 | [Class notes and submission requirements](CLASS_NOTES.md) | Workshop takeaways, original image and assignment context |
+| [Optional Agents SDK guide](AGENTS_SDK_REFERENCE.md) | User-supplied Agents-view integration example; not adopted or executed |
 
 The source manifest describes the design's pre-publication state. It is preserved inside the receipt for provenance. The receipt's top-level publication and sample fields record the subsequent successful run; the historical manifest status is not the current publication status.
 
