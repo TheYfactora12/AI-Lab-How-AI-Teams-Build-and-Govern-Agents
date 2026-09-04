@@ -11,7 +11,7 @@ This index records the substantive project context supplied or developed in our 
 - [W&B project overview](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/overview)
 - [Weave project](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave)
 
-One V1 model sample has run. Five cases have been published. A live AI judge, V2 implementation and the full controlled comparison remain pending. Successful exact-rule scores on one sample are not overall assessment approval.
+The live judge, V2 gate and five-case controlled comparison are complete. Both versions received three automated passes and two blocks; inspection uncovered scope and judge errors. See the [comparison report](../COMPARISON_REPORT.md), [evaluation design](../EVALUATION_DESIGN.md), [policy](../OPERATING_POLICY.md), and [video outline](../VIDEO_WALKTHROUGH.md). Student review and video submission remain pending. Earlier progress entries below are historical.
 
 ## Project document and implementation map
 
@@ -150,3 +150,19 @@ The user also supplied the OpenAI-hosted variant of that JSON-QA example, using 
 7. Complete the final report/operating decision and the user's own-voice video.
 
 Update this index and REVIEW_START_HERE.md when new runs or decisions supersede the current state. Keep historical output snapshots intact.
+
+
+## Completed comparison: September 4, 2026
+
+The user's pasted OpenAI JSON-QA sample is an alternate integration reference, not a request to replace the project's W&B inference provider. No OpenAI credential was needed. The optional Agents SDK example remains separate.
+
+- Contract: [bank-vendor-eval-v1.1](../evaluation_contract.json); original cases and expected findings unchanged.
+- Source commit: e4812fe7267b22b082375ad793aedde62e49dfe8.
+- [Final Actions execution](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33885310280): completed with 17 calibration tests and both evaluations.
+- [V1 evaluation](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06cdf-b7f7-7038-93e0-b60ac9376a11), [V2 evaluation](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06ce0-2c54-769e-b851-93e10e0b2f3e).
+- [Final receipt](../evaluation_snapshots/final/receipt.json), [V1 rows](../evaluation_snapshots/final/v1-rows.json), [V2 rows](../evaluation_snapshots/final/v2-rows.json).
+- [Earlier failed attempt](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33884926606) remains in evaluation_snapshots/attempt-1. Both versions were rerun after common error handling changed; counts are not pooled.
+
+New implementation: bank_review/gate.py, bank_review/judge.py, bank_review/evaluate.py, scripts/freeze_contract.py, tests/test_gate_and_judge.py, and .github/workflows/evaluate-v1-v2.yml. See JUDGE_RUBRIC.md and the [submission checklist](../SUBMISSION_CHECKLIST.md).
+
+V2 withheld an incorrectly supported role-test claim in C02. Overall verdict counts did not improve. C03 scope errors passed every scorer; C05 had application errors and unsupported judge reasoning. Preserve those failures as evidence for the operating decision. No 576-run project comparison, ARIA review, independent expert validation or video submission is claimed.

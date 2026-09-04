@@ -1,5 +1,7 @@
 # Saved review package
 
+Current review: [completed V1/V2 comparison](COMPARISON_REPORT.md), [operating policy](OPERATING_POLICY.md), and [submission checklist](SUBMISSION_CHECKLIST.md). This page preserves the earlier single-sample review; its pending-work statements are historical.
+
 The dataset is published, V1 has generated one actual assessment, and the original output is saved for review. No live judge or full V1/V2 evaluation has run.
 
 For the full context, see [the project record and references](docs/PROJECT_RECORD.md) and [class notes](docs/CLASS_NOTES.md).

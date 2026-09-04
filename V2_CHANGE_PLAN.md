@@ -1,5 +1,7 @@
 # V2: Evidence-validation gate
 
+Implementation status: the gate is implemented and measured. See [comparison report](COMPARISON_REPORT.md) for C02 containment, unchanged overall verdict counts and remaining scope/judge failures. The plan below records the original rationale.
+
 Status: Planned, not an observed improvement.
 
 The certificate calls for one targeted application change under fixed evaluation conditions. Our deeper fix is one coherent post-generation validation mechanism.

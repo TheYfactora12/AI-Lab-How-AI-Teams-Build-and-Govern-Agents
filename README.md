@@ -4,7 +4,7 @@ An Evaluation Builder certificate project reviewing a fictional bank's proposed 
 
 ## Review these first
 
-Start with [the saved review package](REVIEW_START_HERE.md) for direct Weave links, the actual V1 output, and observations to discuss.
+Start with the [completed comparison report](COMPARISON_REPORT.md), [evaluation design](EVALUATION_DESIGN.md), [30-day operating rule](OPERATING_POLICY.md), and [video outline](VIDEO_WALKTHROUGH.md). The [submission checklist](SUBMISSION_CHECKLIST.md) covers your remaining review and recording steps. The [original sample](REVIEW_START_HERE.md) is preserved as history.
 
 The [project record and reference index](docs/PROJECT_RECORD.md) collects the decision history, setup notes, source references, GitHub workflow history and Weave links. [Class notes](docs/CLASS_NOTES.md) preserve the supplied image and submission requirements.
 
@@ -18,20 +18,19 @@ All vendor documents and test records are synthetic. Claims about vendor test re
 
 ## What exists
 
-- Five versioned input packets and separately stored expected findings.
-- A model-powered V1 with a common structured output schema.
-- Two independent deterministic scorers and pass/fail/unknown calibration tests.
-- A manual workflow to publish the dataset and optionally generate one C01 draft. The first dataset publication and live C01 sample succeeded; the original output is saved in review_snapshots/.
+- Five versioned synthetic cases and a frozen evaluation contract.
+- Two model-powered versions differing only by an evidence gate.
+- Two independent exact scorers, a live three-criterion judge and 17 calibration tests.
+- Completed native Weave evaluations, unedited outputs, receipts and interpretation.
+- Notes, references, ownership policy and an own-voice recording outline.
 
-The live judge, V2 gate and full V1/V2 evaluation comparison are not implemented yet. A single sample is not a full evaluation. The evaluation contract and expected findings still need review.
+Both versions received three automated passes and two blocks. V2 caught the C02 test mismatch, but inspection found scope and judge errors. These scores do not establish production readiness. Student review and video recording/upload remain outstanding.
 
-## Open the saved run later
+## Open the saved evaluation later
 
-Go to [GitHub Actions](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions), select **Publish review package**, and open the latest completed run. Its summary contains the versioned dataset reference and sample trace link. Download the **review-package** artifact for the receipt, scores and model-generated JSON.
+Open the [completed GitHub Actions run](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33885310280) or the direct V1/V2 Weave links in the comparison report. Unedited results are committed in evaluation_snapshots/final/; the failed first attempt is separately retained in evaluation_snapshots/attempt-1/.
 
-The sample is in Weave **Calls/Traces**, not the Agents sessions view. The dataset is in Weave's dataset/object views. It is not yet a V1/V2 evaluation run.
-
-Workflow artifacts are retained for 90 days. The dataset and trace are separately stored in the W&B project, subject to that account's retention settings. Save downloaded artifacts for longer-term review.
+The implementation uses Weave Calls/Evaluations, not Agents SDK sessions. Workflow artifacts last 90 days; committed snapshots preserve the review record independently. W&B retention depends on account settings.
 
 ## Reproduce locally
 

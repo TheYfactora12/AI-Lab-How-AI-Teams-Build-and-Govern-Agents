@@ -1,6 +1,6 @@
 # Bank AI Vendor Risk Assessment: Scope and Evidence Review
 
-Status: Direction approved by the user; detailed design and implementation pending.
+Status: Technical comparison completed; see [actual results](COMPARISON_REPORT.md). Student review and video submission remain pending. Design statements below record the intended behavior, not a claim that every output meets it.
 Track: Evaluation Builder.
 
 ## Locked project decision
@@ -67,9 +67,9 @@ All cases will use declared synthetic sources. Expand each into exact inputs, ex
 | Operational failure | Document retrieval fails | Preserve failure evidence; do not treat failure as a clean assessment |
 | Contradictory evidence | Questionnaire and policy disagree | Cite both statements and escalate the unresolved contradiction |
 
-## Evaluation contract to complete
+## Evaluation contract (implemented in EVALUATION_DESIGN.md)
 
-Two proposed deterministic scorers to finalize:
+Two implemented deterministic scorers:
 - Evidence reference integrity: verify cited document IDs and passages exist and belong to the requested vendor and use case.
 - Evidence-status and routing consistency: verify claims marked behaviorally tested reference an actual supplied test record, and missing or failed evidence is not labeled verified or cleared for release.
 
@@ -109,26 +109,27 @@ This is a proposed policy, not an approved deployment or evidence of safety.
 - Local environment: `.venv`, with wandb 0.29.0 and weave 0.53.8; imports verified.
 - Authentication succeeded in GitHub Actions.
 - Synthetic setup trace saved and read back: https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06a53-9e5b-758c-b799-514f7576fbfb
-- The setup trace is not a model call or evaluation. V1 is implemented in bank_review/app.py; live review-package status is recorded in GitHub Actions. No full evaluation results exist yet.
+- The setup trace is not a model call or evaluation. V1 is implemented in bank_review/app.py; live review-package status is recorded in GitHub Actions. The completed comparison and error analysis are in COMPARISON_REPORT.md.
 - Reports and ARIA access remain unverified.
 
 ## Certificate completion checklist
 
 - [x] Select an original use case and project track.
 - [x] Verify W&B authentication and basic Weave tracing.
-- [ ] Complete the official evaluation design template.
+- [x] Complete the official evaluation design template.
 - [x] Define the internal-assistant use-case profile and operating boundaries.
 - [x] Create the versioned assessment catalog and fictional vendor evidence packets; see [ASSESSMENT_CATALOG.md](ASSESSMENT_CATALOG.md).
-- [x] Draft five cases and expected outcomes in data/; model runs have not occurred.
-- [ ] Review expected findings with the user and freeze the evaluation contract.
+- [x] Draft five cases and expected outcomes in data/; both versions have now been evaluated.
+- [x] Freeze the experimental contract without changing the pre-run answer key.
+- [ ] Obtain student/expert review of the expected findings and final conclusions.
 - [x] Implement traced V1 using W&B Serverless Inference with OpenPipe/Qwen3-14B-Instruct; live C01 sample succeeded and was read back.
-- [x] Implement two deterministic scorers; ten local calibration tests pass.
+- [x] Implement two deterministic scorers; 17 local calibration tests pass across scorers, gate and judge routing.
 - [x] Publish and read back the five-case Weave dataset; save one actual V1 draft and observations in [REVIEW_START_HERE.md](REVIEW_START_HERE.md).
-- [ ] Finalize and implement the three-criterion AI judge.
-- [ ] Run V1 and V2 under the same evaluation contract.
-- [ ] Inspect failures and record actual results with evidence links.
-- [ ] Finalize the human-in-the-loop policy based on results.
-- [ ] Prepare a portfolio-ready assessment and evaluation summary.
+- [x] Finalize and implement the three-criterion AI judge.
+- [x] Run V1 and V2 under the same evaluation contract.
+- [x] Inspect failures and record actual results with evidence links.
+- [x] Finalize the human-in-the-loop policy based on results.
+- [x] Prepare a portfolio-ready assessment and evaluation summary.
 - [ ] Record and upload a 3–5 minute walkthrough in the user's own voice, showing the final deliverable.
 
 ## References
