@@ -6,6 +6,7 @@ from openai import OpenAI, APIError
 from pydantic import ValidationError
 from bank_review.schema import Assessment
 from bank_review.gate import apply_evidence_gate
+from bank_review.validation import structure_errors
 
 PROJECT = "kevinmedeiros-masterclass/ai-lab-agent-governance"
 MODEL = "OpenPipe/Qwen3-14B-Instruct"
@@ -34,6 +35,8 @@ def generate_assessment(packet: dict, catalog: dict, model: str) -> dict:
         "Plans do not prove outcomes. Make follow-up questions specific and assign role owners. "
         "Always require human review, never approve the pilot. Use needs_evidence for unresolved scope, "
         "missing required evidence or contradictions; otherwise ready_for_human_review. "
+        "not_applicable is allowed only in scope.applicability, never in findings.evidence_status. "
+        "Omit findings for requirements explicitly marked not_applicable. "
         "Return only a JSON object matching this schema:\n" + json.dumps(Assessment.model_json_schema())
     )
     response = client.chat.completions.create(
@@ -56,8 +59,10 @@ class VendorReviewer(weave.Model):
     def predict(self, input: dict) -> dict:
         if self.application_version not in ("v1", "v2"):
             raise ValueError("Unknown application version")
-        packet = prepare_evidence(input)
         try:
+            if structure_errors(input):
+                raise ValueError("Invalid source packet")
+            packet = prepare_evidence(input)
             result = generate_assessment(packet, self.catalog, self.model)
         except (APIError, ValidationError, ValueError) as exc:
             return {"scope": [], "findings": [], "questions": [], "packet_status": "withheld",

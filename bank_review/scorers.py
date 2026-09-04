@@ -1,5 +1,6 @@
 """Independent exact-rule checks. No model calls or application-gate imports."""
 from datetime import date
+from bank_review.validation import structure_errors
 
 
 def verdict(failures, missing):
@@ -12,6 +13,9 @@ def verdict(failures, missing):
 
 def evidence_reference_integrity(input, output):
     failures, missing = [], []
+    errors = structure_errors(input, output)
+    if errors:
+        return verdict([e for e in errors if "Duplicate" in e], errors)
     if not isinstance(output, dict) or not isinstance(input, dict):
         return verdict([], ["Input or output unavailable"])
     findings, docs, profile = output.get("findings"), input.get("evidence"), input.get("profile")
@@ -50,6 +54,9 @@ def evidence_reference_integrity(input, output):
 
 def evidence_status_and_routing(input, output):
     failures, missing = [], []
+    errors = structure_errors(input, output)
+    if errors:
+        return verdict([e for e in errors if "Duplicate" in e], errors)
     if not isinstance(input, dict) or not isinstance(output, dict):
         return verdict([], ["Input or output unavailable"])
     docs, profile, findings = input.get("evidence"), input.get("profile"), output.get("findings")
@@ -70,6 +77,14 @@ def evidence_status_and_routing(input, output):
     elif any(s.get("applicability") == "needs_clarification" for s in output["scope"]) and state == "ready_for_human_review":
         failures.append("Unresolved scope marked ready")
     by_id = {d.get("id"): d for d in docs}
+    # Independent scope rule: unknown intended use cannot become an exclusion.
+    for item in output.get("scope", []):
+        field = {"SEC-01": "restricted_documents", "FAIR-02": "credit_decisions"}.get(item.get("requirement_id"))
+        if field and field in profile:
+            value = profile[field]
+            expected = "needs_clarification" if value is None else ("applicable" if value is True else "not_applicable")
+            if item.get("applicability") != expected:
+                failures.append(f"{item.get('requirement_id')}: scope contradicts intended-use field")
     for f in findings:
         status = f.get("evidence_status")
         if status is None:

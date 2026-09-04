@@ -2,14 +2,29 @@
 from copy import deepcopy
 from datetime import date
 import weave
+from bank_review.validation import structure_errors
 
 
 @weave.op()
 def apply_evidence_gate(input: dict, draft: dict) -> dict:
+    errors = structure_errors(input, draft)
+    if errors:
+        return {"scope": [], "findings": [], "questions": [], "packet_status": "withheld",
+                "human_review_required": True, "pilot_approved": False, "execution_error": "InvalidStructure",
+                "gate_record": {"applied": True, "reason": "Validation gate v2.0", "rejected": [], "errors": errors}}
     output = deepcopy(draft)
     records = {record["id"]: record for record in input["evidence"]}
     profile = input["profile"]
     rejected = []
+    scope_rejected = []
+    for scope in output["scope"]:
+        field = {"SEC-01": "restricted_documents", "FAIR-02": "credit_decisions"}.get(scope.get("requirement_id"))
+        if field and field in profile:
+            value = profile[field]
+            expected = "needs_clarification" if value is None else ("applicable" if value is True else "not_applicable")
+            if scope.get("applicability") != expected:
+                scope["applicability"] = expected
+                scope_rejected.append({"requirement_id": scope["requirement_id"], "reasons": [f"Clarify intended use: {field}; original scope decision was unsupported"]})
     for finding in draft["findings"]:
         if finding["evidence_status"] != "tested_in_scope":
             continue
@@ -47,16 +62,17 @@ def apply_evidence_gate(input: dict, draft: dict) -> dict:
             reasons.append("no supplied behavioral test")
         if reasons:
             rejected.append({"requirement_id": finding["requirement_id"], "reasons": sorted(set(reasons))})
+    rejected.extend(scope_rejected)
     if rejected:
         # Withhold the whole generated narrative so an unsafe claim cannot survive
         # in another finding, rationale or question. Original draft stays in trace.
-        output["scope"] = [{**s, "rationale": "Generated assessment withheld pending evidence validation."} for s in draft["scope"]]
+        output["scope"] = [{**s, "rationale": "Generated assessment withheld pending evidence and scope validation."} for s in output["scope"]]
         output["findings"] = [{"requirement_id": r["requirement_id"],
                                "claim": "Behavioral verification could not be established from eligible supplied evidence; original assessment withheld.",
                                "evidence_status": "missing", "citations": []} for r in rejected]
         output["questions"] = [{"requirement_id": r["requirement_id"],
-                                "question": "Supply a current, matching behavioral test with method, passing result and limitations. Validation gaps: " + "; ".join(r["reasons"]),
+                                "question": ("Clarify the bank's intended use. " if r in scope_rejected else "Supply a current, matching behavioral test with method, passing result and limitations. ") + "Validation gaps: " + "; ".join(r["reasons"]),
                                 "owner": "bank_security"} for r in rejected]
         output.update(packet_status="withheld", human_review_required=True, pilot_approved=False)
-    output["gate_record"] = {"applied": True, "reason": "Evidence gate v1.0", "rejected": rejected}
+    output["gate_record"] = {"applied": True, "reason": "Evidence and scope validation gate v2.0", "rejected": rejected}
     return output
