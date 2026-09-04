@@ -1,8 +1,53 @@
-# Evidence gate comparison: useful containment, no overall score gain
+# V1 vs V2: what matters for the review
 
 The V2 gate caught an incorrectly matched test in C02 and withheld the draft. Both versions still received three automated passes and two blocks across five cases. Inspection also found a material scope error that every scorer missed. This supports continued human review, not release readiness.
 
 This is Kevin Medeiros's AI-assisted certificate project, evaluated on September 4, 2026. All bank/vendor records are fictional. The model executions and saved scores are real; they evaluate the assessor, not a vendor's actual controls.
+
+## The decision
+
+**Keep the assistant in draft-only use with human review of every report.** V2 caught one wrong-test claim, but the remaining scope mistakes and unreliable judge results prevent automatic release.
+
+- **Improved:** C02's wrong-test claim was caught and the draft withheld.
+- **Still unresolved:** C03 passed despite a material scope error; C05 produced no valid assessment.
+- **Overall:** both versions received 3 automated passes and 2 blocks. Those are grader results, not five independently validated decisions.
+
+Jump to [needs attention](#needs-attention), [normal-and-timeout cases](#normal-and-timeout-cases), or [understand the checks](#understand-the-checks). These are report sections, not new Weave filters.
+
+## Needs attention
+
+Inspection notes below are documented analysis, not additional official scores or completed human sign-off.
+
+| Test case | V1 automated result | V2 automated result | What matters | Required next action |
+| --- | --- | --- | --- | --- |
+| **C03: Unclear application scope** | Pass | Pass | Both treated unknown information as a reason to exclude a risk. The graders missed it. | Clarify scope and improve scope checks; do not accept this pass as correct. |
+| **C05: Conflicting documents** | Block | Block | Neither produced a valid assessment. The judge then gave unsupported reasons. | Diagnose the output failure and calibrate the judge before reassessing. |
+| **C02: Missing role-isolation test** | Block | Block | V2 caught the wrong-test claim. Withholding the whole draft also removed useful findings. | A reviewer must resolve the evidence gap and review the incomplete draft. |
+
+## Normal and timeout cases
+
+| Test case | V1 automated result | V2 automated result | What matters | Required next action |
+| --- | --- | --- | --- | --- |
+| **C01: Normal packet** | Pass | Pass | Both asked for more evidence than the expected review state called for; the judge missed that mismatch. | Review unnecessary escalation; this is still a quality issue. |
+| **C04: Document retrieval timed out** | Pass | Pass | Both disclosed the missing evidence instead of inventing success. | Obtain the missing evidence before making the vendor decision. |
+
+## Understand the checks
+
+| Plain-English question | Name shown in Weave | What it checks |
+| --- | --- | --- |
+| **Are the citations valid?** | score_references | Source identity and exact quotations |
+| **Does the test evidence match the claim?** | score_status | Test metadata, requirement matching and evidence-status rules; not every meaning in the prose |
+| **Is the assessment well supported and useful?** | BankRiskJudge | Evidence support, risk scope and follow-up quality; its grades can be wrong |
+
+**Pass:** the automated rules accepted the assessment. **Block:** the rules prevented report release. **Unknown:** a particular check lacked sufficient evidence to grade. The final policy also has **Review** for unresolved grading; this run's recorded final counts were passes and blocks only.
+
+These labels answer “How did the assistant perform?” They do not answer “Is the vendor approved?” Vendor acceptance remains a human decision. Execution status icons in Weave are separate from these assessment scores.
+
+For your presentation, show the decision above, C02's change and C03's missed error, then the [operating policy](OPERATING_POLICY.md). Expand the supporting detail below only when explaining a specific result.
+
+<details>
+<summary><strong>Open detailed scores, original evidence links and experiment history</strong></summary>
+
 
 ## Open the evidence
 
@@ -68,3 +113,5 @@ Adopt the [proposed 30-day rule](OPERATING_POLICY.md): bounded synthetic draft p
 Next work should independently check null-sensitive applicability, calibrate the judge against these observed mistakes, improve schema-error handling, and test narrower withholding. Freeze a new contract and rerun both versions after any shared change. Obtain expert review of the answer key, more scenarios and repeated trials before estimating real-world reliability. No time savings, production failure rate or competitive superiority was measured.
 
 The five synthetic cases, one trial and shared app/judge model limit generalization. The workshop's 576-run reference is not this project's dataset or result. No ARIA challenge or Reports publication is claimed. The student still needs to review the findings and record the [3–5 minute walkthrough](VIDEO_WALKTHROUGH.md).
+
+</details>
