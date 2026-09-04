@@ -4,6 +4,8 @@ An Evaluation Builder certificate project reviewing a fictional bank's proposed 
 
 ## Review these first
 
+**Ready to present?** Open [your demonstration handoff](START_DEMO_HERE.md) for the exact tabs, four-minute route and remaining student checklist.
+
 **Guided walkthrough:** [full project breakdown with evidence links](PROJECT_EVIDENCE_WALKTHROUGH.md) explains every class step, actual results, Weave terminology and what to show in the final demonstration.
 
 **Build specification:** [official certificate alignment and remaining acceptance gaps](CERTIFICATE_ALIGNMENT.md). The Evaluation Builder instructions govern the submission; public-source intake and broader routing ideas support that bounded scope.

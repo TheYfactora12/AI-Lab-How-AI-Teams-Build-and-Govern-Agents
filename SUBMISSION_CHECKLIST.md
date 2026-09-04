@@ -4,6 +4,9 @@ This repository supplies the technical demonstration and written deliverable. Th
 
 ## Review package
 
+- [Demonstration handoff](START_DEMO_HERE.md): what is prepared and what the student must finish.
+- [Full evidence walkthrough](PROJECT_EVIDENCE_WALKTHROUGH.md): each class step, explanations and source links.
+
 - [Evaluation design](EVALUATION_DESIGN.md): application fit, evidence and scoring contract.
 - [Use-case profile](USE_CASE_PROFILE.md): fictional bank and vendor scope.
 - [Catalog and five cases](ASSESSMENT_CATALOG.md): normal, unsafe, ambiguous, operational and contradiction cases.
