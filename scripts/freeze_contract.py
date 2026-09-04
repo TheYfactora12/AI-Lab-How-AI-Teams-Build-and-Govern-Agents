@@ -8,9 +8,9 @@ FILES = ["data/assessment_catalog.json", "data/cases.jsonl", "data/expected_find
          "bank_review/app.py", "bank_review/schema.py", "bank_review/gate.py", "bank_review/scorers.py",
          "bank_review/judge.py", "bank_review/publish.py", "bank_review/evaluate.py", "JUDGE_RUBRIC.md", "requirements.txt"]
 contract = {
-    "contract_id": "bank-vendor-eval-v1.0",
+    "contract_id": "bank-vendor-eval-v1.1",
     "dataset_uri": "weave:///kevinmedeiros-masterclass/ai-lab-agent-governance/object/bank-vendor-scope-five-v1:Ew78A6FsNIIFMK8IlXgz8J6HdAX9iaeMqlUltbJRPQs",
-    "catalog_id": "bank-ai-scope-v1.0", "scorer_set": "exact-rules-v1.0", "rubric_id": "bank-risk-judge-v1.0",
+    "catalog_id": "bank-ai-scope-v1.0", "scorer_set": "exact-rules-v1.0", "rubric_id": "bank-risk-judge-v1.1",
     "release_policy": "exact-fail-or-blocking-judge-fail-block; unknown-review; all-pass-human-review-only-v1.0",
     "app_model": "OpenPipe/Qwen3-14B-Instruct", "judge_model": "OpenPipe/Qwen3-14B-Instruct",
     "temperature": 0, "trials_per_case": 1, "app_max_tokens": 6000, "judge_max_tokens": 3000,

@@ -1,0 +1,100 @@
+{
+  "contract": {
+    "contract_id": "bank-vendor-eval-v1.0",
+    "dataset_uri": "weave:///kevinmedeiros-masterclass/ai-lab-agent-governance/object/bank-vendor-scope-five-v1:Ew78A6FsNIIFMK8IlXgz8J6HdAX9iaeMqlUltbJRPQs",
+    "catalog_id": "bank-ai-scope-v1.0",
+    "scorer_set": "exact-rules-v1.0",
+    "rubric_id": "bank-risk-judge-v1.0",
+    "release_policy": "exact-fail-or-blocking-judge-fail-block; unknown-review; all-pass-human-review-only-v1.0",
+    "app_model": "OpenPipe/Qwen3-14B-Instruct",
+    "judge_model": "OpenPipe/Qwen3-14B-Instruct",
+    "temperature": 0,
+    "trials_per_case": 1,
+    "app_max_tokens": 6000,
+    "judge_max_tokens": 3000,
+    "automatic_retries": 0,
+    "planned_hosted_calls": 20,
+    "only_changed_dimension": "post_generation_evidence_gate",
+    "answer_key_provenance": "AI-assisted pre-run design; no independent expert validation claimed",
+    "file_hashes": {
+      "data/assessment_catalog.json": "c7b76d6c74cdab028a9d78205798d08f75c92aac3794f6fb5f9b58067d5b3c0d",
+      "data/cases.jsonl": "a2eb2a9705dfff2f0344fbb549375f94a21bac3704670359612e6b39c9b5ac1a",
+      "data/expected_findings.json": "69774814bf7098e69f3904d6ad58b516e9d75e8186a26d3e1fdfe9463b24f91c",
+      "bank_review/app.py": "f02946faa1363821a6fe9375e39388978d0493fd8b876991d928ea5e96fcdda2",
+      "bank_review/schema.py": "d5895575b17ef758163a2dab6910eddcc6195607741ac69be5e5fa29932f7305",
+      "bank_review/gate.py": "ba933dafbde5faf8fa712cb238c4ff27a07df9de3f6af2c449702c30b4a18e89",
+      "bank_review/scorers.py": "b94b7d9a0c9e65ab4a7d0f40bc035d87036d981eb390ba9593836112d8c787b2",
+      "bank_review/judge.py": "a3e98cf4f052bde9514ac5223937b18099744374662e27d850fae6e1326dcbf6",
+      "bank_review/publish.py": "0970eae5ffb331e266bd178922620ced3242597cca4f6c287e01f43ad1c2fc44",
+      "bank_review/evaluate.py": "7a38d3f9182132b100cd89c68a54cf8881cf70015a99a114fb5ba28b50be1bf5",
+      "JUDGE_RUBRIC.md": "5de8806cf05918b3a4e8737d7de901d6f2478b42062d5ef264f9bafd82ffe846",
+      "requirements.txt": "b77ed03fface2fee79f0cb83d64c0395e216260c90135266f7ae59fd7f9d5596"
+    }
+  },
+  "git_commit": "cada5adaa89f4133314d223e0af68b81ccd4d31f",
+  "workflow_run": "33884926606",
+  "runs": {
+    "v1": {
+      "trace_url": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06cdc-0eee-7880-8a28-f7cd4236d3fb",
+      "call_id": "01a06cdc-0eee-7880-8a28-f7cd4236d3fb",
+      "summary": {
+        "output": {
+          "human_review_required": {
+            "true_count": 4,
+            "true_fraction": 1.0
+          },
+          "pilot_approved": {
+            "true_count": 0,
+            "true_fraction": 0.0
+          },
+          "gate_record": {
+            "applied": {
+              "true_count": 0,
+              "true_fraction": 0.0
+            }
+          }
+        },
+        "score_references": null,
+        "score_status": null,
+        "BankRiskJudge": null,
+        "model_latency": {
+          "mean": 9.140313386917114
+        }
+      }
+    },
+    "v2": {
+      "trace_url": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06cdc-8b65-70ee-88e2-b29c196d8099",
+      "call_id": "01a06cdc-8b65-70ee-88e2-b29c196d8099",
+      "summary": {
+        "output": {
+          "human_review_required": {
+            "true_count": 4,
+            "true_fraction": 1.0
+          },
+          "pilot_approved": {
+            "true_count": 0,
+            "true_fraction": 0.0
+          },
+          "gate_record": {
+            "applied": {
+              "true_count": 4,
+              "true_fraction": 1.0
+            }
+          }
+        },
+        "score_references": null,
+        "score_status": null,
+        "BankRiskJudge": null,
+        "model_latency": {
+          "mean": 8.231833267211915
+        }
+      }
+    }
+  },
+  "notice": "Actual model evaluations of an assessor on synthetic cases; not real vendor validation.",
+  "complete": false,
+  "errors": [
+    "v1/C05: incomplete model or scoring result",
+    "v2/C05: incomplete model or scoring result"
+  ]
+}

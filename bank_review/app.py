@@ -2,7 +2,8 @@
 import json
 import os
 import weave
-from openai import OpenAI
+from openai import OpenAI, APIError
+from pydantic import ValidationError
 from bank_review.schema import Assessment
 from bank_review.gate import apply_evidence_gate
 
@@ -56,7 +57,14 @@ class VendorReviewer(weave.Model):
         if self.application_version not in ("v1", "v2"):
             raise ValueError("Unknown application version")
         packet = prepare_evidence(input)
-        result = generate_assessment(packet, self.catalog, self.model)
+        try:
+            result = generate_assessment(packet, self.catalog, self.model)
+        except (APIError, ValidationError, ValueError) as exc:
+            return {"scope": [], "findings": [], "questions": [], "packet_status": "withheld",
+                    "human_review_required": True, "pilot_approved": False,
+                    "execution_error": type(exc).__name__,
+                    "gate_record": {"applied": False, "reason": "No valid model draft; inspect failed generation trace"}}
+        result["execution_error"] = None
         if self.application_version == "v2":
             return apply_evidence_gate(input, result)
         return {**result, "gate_record": {"applied": False, "reason": "V1 baseline"}}

@@ -42,7 +42,7 @@ def final_verdict(scores):
 
 class BankRiskJudge(weave.Scorer):
     model: str = MODEL
-    rubric_id: str = "bank-risk-judge-v1.0"
+    rubric_id: str = "bank-risk-judge-v1.1"
     rubric: str
     catalog: dict
 

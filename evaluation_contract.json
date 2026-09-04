@@ -1,9 +1,9 @@
 {
-  "contract_id": "bank-vendor-eval-v1.0",
+  "contract_id": "bank-vendor-eval-v1.1",
   "dataset_uri": "weave:///kevinmedeiros-masterclass/ai-lab-agent-governance/object/bank-vendor-scope-five-v1:Ew78A6FsNIIFMK8IlXgz8J6HdAX9iaeMqlUltbJRPQs",
   "catalog_id": "bank-ai-scope-v1.0",
   "scorer_set": "exact-rules-v1.0",
-  "rubric_id": "bank-risk-judge-v1.0",
+  "rubric_id": "bank-risk-judge-v1.1",
   "release_policy": "exact-fail-or-blocking-judge-fail-block; unknown-review; all-pass-human-review-only-v1.0",
   "app_model": "OpenPipe/Qwen3-14B-Instruct",
   "judge_model": "OpenPipe/Qwen3-14B-Instruct",
@@ -19,14 +19,14 @@
     "data/assessment_catalog.json": "c7b76d6c74cdab028a9d78205798d08f75c92aac3794f6fb5f9b58067d5b3c0d",
     "data/cases.jsonl": "a2eb2a9705dfff2f0344fbb549375f94a21bac3704670359612e6b39c9b5ac1a",
     "data/expected_findings.json": "69774814bf7098e69f3904d6ad58b516e9d75e8186a26d3e1fdfe9463b24f91c",
-    "bank_review/app.py": "f02946faa1363821a6fe9375e39388978d0493fd8b876991d928ea5e96fcdda2",
+    "bank_review/app.py": "3c99b42235d29a380e857e77eb35f2d7a4922b84f0b6509f19a5b0aa8fc389c7",
     "bank_review/schema.py": "d5895575b17ef758163a2dab6910eddcc6195607741ac69be5e5fa29932f7305",
     "bank_review/gate.py": "ba933dafbde5faf8fa712cb238c4ff27a07df9de3f6af2c449702c30b4a18e89",
     "bank_review/scorers.py": "b94b7d9a0c9e65ab4a7d0f40bc035d87036d981eb390ba9593836112d8c787b2",
-    "bank_review/judge.py": "a3e98cf4f052bde9514ac5223937b18099744374662e27d850fae6e1326dcbf6",
+    "bank_review/judge.py": "eb1ca473a93b0253494c22fa43255648685bcf1848a7f52e1c74c4165af9ac3d",
     "bank_review/publish.py": "0970eae5ffb331e266bd178922620ced3242597cca4f6c287e01f43ad1c2fc44",
-    "bank_review/evaluate.py": "7a38d3f9182132b100cd89c68a54cf8881cf70015a99a114fb5ba28b50be1bf5",
-    "JUDGE_RUBRIC.md": "5de8806cf05918b3a4e8737d7de901d6f2478b42062d5ef264f9bafd82ffe846",
+    "bank_review/evaluate.py": "67173be3300ab83e3d1343cd080d96fded8ecec1f521f7b3a24288860f4c5e0c",
+    "JUDGE_RUBRIC.md": "bc46f969867a19358b63d890a79e0a0f5baf7bf6ee410e3f053d42cdbb3abeab",
     "requirements.txt": "b77ed03fface2fee79f0cb83d64c0395e216260c90135266f7ae59fd7f9d5596"
   }
 }

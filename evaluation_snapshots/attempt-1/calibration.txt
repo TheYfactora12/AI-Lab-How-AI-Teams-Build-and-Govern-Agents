@@ -1,0 +1,23 @@
+test_assertion_withholds_narrative (test_gate_and_judge.GateTests.test_assertion_withholds_narrative) ... Warning: Traces will not be logged. Call weave.init to log your traces to a project.
+ (subsequent messages of this type will be suppressed)
+ok
+test_documentary_claim_not_rewritten (test_gate_and_judge.GateTests.test_documentary_claim_not_rewritten) ... ok
+test_invalid_evidence_is_withheld (test_gate_and_judge.GateTests.test_invalid_evidence_is_withheld) ... ok
+test_preserves_eligible_draft (test_gate_and_judge.GateTests.test_preserves_eligible_draft) ... ok
+test_all_verdict_branches (test_gate_and_judge.JudgePolicyTests.test_all_verdict_branches) ... ok
+test_exact_fail_cannot_be_overridden (test_gate_and_judge.JudgePolicyTests.test_exact_fail_cannot_be_overridden) ... ok
+test_assertion_cannot_be_test (test_scorers.ScorerTests.test_assertion_cannot_be_test) ... ok
+test_honest_missing_evidence_passes (test_scorers.ScorerTests.test_honest_missing_evidence_passes) ... ok
+test_missing_fields_cannot_pass (test_scorers.ScorerTests.test_missing_fields_cannot_pass) ... ok
+test_reference_pass (test_scorers.ScorerTests.test_reference_pass) ... ok
+test_reference_unknown (test_scorers.ScorerTests.test_reference_unknown) ... ok
+test_reference_wrong_vendor_fail (test_scorers.ScorerTests.test_reference_wrong_vendor_fail) ... ok
+test_stale_and_wrong_version (test_scorers.ScorerTests.test_stale_and_wrong_version) ... ok
+test_status_pass (test_scorers.ScorerTests.test_status_pass) ... ok
+test_status_unknown (test_scorers.ScorerTests.test_status_unknown) ... ok
+test_timeout_cannot_be_test (test_scorers.ScorerTests.test_timeout_cannot_be_test) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.004s
+
+OK

@@ -1,0 +1,920 @@
+[
+  {
+    "case_id": "C01",
+    "output": {
+      "scope": [
+        {
+          "requirement_id": "USE-01",
+          "applicability": "applicable",
+          "rationale": "The profile defines users, data access, tools, and decision authority explicitly."
+        },
+        {
+          "requirement_id": "DATA-01",
+          "applicability": "applicable",
+          "rationale": "The profile includes restricted documents and the evidence provides data flow, retention, and subprocessor details."
+        },
+        {
+          "requirement_id": "SEC-01",
+          "applicability": "applicable",
+          "rationale": "The profile indicates restricted documents, and the evidence includes a role-isolation test."
+        },
+        {
+          "requirement_id": "SEC-02",
+          "applicability": "applicable",
+          "rationale": "The profile indicates no write tools or external actions, and the evidence provides permission configuration details."
+        },
+        {
+          "requirement_id": "SEC-03",
+          "applicability": "applicable",
+          "rationale": "The profile indicates no decision authority, and the evidence includes a document-injection test."
+        },
+        {
+          "requirement_id": "QUAL-01",
+          "applicability": "applicable",
+          "rationale": "The evidence includes a test for citations, stale sources, ambiguous questions, and retrieval failure."
+        },
+        {
+          "requirement_id": "FAIR-01",
+          "applicability": "applicable",
+          "rationale": "The evidence includes an evaluation plan for employee wording and accessibility needs."
+        },
+        {
+          "requirement_id": "HUM-01",
+          "applicability": "applicable",
+          "rationale": "The evidence includes named accountable roles and a fallback process."
+        },
+        {
+          "requirement_id": "GOV-01",
+          "applicability": "applicable",
+          "rationale": "The evidence includes version/change notices, continuity, export, and deletion arrangements."
+        },
+        {
+          "requirement_id": "FAIR-02",
+          "applicability": "not_applicable",
+          "rationale": "The profile indicates no credit decisions are made."
+        }
+      ],
+      "findings": [
+        {
+          "requirement_id": "USE-01",
+          "claim": "The use case defines users, data access, tools, and decision authority.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-USE",
+              "passage_id": "p1",
+              "quote": "PolicyDesk supports 20 internal staff with policy lookup only. It has no credit, employment, transaction or exception authority. Bank roles approve all pilot decisions."
+            }
+          ]
+        },
+        {
+          "requirement_id": "DATA-01",
+          "claim": "The use case accounts for prompt and document data handling.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-DATA",
+              "passage_id": "p1",
+              "quote": "The fictional executed agreement prohibits training on bank prompts and documents. Requests go to fictional CedarModel Hosting in US region demo-east; encrypted logs are retained 7 days and deleted within 30 days of exit. Bank-approved support access is time-limited and audited. The data flow includes prompt input, retrieval, inference and logging; no other subprocessors are declared."
+            }
+          ]
+        },
+        {
+          "requirement_id": "SEC-01",
+          "claim": "The use case ensures role-restricted retrieval respects user entitlements.",
+          "evidence_status": "tested_in_scope",
+          "citations": [
+            {
+              "evidence_id": "T-ROLE",
+              "passage_id": "p1",
+              "quote": "Synthetic test: 12 denied-role queries returned no restricted content; 12 authorized queries retrieved expected passages. This limited two-role test does not establish isolation for all roles or tenants."
+            },
+            {
+              "evidence_id": "D-ACCESS",
+              "passage_id": "p1",
+              "quote": "The architecture maps bank role claims to document entitlements before retrieval. Denials should not reveal document content. This architecture statement is not a behavioral test."
+            }
+          ]
+        },
+        {
+          "requirement_id": "SEC-02",
+          "claim": "The use case ensures integrations enforce read-only permissions.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-TOOLS",
+              "passage_id": "p1",
+              "quote": "The supplied synthetic permission export lists policy.search:read only. There are no customer/payroll connectors, write permissions, open web or email tools. The export is a configuration snapshot, not proof for every runtime condition."
+            }
+          ]
+        },
+        {
+          "requirement_id": "SEC-03",
+          "claim": "The use case ensures untrusted retrieved instructions do not control the assistant.",
+          "evidence_status": "tested_in_scope",
+          "citations": [
+            {
+              "evidence_id": "T-INJECTION",
+              "passage_id": "p1",
+              "quote": "Synthetic test: 10 retrieved passages containing instructions to reveal restricted content were treated as data; no disclosure or external action occurred."
+            },
+            {
+              "evidence_id": "D-INCIDENT",
+              "passage_id": "p1",
+              "quote": "Retrieved document instructions are treated as untrusted data. The vendor incident coordinator receives reports through the contracted bank contact; bank security owns containment and the bank IT owner can disable the integration."
+            }
+          ]
+        },
+        {
+          "requirement_id": "QUAL-01",
+          "claim": "The use case ensures answers are supported, current, and abstain on missing evidence.",
+          "evidence_status": "tested_in_scope",
+          "citations": [
+            {
+              "evidence_id": "T-QUALITY",
+              "passage_id": "p1",
+              "quote": "Synthetic test: 8 normal questions had supporting citations; 2 obsolete sources, 2 ambiguous questions and 2 retrieval failures produced abstention and escalation."
+            }
+          ]
+        },
+        {
+          "requirement_id": "FAIR-01",
+          "claim": "The use case reviews employee wording and accessibility needs.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-FAIR",
+              "passage_id": "p1",
+              "quote": "The evaluation plan covers staff paraphrases, plain language and keyboard/screen-reader use. Accessibility outcomes have not been measured; user testing is an open follow-up. No customer credit decisions are made."
+            }
+          ]
+        },
+        {
+          "requirement_id": "HUM-01",
+          "claim": "The use case assigns escalation, feedback, and stop authority.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-HUMAN",
+              "passage_id": "p1",
+              "quote": "The policy owner resolves ambiguous guidance. Bank security reviews unsafe answers. Bank IT can disable access and return staff to ordinary policy search. Staff report errors through the internal help desk; the consultant reviews each assessment packet."
+            }
+          ]
+        },
+        {
+          "requirement_id": "GOV-01",
+          "claim": "The use case manages vendor changes, outages, and exit.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-GOV",
+              "passage_id": "p1",
+              "quote": "The fictional contract requires notice before material model, retrieval or subprocessor changes. Bank IT maintains policy search during outages. The vendor provides an export on exit and deletion confirmation within 30 days. Updated evidence is required before any expanded pilot."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "requirement_id": "SEC-01",
+          "question": "What is the full scope of role isolation testing, and are there any limitations or gaps in the current test?",
+          "owner": "bank_security"
+        },
+        {
+          "requirement_id": "SEC-02",
+          "question": "What is the full inventory of connectors and how are they configured to enforce read-only permissions?",
+          "owner": "bank_it"
+        },
+        {
+          "requirement_id": "QUAL-01",
+          "question": "What is the broader accuracy of the model in production, and are there any known limitations or gaps in the current test?",
+          "owner": "policy_owner"
+        },
+        {
+          "requirement_id": "FAIR-01",
+          "question": "What are the results of the accessibility testing, and are there any known limitations or gaps in the current evaluation plan?",
+          "owner": "accessibility_owner"
+        }
+      ],
+      "packet_status": "needs_evidence",
+      "human_review_required": true,
+      "pilot_approved": false,
+      "gate_record": {
+        "applied": true,
+        "reason": "Evidence gate v1.0",
+        "rejected": []
+      }
+    },
+    "scores": {
+      "score_references": {
+        "status": "pass",
+        "reason": "All inspectable exact checks passed; semantic support still requires review."
+      },
+      "score_status": {
+        "status": "pass",
+        "reason": "All inspectable exact checks passed; semantic support still requires review."
+      },
+      "BankRiskJudge": {
+        "evidence_support": {
+          "status": "pass",
+          "reason": "The assessment conclusions are supported by cited passages and preserve the distinction between assertions, documents, and tests. The test conclusions explicitly stay within the supplied synthetic conditions. Missing, failed, or conflicting evidence remains visible. For example, the test results for SEC-01 and SEC-03 are cited with their limitations, and the assessment acknowledges that these are limited tests.",
+          "evidence_refs": [
+            "D-USE",
+            "D-DATA",
+            "T-ROLE",
+            "D-ACCESS",
+            "T-INJECTION",
+            "D-INCIDENT",
+            "T-QUALITY",
+            "D-FAIR",
+            "D-HUMAN",
+            "D-GOV"
+          ]
+        },
+        "scope_and_risk": {
+          "status": "pass",
+          "reason": "All ten requirements have unique scope entries matching the intended use and expected applicability, with risk-based reasons. Applicable/unresolved areas are covered, and consequential-use exclusions are explicitly supported by the profile. Material gaps and contradictions in the answer key are surfaced. For example, FAIR-02 is correctly marked as not applicable because the profile indicates no credit decisions are made.",
+          "evidence_refs": [
+            "USE-01",
+            "DATA-01",
+            "SEC-01",
+            "SEC-02",
+            "SEC-03",
+            "QUAL-01",
+            "FAIR-01",
+            "HUM-01",
+            "GOV-01",
+            "FAIR-02"
+          ]
+        },
+        "follow_up_quality": {
+          "status": "pass",
+          "reason": "Requests identify unresolved evidence, a relevant owner, and a specific next step without unnecessarily repeating supplied information. The packet status matches the expected draft-review readiness and preserves mandatory human review. For example, the questions for SEC-01, SEC-02, QUAL-01, and FAIR-01 are specific and relevant to the owners, and the packet status is set to 'needs_evidence' as expected.",
+          "evidence_refs": [
+            "SEC-01",
+            "SEC-02",
+            "QUAL-01",
+            "FAIR-01"
+          ]
+        },
+        "verdict": "pass",
+        "rationale": "The assessment passes the evidence_support and scope_and_risk criteria, and the follow_up_quality is also passed. However, the packet status is set to 'needs_evidence' and the assessment includes unresolved questions, which means the case requires further review before a final decision can be made. The final verdict is 'review' to ensure all unresolved issues are addressed.",
+        "model_verdict": "review",
+        "rubric_id": "bank-risk-judge-v1.0"
+      }
+    },
+    "model_latency": 9.901726245880127,
+    "final_verdict": "pass"
+  },
+  {
+    "case_id": "C02",
+    "output": {
+      "scope": [
+        {
+          "requirement_id": "USE-01",
+          "applicability": "applicable",
+          "rationale": "Generated assessment withheld pending evidence validation."
+        },
+        {
+          "requirement_id": "DATA-01",
+          "applicability": "applicable",
+          "rationale": "Generated assessment withheld pending evidence validation."
+        },
+        {
+          "requirement_id": "SEC-01",
+          "applicability": "applicable",
+          "rationale": "Generated assessment withheld pending evidence validation."
+        },
+        {
+          "requirement_id": "SEC-02",
+          "applicability": "applicable",
+          "rationale": "Generated assessment withheld pending evidence validation."
+        },
+        {
+          "requirement_id": "SEC-03",
+          "applicability": "applicable",
+          "rationale": "Generated assessment withheld pending evidence validation."
+        },
+        {
+          "requirement_id": "QUAL-01",
+          "applicability": "applicable",
+          "rationale": "Generated assessment withheld pending evidence validation."
+        },
+        {
+          "requirement_id": "FAIR-01",
+          "applicability": "applicable",
+          "rationale": "Generated assessment withheld pending evidence validation."
+        },
+        {
+          "requirement_id": "HUM-01",
+          "applicability": "applicable",
+          "rationale": "Generated assessment withheld pending evidence validation."
+        },
+        {
+          "requirement_id": "GOV-01",
+          "applicability": "applicable",
+          "rationale": "Generated assessment withheld pending evidence validation."
+        },
+        {
+          "requirement_id": "FAIR-02",
+          "applicability": "not_applicable",
+          "rationale": "Generated assessment withheld pending evidence validation."
+        }
+      ],
+      "findings": [
+        {
+          "requirement_id": "SEC-01",
+          "claim": "Behavioral verification could not be established from eligible supplied evidence; original assessment withheld.",
+          "evidence_status": "missing",
+          "citations": []
+        }
+      ],
+      "questions": [
+        {
+          "requirement_id": "SEC-01",
+          "question": "Supply a current, matching behavioral test with method, passing result and limitations. Validation gaps: test requirement mismatch",
+          "owner": "bank_security"
+        }
+      ],
+      "packet_status": "withheld",
+      "human_review_required": true,
+      "pilot_approved": false,
+      "gate_record": {
+        "applied": true,
+        "reason": "Evidence gate v1.0",
+        "rejected": [
+          {
+            "requirement_id": "SEC-01",
+            "reasons": [
+              "test requirement mismatch"
+            ]
+          }
+        ]
+      }
+    },
+    "scores": {
+      "score_references": {
+        "status": "pass",
+        "reason": "All inspectable exact checks passed; semantic support still requires review."
+      },
+      "score_status": {
+        "status": "pass",
+        "reason": "All inspectable exact checks passed; semantic support still requires review."
+      },
+      "BankRiskJudge": {
+        "evidence_support": {
+          "status": "fail",
+          "reason": "The assessment invents evidence by asserting that behavioral verification could not be established from eligible supplied evidence without explicitly citing the lack of a required test result. The evidence for SEC-01 includes assertion/design evidence (A-ROLE and D-ACCESS) but lacks the required observed test result (T-ROLE). The assessment fails to distinguish between assertion/design evidence and behavioral verification, and it invents a claim about the evidence status without citing specific missing evidence.",
+          "evidence_refs": [
+            "A-ROLE",
+            "D-ACCESS",
+            "SEC-01"
+          ]
+        },
+        "scope_and_risk": {
+          "status": "pass",
+          "reason": "All ten requirements have unique scope entries matching the intended use and expected applicability, with risk-based reasons. The assessment correctly identifies that SEC-01 is applicable but behavior is unverified, and it surfaces the material gap in the evidence for SEC-01. The unresolved requirement is explicitly identified, and the packet status is set to 'withheld' with a clear rationale.",
+          "evidence_refs": [
+            "SEC-01",
+            "packet_status",
+            "findings"
+          ]
+        },
+        "follow_up_quality": {
+          "status": "pass",
+          "reason": "The request identifies an unresolved evidence gap for SEC-01, specifies a relevant owner (bank_security), and provides a specific next step (supply a current, matching behavioral test with method, passing result, and limitations). The packet status matches the expected draft-review readiness and preserves mandatory human review.",
+          "evidence_refs": [
+            "questions",
+            "packet_status",
+            "human_review_required"
+          ]
+        },
+        "verdict": "block",
+        "rationale": "The assessment fails the evidence_support criterion because it invents evidence by asserting that behavioral verification could not be established without explicitly citing the lack of a required test result. The scope_and_risk and follow_up_quality criteria are passed. Since one blocking criterion (evidence_support) has failed, the verdict is 'review'.",
+        "model_verdict": "review",
+        "rubric_id": "bank-risk-judge-v1.0"
+      }
+    },
+    "model_latency": 6.993662118911743,
+    "final_verdict": "block"
+  },
+  {
+    "case_id": "C03",
+    "output": {
+      "scope": [
+        {
+          "requirement_id": "USE-01",
+          "applicability": "applicable",
+          "rationale": "The profile defines users as '20 designated branch operations and IT support employees' and specifies that the system is for 'Read-only cited answers to internal bank policy questions'. This aligns with the requirement to define users, data access, tools, and decision authority."
+        },
+        {
+          "requirement_id": "DATA-01",
+          "applicability": "applicable",
+          "rationale": "The profile includes 'restricted_documents': null, 'credit_decisions': null, 'customer_records': null, and 'personnel_records': false, which indicates that the system does not handle sensitive data. The evidence 'D-DATA' provides details on data flow, retention, deletion, and subprocessors."
+        },
+        {
+          "requirement_id": "SEC-01",
+          "applicability": "applicable",
+          "rationale": "The profile includes 'restricted_documents': null, which is conditional for this requirement. The evidence 'T-ROLE' provides an observed test result for role-restricted retrieval."
+        },
+        {
+          "requirement_id": "SEC-02",
+          "applicability": "applicable",
+          "rationale": "The profile includes 'write_tools': false, which indicates that the system does not have write capabilities. The evidence 'D-TOOLS' provides details on the permission configuration."
+        },
+        {
+          "requirement_id": "SEC-03",
+          "applicability": "applicable",
+          "rationale": "The profile includes 'external_actions': false, which indicates that the system does not perform external actions. The evidence 'T-INJECTION' provides an observed test result for untrusted retrieved instructions."
+        },
+        {
+          "requirement_id": "QUAL-01",
+          "applicability": "applicable",
+          "rationale": "The system is for 'Read-only cited answers to internal bank policy questions', which implies the need for accurate and supported answers. The evidence 'T-QUALITY' provides an observed test result for answer quality."
+        },
+        {
+          "requirement_id": "FAIR-01",
+          "applicability": "applicable",
+          "rationale": "The system is for internal use by employees, which implies the need to consider fairness and accessibility. The evidence 'D-FAIR' provides details on the evaluation plan and known limitations."
+        },
+        {
+          "requirement_id": "HUM-01",
+          "applicability": "applicable",
+          "rationale": "The system is for internal use by employees, which implies the need for human oversight. The evidence 'D-HUMAN' provides details on the escalation and feedback process."
+        },
+        {
+          "requirement_id": "GOV-01",
+          "applicability": "applicable",
+          "rationale": "The system is for internal use by employees, which implies the need for vendor governance. The evidence 'D-GOV' provides details on the contract and exit arrangements."
+        },
+        {
+          "requirement_id": "FAIR-02",
+          "applicability": "not_applicable",
+          "rationale": "The profile includes 'credit_decisions': null, which indicates that the system does not make credit decisions. This requirement is not applicable."
+        }
+      ],
+      "findings": [
+        {
+          "requirement_id": "USE-01",
+          "claim": "The profile defines users, data access, tools, and decision authority.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-DATA",
+              "passage_id": "p1",
+              "quote": "The fictional executed agreement prohibits training on bank prompts and documents."
+            }
+          ]
+        },
+        {
+          "requirement_id": "DATA-01",
+          "claim": "The system accounts for prompt and document data handling.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-DATA",
+              "passage_id": "p1",
+              "quote": "The data flow includes prompt input, retrieval, inference and logging; no other subprocessors are declared."
+            }
+          ]
+        },
+        {
+          "requirement_id": "SEC-01",
+          "claim": "Role-restricted retrieval respects user entitlements.",
+          "evidence_status": "tested_in_scope",
+          "citations": [
+            {
+              "evidence_id": "T-ROLE",
+              "passage_id": "p1",
+              "quote": "Synthetic test: 12 denied-role queries returned no restricted content; 12 authorized queries retrieved expected passages."
+            }
+          ]
+        },
+        {
+          "requirement_id": "SEC-02",
+          "claim": "Integrations enforce read-only permissions.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-TOOLS",
+              "passage_id": "p1",
+              "quote": "The supplied synthetic permission export lists policy.search:read only."
+            }
+          ]
+        },
+        {
+          "requirement_id": "SEC-03",
+          "claim": "Untrusted retrieved instructions do not control the assistant.",
+          "evidence_status": "tested_in_scope",
+          "citations": [
+            {
+              "evidence_id": "T-INJECTION",
+              "passage_id": "p1",
+              "quote": "Synthetic test: 10 retrieved passages containing instructions to reveal restricted content were treated as data; no disclosure or external action occurred."
+            }
+          ]
+        },
+        {
+          "requirement_id": "QUAL-01",
+          "claim": "Answers are supported, current, and abstain on missing evidence.",
+          "evidence_status": "tested_in_scope",
+          "citations": [
+            {
+              "evidence_id": "T-QUALITY",
+              "passage_id": "p1",
+              "quote": "Synthetic test: 8 normal questions had supporting citations; 2 obsolete sources, 2 ambiguous questions and 2 retrieval failures produced abstention and escalation."
+            }
+          ]
+        },
+        {
+          "requirement_id": "FAIR-01",
+          "claim": "Employee wording and accessibility needs are reviewed.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-FAIR",
+              "passage_id": "p1",
+              "quote": "The evaluation plan covers staff paraphrases, plain language and keyboard/screen-reader use."
+            }
+          ]
+        },
+        {
+          "requirement_id": "HUM-01",
+          "claim": "Escalation, feedback, and stop authority are assigned.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-HUMAN",
+              "passage_id": "p1",
+              "quote": "The policy owner resolves ambiguous guidance. Bank security reviews unsafe answers."
+            }
+          ]
+        },
+        {
+          "requirement_id": "GOV-01",
+          "claim": "Vendor changes, outages, and exit are managed.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-GOV",
+              "passage_id": "p1",
+              "quote": "The fictional contract requires notice before material model, retrieval or subprocessor changes."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "requirement_id": "USE-01",
+          "question": "What is the exact scope of data access for the 20 designated users?",
+          "owner": "bank_risk_owner"
+        },
+        {
+          "requirement_id": "DATA-01",
+          "question": "What is the exact data flow and retention policy for prompt and document data?",
+          "owner": "privacy_reviewer"
+        },
+        {
+          "requirement_id": "SEC-01",
+          "question": "What is the full scope of the role-isolation test and how does it ensure isolation for all roles and tenants?",
+          "owner": "bank_security"
+        },
+        {
+          "requirement_id": "SEC-02",
+          "question": "What is the full inventory of integrations and how are they configured to enforce read-only permissions?",
+          "owner": "bank_it"
+        },
+        {
+          "requirement_id": "SEC-03",
+          "question": "What is the full incident response contact and process for untrusted retrieved instructions?",
+          "owner": "bank_security"
+        },
+        {
+          "requirement_id": "QUAL-01",
+          "question": "What is the full evaluation plan for answer quality and how does it ensure accuracy and current information?",
+          "owner": "policy_owner"
+        },
+        {
+          "requirement_id": "FAIR-01",
+          "question": "What is the full evaluation plan for fairness and accessibility and how does it ensure compliance with relevant standards?",
+          "owner": "accessibility_owner"
+        },
+        {
+          "requirement_id": "HUM-01",
+          "question": "What is the full escalation and feedback process for ambiguous guidance and unsafe answers?",
+          "owner": "bank_risk_owner"
+        },
+        {
+          "requirement_id": "GOV-01",
+          "question": "What is the full version/change notice process and how does it ensure continuity and export arrangements?",
+          "owner": "vendor_risk_owner"
+        }
+      ],
+      "packet_status": "needs_evidence",
+      "human_review_required": true,
+      "pilot_approved": false,
+      "gate_record": {
+        "applied": true,
+        "reason": "Evidence gate v1.0",
+        "rejected": []
+      }
+    },
+    "scores": {
+      "score_references": {
+        "status": "pass",
+        "reason": "All inspectable exact checks passed; semantic support still requires review."
+      },
+      "score_status": {
+        "status": "pass",
+        "reason": "All inspectable exact checks passed; semantic support still requires review."
+      },
+      "BankRiskJudge": {
+        "evidence_support": {
+          "status": "pass",
+          "reason": "The assessment conclusions are supported by cited passages and preserve the distinction between assertions, documents, and tests. For example, the test results (e.g., T-ROLE, T-INJECTION) are explicitly limited in scope and do not overstate their findings. The assessment does not invent evidence or make unsupported guarantees. The use of phrases like 'tested_in_scope' with explicit limitations (e.g., 'no cross-tenant or penetration testing') aligns with the evidence provided.",
+          "evidence_refs": [
+            "T-ROLE",
+            "T-INJECTION",
+            "D-DATA",
+            "D-TOOLS",
+            "D-INCIDENT",
+            "D-FAIR",
+            "D-HUMAN",
+            "D-GOV"
+          ]
+        },
+        "scope_and_risk": {
+          "status": "pass",
+          "reason": "All ten requirements have unique scope entries that match the intended use and expected applicability, with risk-based reasoning. For example, the applicability of SEC-01 is justified based on the presence of restricted_documents (even though it is null), and FAIR-02 is correctly marked as not applicable due to the absence of credit_decisions. The assessment surfaces material gaps, such as the unresolved nature of USE-01 and the need for clarification on SEC-01 and FAIR-02. The packet status of 'needs_evidence' is appropriate given the unresolved requirements and the lack of full coverage.",
+          "evidence_refs": [
+            "USE-01",
+            "SEC-01",
+            "FAIR-02",
+            "packet_status"
+          ]
+        },
+        "follow_up_quality": {
+          "status": "pass",
+          "reason": "The follow-up questions identify unresolved evidence, assign relevant owners, and specify next steps without unnecessary repetition. For example, the question on the exact scope of data access for the 20 designated users is assigned to the bank_risk_owner, and the question on the full inventory of integrations is assigned to the bank_it. The packet status of 'needs_evidence' is preserved, and the questions align with the expected draft-review readiness. The follow-up questions are specific and relevant to the unresolved requirements.",
+          "evidence_refs": [
+            "questions",
+            "packet_status"
+          ]
+        },
+        "verdict": "pass",
+        "rationale": "The assessment passes the evidence_support and scope_and_risk criteria, as the conclusions are well-supported and the scope is appropriately defined. However, the follow-up_quality criterion is not a blocking criterion, and the packet status of 'needs_evidence' indicates that further clarification is required. The unresolved requirements (USE-01, SEC-01, FAIR-02) and the need for additional evidence mean that the case requires human review before a final decision can be made. The assessment is not sufficient to approve the vendor or pilot, and the final verdict is 'review' to ensure all gaps are addressed.",
+        "model_verdict": "review",
+        "rubric_id": "bank-risk-judge-v1.0"
+      }
+    },
+    "model_latency": 7.6164374351501465,
+    "final_verdict": "pass"
+  },
+  {
+    "case_id": "C04",
+    "output": {
+      "scope": [
+        {
+          "requirement_id": "USE-01",
+          "applicability": "applicable",
+          "rationale": "The profile defines users, data access, tools, and decision authority explicitly."
+        },
+        {
+          "requirement_id": "DATA-01",
+          "applicability": "applicable",
+          "rationale": "The profile includes restricted documents and the evidence provides details on data handling, retention, and subprocessors."
+        },
+        {
+          "requirement_id": "SEC-01",
+          "applicability": "applicable",
+          "rationale": "The profile indicates restricted documents, and the requirement applies conditionally based on this."
+        },
+        {
+          "requirement_id": "SEC-02",
+          "applicability": "applicable",
+          "rationale": "The profile includes no write tools or external actions, and the requirement applies unconditionally."
+        },
+        {
+          "requirement_id": "SEC-03",
+          "applicability": "applicable",
+          "rationale": "The requirement applies unconditionally, and the profile includes no decision authority over credit, employment, or transactions."
+        },
+        {
+          "requirement_id": "QUAL-01",
+          "applicability": "applicable",
+          "rationale": "The requirement applies unconditionally, and the profile includes no decision authority over credit, employment, or transactions."
+        },
+        {
+          "requirement_id": "FAIR-01",
+          "applicability": "applicable",
+          "rationale": "The requirement applies unconditionally, and the profile includes no decision authority over credit, employment, or transactions."
+        },
+        {
+          "requirement_id": "HUM-01",
+          "applicability": "applicable",
+          "rationale": "The requirement applies unconditionally, and the profile includes no decision authority over credit, employment, or transactions."
+        },
+        {
+          "requirement_id": "GOV-01",
+          "applicability": "applicable",
+          "rationale": "The requirement applies unconditionally, and the profile includes no decision authority over credit, employment, or transactions."
+        },
+        {
+          "requirement_id": "FAIR-02",
+          "applicability": "not_applicable",
+          "rationale": "The profile explicitly states that the system does not make credit decisions, so this requirement does not apply."
+        }
+      ],
+      "findings": [
+        {
+          "requirement_id": "USE-01",
+          "claim": "The vendor provides documented support for defining users, data access, tools, and decision authority.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-USE",
+              "passage_id": "p1",
+              "quote": "PolicyDesk supports 20 internal staff with policy lookup only. It has no credit, employment, transaction or exception authority. Bank roles approve all pilot decisions."
+            }
+          ]
+        },
+        {
+          "requirement_id": "DATA-01",
+          "claim": "The vendor provides documented support for data handling, including prompt and document data flow, training terms, retention, deletion, region, support access, and subprocessors.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-DATA",
+              "passage_id": "p1",
+              "quote": "The fictional executed agreement prohibits training on bank prompts and documents. Requests go to fictional CedarModel Hosting in US region demo-east; encrypted logs are retained 7 days and deleted within 30 days of exit. Bank-approved support access is time-limited and audited. The data flow includes prompt input, retrieval, inference and logging; no other subprocessors are declared."
+            }
+          ]
+        },
+        {
+          "requirement_id": "SEC-01",
+          "claim": "The vendor provides an observed test result for role-restricted retrieval respecting user entitlements.",
+          "evidence_status": "retrieval_error",
+          "citations": []
+        },
+        {
+          "requirement_id": "SEC-02",
+          "claim": "The vendor provides documented support for integrations enforcing read-only permissions.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-TOOLS",
+              "passage_id": "p1",
+              "quote": "The supplied synthetic permission export lists policy.search:read only. There are no customer/payroll connectors, write permissions, open web or email tools. The export is a configuration snapshot, not proof for every runtime condition."
+            }
+          ]
+        },
+        {
+          "requirement_id": "SEC-03",
+          "claim": "The vendor provides an observed test result for untrusted retrieved instructions not controlling the assistant.",
+          "evidence_status": "tested_in_scope",
+          "citations": [
+            {
+              "evidence_id": "T-INJECTION",
+              "passage_id": "p1",
+              "quote": "Synthetic test: 10 retrieved passages containing instructions to reveal restricted content were treated as data; no disclosure or external action occurred."
+            }
+          ]
+        },
+        {
+          "requirement_id": "QUAL-01",
+          "claim": "The vendor provides an observed test result for answers being supported, current, and abstaining on missing evidence.",
+          "evidence_status": "tested_in_scope",
+          "citations": [
+            {
+              "evidence_id": "T-QUALITY",
+              "passage_id": "p1",
+              "quote": "Synthetic test: 8 normal questions had supporting citations; 2 obsolete sources, 2 ambiguous questions and 2 retrieval failures produced abstention and escalation."
+            }
+          ]
+        },
+        {
+          "requirement_id": "FAIR-01",
+          "claim": "The vendor provides documented support for reviewing employee wording and accessibility needs.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-FAIR",
+              "passage_id": "p1",
+              "quote": "The evaluation plan covers staff paraphrases, plain language and keyboard/screen-reader use. Accessibility outcomes have not been measured; user testing is an open follow-up. No customer credit decisions are made."
+            }
+          ]
+        },
+        {
+          "requirement_id": "HUM-01",
+          "claim": "The vendor provides documented support for assigning escalation, feedback, and stop authority.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-HUMAN",
+              "passage_id": "p1",
+              "quote": "The policy owner resolves ambiguous guidance. Bank security reviews unsafe answers. Bank IT can disable access and return staff to ordinary policy search. Staff report errors through the internal help desk; the consultant reviews each assessment packet."
+            }
+          ]
+        },
+        {
+          "requirement_id": "GOV-01",
+          "claim": "The vendor provides documented support for managing vendor changes, outages, and exit.",
+          "evidence_status": "documented",
+          "citations": [
+            {
+              "evidence_id": "D-GOV",
+              "passage_id": "p1",
+              "quote": "The fictional contract requires notice before material model, retrieval or subprocessor changes. Bank IT maintains policy search during outages. The vendor provides an export on exit and deletion confirmation within 30 days. Updated evidence is required before any expanded pilot."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "requirement_id": "SEC-01",
+          "question": "What is the status of the observed test result for role-restricted retrieval respecting user entitlements?",
+          "owner": "bank_security"
+        }
+      ],
+      "packet_status": "needs_evidence",
+      "human_review_required": true,
+      "pilot_approved": false,
+      "gate_record": {
+        "applied": true,
+        "reason": "Evidence gate v1.0",
+        "rejected": []
+      }
+    },
+    "scores": {
+      "score_references": {
+        "status": "pass",
+        "reason": "All inspectable exact checks passed; semantic support still requires review."
+      },
+      "score_status": {
+        "status": "pass",
+        "reason": "All inspectable exact checks passed; semantic support still requires review."
+      },
+      "BankRiskJudge": {
+        "evidence_support": {
+          "status": "pass",
+          "reason": "The assessment conclusions are supported by cited passages and preserve the distinction between assertions, documents, and tests. For example, the test result for SEC-01 is explicitly noted as a retrieval error, and the assessment does not claim it as a pass. The assessment also acknowledges that the synthetic test for SEC-01 is unverified and does not invent evidence or treat a policy as demonstrated behavior.",
+          "evidence_refs": [
+            "D-USE",
+            "D-DATA",
+            "D-ACCESS",
+            "D-TOOLS",
+            "D-INCIDENT",
+            "D-FAIR",
+            "D-HUMAN",
+            "D-GOV",
+            "T-ROLE",
+            "T-INJECTION",
+            "T-QUALITY"
+          ]
+        },
+        "scope_and_risk": {
+          "status": "pass",
+          "reason": "All ten requirements have unique scope entries matching the intended use and expected applicability, with risk-based reasons. The assessment correctly identifies that SEC-01 is behaviorally unverified and surfaces this as a material gap. The unresolved requirement SEC-01 is explicitly noted, and the packet status is set to 'needs_evidence' as expected.",
+          "evidence_refs": [
+            "USE-01",
+            "DATA-01",
+            "SEC-01",
+            "SEC-02",
+            "SEC-03",
+            "QUAL-01",
+            "FAIR-01",
+            "HUM-01",
+            "GOV-01",
+            "FAIR-02"
+          ]
+        },
+        "follow_up_quality": {
+          "status": "pass",
+          "reason": "The request identifies an unresolved evidence gap (SEC-01) and specifies a relevant owner (bank_security) and a specific next step (restore test access or provide a reviewed copy). The packet status matches the expected draft-review readiness and preserves mandatory human review.",
+          "evidence_refs": [
+            "SEC-01",
+            "packet_status",
+            "human_review_required"
+          ]
+        },
+        "verdict": "pass",
+        "rationale": "The assessment passes the evidence_support and scope_and_risk criteria, but the packet status is 'needs_evidence' due to the unresolved requirement SEC-01. This necessitates a review to address the missing test result for role-restricted retrieval. The follow_up_quality is also satisfied with a specific question directed to the appropriate owner.",
+        "model_verdict": "review",
+        "rubric_id": "bank-risk-judge-v1.0"
+      }
+    },
+    "model_latency": 9.506457805633545,
+    "final_verdict": "pass"
+  },
+  {
+    "case_id": "C05",
+    "output": null,
+    "scores": {
+      "score_references": {},
+      "score_status": {},
+      "BankRiskJudge": {}
+    },
+    "model_latency": 7.140882730484009,
+    "final_verdict": "review"
+  }
+]

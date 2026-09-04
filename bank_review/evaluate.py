@@ -27,6 +27,18 @@ class RecordedEvaluation(weave.Evaluation):
         (OUTPUT / f"{model.application_version}-rows.json").write_text(json.dumps(recorded, indent=2), encoding="utf-8")
         return results
 
+    @weave.op()
+    async def summarize(self, eval_table):
+        rows = list(eval_table.rows)
+        summary = {"case_count": len(rows),
+                   "application_errors": sum(bool((r.get("output") or {}).get("execution_error")) or not r.get("output") for r in rows),
+                   "final_verdicts": dict(Counter(final_verdict(r.get("scores", {})) for r in rows))}
+        for name in ("score_references", "score_status"):
+            summary[name] = dict(Counter(r.get("scores", {}).get(name, {}).get("status", "unknown") for r in rows))
+        summary["BankRiskJudge"] = dict(Counter(r.get("scores", {}).get("BankRiskJudge", {}).get("verdict", "review") for r in rows))
+        summary["gate_rejections"] = sum(len((r.get("output") or {}).get("gate_record", {}).get("rejected", [])) for r in rows)
+        return summary
+
 
 async def main():
     contract = json.loads((ROOT / "evaluation_contract.json").read_text())
@@ -66,11 +78,11 @@ async def main():
                                         "call_id": call.id, "summary": summary}
             (OUTPUT / "receipt.json").write_text(json.dumps(receipt, indent=2), encoding="utf-8")
         lines = ["# Controlled evaluation results", f"Contract: {contract['contract_id']}",
-                 "| Case | V1 final | V2 final | V2 gate rejected |", "| --- | --- | --- | --- |"]
+                 "| Case | V1 final | V2 final | V2 gate rejected |\n| --- | --- | --- | --- |"]
         version_rows = {v: json.loads((OUTPUT / f"{v}-rows.json").read_text()) for v in ("v1", "v2")}
         errors = []
         for a, b in zip(version_rows["v1"], version_rows["v2"], strict=True):
-            lines.append(f"| {a['case_id']} | {a['final_verdict']} | {b['final_verdict']} | {len((b.get('output') or {}).get('gate_record', {}).get('rejected', []))} |")
+            lines[-1] += f"\n| {a['case_id']} | {a['final_verdict']} | {b['final_verdict']} | {len((b.get('output') or {}).get('gate_record', {}).get('rejected', []))} |"
         for version, evaluated in version_rows.items():
             lines += [f"[{version} evaluation]({receipt['runs'][version]['trace_url']})",
                       f"{version} final verdict counts: {dict(Counter(r['final_verdict'] for r in evaluated))}"]

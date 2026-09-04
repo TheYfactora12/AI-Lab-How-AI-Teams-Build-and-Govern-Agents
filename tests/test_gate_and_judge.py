@@ -1,5 +1,9 @@
 import copy
 import unittest
+from unittest.mock import patch
+from pydantic import ValidationError
+from bank_review.app import VendorReviewer
+from bank_review.schema import Assessment
 from bank_review.gate import apply_evidence_gate
 from bank_review.judge import criterion_verdict, final_verdict
 import test_scorers
@@ -46,6 +50,21 @@ class GateTests(unittest.TestCase):
 
 
 class JudgePolicyTests(unittest.TestCase):
+    def test_invalid_generation_is_explicit_for_both_versions(self):
+        fixture = test_scorers.ScorerTests()
+        fixture.setUp()
+        try:
+            Assessment.model_validate({})
+        except ValidationError as exc:
+            error = exc
+        for version in ("v1", "v2"):
+            with patch("bank_review.app.generate_assessment", side_effect=error):
+                result = VendorReviewer(application_version=version, catalog={}).predict(fixture.input)
+            self.assertEqual(result["execution_error"], "ValidationError")
+            self.assertEqual(result["packet_status"], "withheld")
+            self.assertEqual(result["findings"], [])
+            self.assertFalse(result["gate_record"]["applied"])
+
     def test_all_verdict_branches(self):
         data = {k: {"status": "pass"} for k in ("evidence_support", "scope_and_risk", "follow_up_quality")}
         self.assertEqual(criterion_verdict(data), "pass")
