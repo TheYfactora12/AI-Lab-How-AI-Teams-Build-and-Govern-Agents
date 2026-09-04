@@ -1,0 +1,20 @@
+name: Log first Weave trace
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  trace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Weave
+        run: python -m pip install wandb==0.29.0 weave==0.53.8
+      - name: Log and verify synthetic trace
+        env:
+          WANDB_API_KEY: ${{ secrets.W_B }}
+        run: python scripts/hello_trace.py
