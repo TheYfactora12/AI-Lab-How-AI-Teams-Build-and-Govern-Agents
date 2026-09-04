@@ -2,6 +2,8 @@
 
 The dataset is published, V1 has generated one actual assessment, and the original output is saved for review. No live judge or full V1/V2 evaluation has run.
 
+For the full context, see [the project record and references](docs/PROJECT_RECORD.md) and [class notes](docs/CLASS_NOTES.md).
+
 ## Open the work
 
 - [Five-case dataset in Weave](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/objects/bank-vendor-scope-five-v1/versions/Ew78A6FsNIIFMK8IlXgz8J6HdAX9iaeMqlUltbJRPQs)

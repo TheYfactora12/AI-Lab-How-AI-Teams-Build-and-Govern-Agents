@@ -6,6 +6,8 @@ An Evaluation Builder certificate project reviewing a fictional bank's proposed 
 
 Start with [the saved review package](REVIEW_START_HERE.md) for direct Weave links, the actual V1 output, and observations to discuss.
 
+The [project record and reference index](docs/PROJECT_RECORD.md) collects the decision history, setup notes, source references, GitHub workflow history and Weave links. [Class notes](docs/CLASS_NOTES.md) preserve the supplied image and submission requirements.
+
 1. [Project brief](PROJECT_BRIEF.md): problem, outcome, scope and completion checklist.
 2. [Use-case profile](USE_CASE_PROFILE.md): fictional bank, vendor, users and operating boundaries.
 3. [Assessment catalog](ASSESSMENT_CATALOG.md): ten requirements across seven risk areas and five cases.
