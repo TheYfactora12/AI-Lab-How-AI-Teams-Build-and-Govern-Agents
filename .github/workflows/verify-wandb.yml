@@ -1,0 +1,48 @@
+name: Verify W&B authentication
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install HTTP client
+        run: python -m pip install requests
+      - name: Verify W&B secret
+        env:
+          WANDB_API_KEY: ${{ secrets.W_B }}
+        shell: python
+        run: |
+          import os
+          import sys
+          import requests
+
+          key = os.environ.get('WANDB_API_KEY', '').strip()
+          if not key:
+              print('FAIL: Repository secret W_B is missing or empty.')
+              sys.exit(1)
+          try:
+              response = requests.post(
+                  'https://api.wandb.ai/graphql',
+                  auth=('api', key),
+                  json={'query': 'query { viewer { username } }'},
+                  timeout=30,
+                  allow_redirects=False,
+              )
+              payload = response.json() if response.status_code == 200 else {}
+              viewer = (payload.get('data') or {}).get('viewer') or {}
+              valid = response.status_code == 200 and not payload.get('errors') and bool(viewer.get('username'))
+          except Exception:
+              print('FAIL: Could not complete the W&B authentication request. No credentials were logged.')
+              sys.exit(1)
+          if not valid:
+              print(f'FAIL: W&B did not confirm authentication (HTTP {response.status_code}).')
+              sys.exit(1)
+          print('PASS: W&B accepted repository secret W_B.')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as summary:
+              summary.write('W&B authentication succeeded using repository secret `W_B`.\n\nNo project data was created. Organization permissions were not tested.\n')
