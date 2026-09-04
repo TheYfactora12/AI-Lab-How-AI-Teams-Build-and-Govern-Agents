@@ -71,7 +71,7 @@ The post-generation gate cannot establish real test authenticity, fix every sema
 
 Local tests and an offline native-Weave runner check were completed before hosted comparison. The offline runner used a saved response and made no inference calls. Local fixture behavior must not be confused with actual V1 output.
 
-The completed [live comparison](COMPARISON_REPORT.md) contains case-level scores, links and limitations. Both versions received three automated passes and two blocks; inspection identified scope and judge failures missed by those scores. Preserve original output snapshots. If V1 does not exhibit the targeted failure, do not claim that V2 improved it. Independent generation at temperature 0 can still vary, so changed wording alone does not establish a causal gate effect; inspect the recorded gate result.
+The [current live comparison](CURRENT_COMPARISON.md) contains contract 1.2 case-level scores, links and limitations. Both versions received three automated passes and two blocks. V2 contained C03's unsupported scope decisions; C02 readiness and qualitative-judge limitations remain. Preserve every output snapshot. Changed wording alone does not establish a causal gate effect; inspect the recorded gate result and distinguish shared corrections from V2-only behavior.
 
 ## 8. Human-in-the-loop policy
 

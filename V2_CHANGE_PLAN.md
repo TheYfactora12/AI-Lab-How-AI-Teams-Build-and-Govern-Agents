@@ -2,7 +2,7 @@
 
 Current implementation: [validation gate v2.0 correction record](V2_CORRECTION_RECORD.md). The scope and nested-input checks extend the original gate described below. Shared changes apply equally to both versions under contract 1.2; do not mix results across contracts.
 
-Implementation status: the gate is implemented and measured. See [comparison report](COMPARISON_REPORT.md) for C02 containment, unchanged overall verdict counts and remaining scope/judge failures. The plan below records the original rationale.
+Historical plan status: the original evidence gate was implemented and measured in contract 1.1. See [historical comparison](COMPARISON_REPORT.md) for C02 containment. Contract 1.2's [current comparison](CURRENT_COMPARISON.md) demonstrates the corrected C03 scope behavior. The plan below records the original rationale and pending assumptions from before those runs.
 
 Status: Planned, not an observed improvement.
 
@@ -62,7 +62,7 @@ Per-criterion pass means satisfied, fail means demonstrated violation, unknown m
 
 ## Controlled comparison
 
-Keep application model, parameters, base prompt, scope logic, retrieval, schemas, dataset, scorer set, rubric, judge model and release policy fixed. Only the evidence gate changes. Pin all versions before live comparison; model access and exact model selection are still pending.
+Original contract intent: keep application model, parameters, base prompt, scope logic, retrieval, schemas, dataset, scorer set, rubric, judge model and release policy fixed; only the evidence gate changes. These items were subsequently pinned and evaluated. Contract 1.2 documents its shared corrections separately from its V2-only gate.
 
 C02 is the primary target; C04 checks the related unavailable-evidence path. C01, C03 and C05 are regression checks. Report each case, not just an average. Improvement requires an actual targeted V1 failure corrected by V2 without losing normal-case quality. No observed failure means no demonstrated gain on this dataset.
 

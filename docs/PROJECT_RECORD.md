@@ -17,7 +17,7 @@ Kevin challenged the initial evaluation's coverage: the workflow should measure 
 - [W&B project overview](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/overview)
 - [Weave project](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave)
 
-The live judge, V2 gate and five-case controlled comparison are complete. Both versions received three automated passes and two blocks; inspection uncovered scope and judge errors. See the [comparison report](../COMPARISON_REPORT.md), [evaluation design](../EVALUATION_DESIGN.md), [policy](../OPERATING_POLICY.md), and [video outline](../VIDEO_WALKTHROUGH.md). Student review and video submission remain pending. Earlier progress entries below are historical.
+The live judge, corrected V2 gate and five-case controlled comparison are complete. Contract 1.2 produced three automated passes and two blocks for each version with zero application errors. See the [current comparison](../CURRENT_COMPARISON.md), [evaluation design](../EVALUATION_DESIGN.md), [policy](../OPERATING_POLICY.md), and [video outline](../VIDEO_WALKTHROUGH.md). Student review and video submission remain pending. Earlier progress entries below are historical.
 
 ## Project document and implementation map
 
