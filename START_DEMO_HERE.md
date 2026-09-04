@@ -29,7 +29,7 @@ No new model runs or grading changes were made just to improve the presentation.
 
 - [ ] Read the expected findings and confirm or challenge the judgment calls. We have not claimed independent expert validation.
 - [ ] Open the dataset, V1 and V2 links in your signed-in browser.
-- [ ] Locate C01, C02 and C04; inspect at least one exact scorer and one judge call. Read the C03 and C05 limitations too.
+- [ ] Locate C03 in both current runs; inspect its V1 exact failure, V2 gate rejection, and one judge call. Read C02 and C05's remaining limitations too.
 - [ ] Explain the C03 scope failure in your own words: unknown does not mean no; show the corrected gate withholding it.
 - [ ] Explain that three automated passes do not mean three human-validated assessments; C02 still has a readiness-state mismatch that the graders missed.
 - [ ] Personalize the [video outline](VIDEO_WALKTHROUGH.md) with your motivation and interpretation.

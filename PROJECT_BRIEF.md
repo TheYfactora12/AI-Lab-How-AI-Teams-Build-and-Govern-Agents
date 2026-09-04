@@ -1,6 +1,6 @@
 # Bank AI Vendor Risk Assessment: Scope and Evidence Review
 
-Status: Technical comparison completed; see [actual results](COMPARISON_REPORT.md). Student review and video submission remain pending. Design statements below record the intended behavior, not a claim that every output meets it.
+Status: Corrected technical comparison completed; see [current results](CURRENT_COMPARISON.md). Student review and video submission remain pending. Design statements below record intended behavior, not a claim that every output meets it.
 Track: Evaluation Builder.
 
 ## Locked project decision

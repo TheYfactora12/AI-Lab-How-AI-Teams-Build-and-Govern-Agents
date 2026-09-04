@@ -32,15 +32,15 @@ All vendor documents and test records are synthetic. Claims about vendor test re
 
 - Five versioned synthetic cases and a frozen evaluation contract.
 - Two model-powered versions differing only by an evidence gate.
-- Two independent exact scorers, a live three-criterion judge and 17 calibration tests.
+- Two independent exact scorers, a live three-criterion judge and 22 current assessment regression tests.
 - Completed native Weave evaluations, unedited outputs, receipts and interpretation.
 - Notes, references, ownership policy and an own-voice recording outline.
 
-Both versions received three automated passes and two blocks. V2 caught the C02 test mismatch, but inspection found scope and judge errors. These scores do not establish production readiness. Student review and video recording/upload remain outstanding.
+In the current contract 1.2 comparison, both versions received three automated passes and two blocks with zero application errors. V2 contained C03's unsupported scope decisions. C02 readiness and qualitative-judge limitations remain. These scores do not establish production readiness. Student review and video recording/upload remain outstanding.
 
 ## Open the saved evaluation later
 
-Open the [completed GitHub Actions run](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33885310280) or the direct V1/V2 Weave links in the comparison report. Unedited results are committed in evaluation_snapshots/final/; the failed first attempt is separately retained in evaluation_snapshots/attempt-1/.
+Open the [current GitHub Actions run](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965) or the direct V1/V2 Weave links in the current comparison. Unedited contract 1.2 results are committed in evaluation_snapshots/contract-1.2/. Earlier runs remain separately preserved as historical evidence.
 
 The implementation uses Weave Calls/Evaluations, not Agents SDK sessions. Workflow artifacts last 90 days; committed snapshots preserve the review record independently. W&B retention depends on account settings.
 
