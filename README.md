@@ -4,6 +4,8 @@ An Evaluation Builder certificate project reviewing a fictional bank's proposed 
 
 ## Review these first
 
+**Current corrected V2:** [contract 1.2 comparison and evidence](CURRENT_COMPARISON.md), [what changed](V2_CORRECTION_RECORD.md), and [presentation handoff](START_DEMO_HERE.md). Earlier contract 1.1 results remain historical. Current automated counts are still 3 passes / 2 blocks, with different case outcomes and documented remaining judgment errors.
+
 **Ready to present?** Open [your demonstration handoff](START_DEMO_HERE.md) for the exact tabs, four-minute route and remaining student checklist.
 
 **Guided walkthrough:** [full project breakdown with evidence links](PROJECT_EVIDENCE_WALKTHROUGH.md) explains every class step, actual results, Weave terminology and what to show in the final demonstration.

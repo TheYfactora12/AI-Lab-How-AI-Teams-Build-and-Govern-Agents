@@ -53,11 +53,14 @@ def main():
         record(name, "status_scorer", lambda o=output: evidence_status_and_routing(fixture.input, o)["status"], ["fail", "unknown"])
     record("missing_judge", "final_policy", lambda: final_verdict({"score_references": {"status": "pass"}, "score_status": {"status": "pass"}}), ["review"])
     record("exact_failure_beats_judge", "final_policy", lambda: final_verdict({"score_references": {"status": "fail"}, "score_status": {"status": "pass"}, "BankRiskJudge": {"verdict": "pass"}}), ["block"])
-    # Replay actual C03 outputs: this exposes the documented scope blind spot without a model call.
+    # Re-score actual C03 outputs with current exact rules; retain the saved judge.
+    packet_c03 = next(json.loads(line)["input"] for line in (ROOT / "data/cases.jsonl").read_text().splitlines() if json.loads(line)["case_id"] == "C03")
     for version in ("v1", "v2"):
         saved = json.loads((ROOT / f"evaluation_snapshots/final/{version}-rows.json").read_text())
         c03 = next(r for r in saved if r["case_id"] == "C03")
-        record(f"{version}_known_scope_error", "combined_saved_scores", lambda r=c03: final_verdict(r["scores"]), ["block", "review"])
+        rescored = {**c03["scores"], "score_references": evidence_reference_integrity(packet_c03, c03["output"]),
+                    "score_status": evidence_status_and_routing(packet_c03, c03["output"])}
+        record(f"{version}_known_scope_error", "current_exact_rules_saved_judge", lambda s=rescored: final_verdict(s), ["block", "review"])
     contract = json.loads((ROOT / "evaluation_contract.json").read_text())
     assert all(hashlib.sha256((ROOT / p).read_bytes()).hexdigest() == h for p, h in contract["file_hashes"].items())
     result = {"kind": "offline_adversarial_probes", "model_calls": 0,
@@ -67,7 +70,7 @@ def main():
               "gaps": sum(p["result"] == "gap" for p in probes), "probes": probes}
     out = ROOT / "stress_snapshots"
     out.mkdir(exist_ok=True)
-    (out / "offline-review.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
+    (out / "corrected-review.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
     print(json.dumps(result, indent=2))
 
 

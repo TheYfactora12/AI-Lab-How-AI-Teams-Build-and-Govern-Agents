@@ -1,5 +1,7 @@
 # V1 vs V2: what matters for the review
 
+**Historical contract 1.1.** For the corrected implementation and presentation, use [current comparison, contract 1.2](CURRENT_COMPARISON.md). The original results below are preserved unchanged.
+
 The V2 gate caught an incorrectly matched test in C02 and withheld the draft. Both versions still received three automated passes and two blocks across five cases. Inspection also found a material scope error that every scorer missed. This supports continued human review, not release readiness.
 
 This is Kevin Medeiros's AI-assisted certificate project, evaluated on September 4, 2026. All bank/vendor records are fictional. The model executions and saved scores are real; they evaluate the assessor, not a vendor's actual controls.

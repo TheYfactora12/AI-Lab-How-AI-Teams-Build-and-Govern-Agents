@@ -1,5 +1,7 @@
 # Reversible 30-day operating rule
 
+Evidence update: the [current contract 1.2 comparison](CURRENT_COMPARISON.md) supports retaining this restricted scope. V2 contains the tested scope error, but readiness-state and judge limitations remain. No expansion of authority follows from the regression tests passing.
+
 Policy version: draft-assessment-v1.0. This is a proposed simulation policy, not an approved bank deployment. Its 30-day period begins only when a designated owner approves a controlled pilot; no pilot is started by this document.
 
 ## Operating scope

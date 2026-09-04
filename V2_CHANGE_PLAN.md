@@ -1,5 +1,7 @@
 # V2: Evidence-validation gate
 
+Current implementation: [validation gate v2.0 correction record](V2_CORRECTION_RECORD.md). The scope and nested-input checks extend the original gate described below. Shared changes apply equally to both versions under contract 1.2; do not mix results across contracts.
+
 Implementation status: the gate is implemented and measured. See [comparison report](COMPARISON_REPORT.md) for C02 containment, unchanged overall verdict counts and remaining scope/judge failures. The plan below records the original rationale.
 
 Status: Planned, not an observed improvement.

@@ -1,5 +1,7 @@
 # Project walkthrough: what we built, what happened, and what the evidence means
 
+**Historical first-loop walkthrough.** For the corrected V2 presentation, start with [current comparison](CURRENT_COMPARISON.md), [demonstration handoff](START_DEMO_HERE.md) and [change record](V2_CORRECTION_RECORD.md). The counts and C02 intervention below describe contract 1.1; contract 1.2 demonstrates the C03 scope fix.
+
 Prepared for Kevin Medeiros. This guide follows the class sequence: **Run → Observe → Curate → Evaluate → Improve → Repeat**. It describes actual saved work and separates it from proposed extensions. The [official assignment](https://github.com/LorenzoWandB/PatchPilot-MasterClass/tree/main/certificate-project) defines the requirements; [our alignment map](CERTIFICATE_ALIGNMENT.md) records remaining acceptance gaps.
 
 ## Start here: the project in plain English

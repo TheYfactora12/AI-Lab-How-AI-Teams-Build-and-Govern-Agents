@@ -12,7 +12,7 @@ This repository supplies the technical demonstration and written deliverable. Th
 - [Catalog and five cases](ASSESSMENT_CATALOG.md): normal, unsafe, ambiguous, operational and contradiction cases.
 - [Judge rubric](JUDGE_RUBRIC.md): three criteria with explicit blocking rules.
 - [V2 intervention](V2_CHANGE_PLAN.md): one evidence gate and its limits.
-- [Comparison report](COMPARISON_REPORT.md): actual case-level results and interpretation.
+- [Current comparison report](CURRENT_COMPARISON.md): actual case-level results and interpretation.
 - [Operating policy](OPERATING_POLICY.md): human ownership and reversible 30-day proposal.
 - [Walkthrough script](VIDEO_WALKTHROUGH.md): recording outline to personalize.
 - [Project sources](docs/PROJECT_RECORD.md): references, notes and run history.

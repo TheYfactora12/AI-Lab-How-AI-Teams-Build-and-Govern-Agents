@@ -1,5 +1,7 @@
 # Stress review: passing calibration does not establish robustness
 
+Historical failure report. The [correction record](V2_CORRECTION_RECORD.md) documents the fixes and a separate 23-probe rerun with zero gaps. Original outcomes below remain unchanged as before evidence.
+
 The original 17 assessment tests and six intake tests passed again. An additional 23 offline probes produced 14 expected outcomes and nine gaps. These counts are probe outcomes, not nine independent defects or a production failure rate.
 
 This run made no model calls and created no new Weave evaluation. It stress-tested component behavior and replayed saved judgments. [Raw probe results](stress_snapshots/offline-review.json) record each input mutation, expected status, observed result, source revision and script fingerprint. [Reproducible runner](scripts/stress_review.py) executes with `python scripts/stress_review.py` after dependencies are installed.
