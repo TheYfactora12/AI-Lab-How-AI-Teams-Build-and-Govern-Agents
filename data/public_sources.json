@@ -1,0 +1,26 @@
+[
+  {
+    "document_id": "PUB-CF-SOC3-2019",
+    "vendor_id": "cloudflare",
+    "document_type": "soc3",
+    "url": "https://www.cloudflare.com/resources/assets/slt3lc6tev37/68oHQbiMBGK65EKiyHgWvh/6685231d288258b0618410632063e1eb/Cloudflare-SOC3-Report.pdf",
+    "format": "pdf",
+    "purpose": "Historical reporting period; scope is not assurance for a new AI application"
+  },
+  {
+    "document_id": "PUB-AWS-SOC3",
+    "vendor_id": "aws",
+    "document_type": "soc3",
+    "url": "https://d1.awsstatic.com/whitepapers/compliance/AWS_SOC3.pdf",
+    "format": "pdf",
+    "purpose": "Independent vendor boundary and report scope extraction; URL may be updated in place"
+  },
+  {
+    "document_id": "PUB-CF-AI-DATA",
+    "vendor_id": "cloudflare",
+    "document_type": "vendor_documentation",
+    "url": "https://developers.cloudflare.com/workers-ai/platform/data-usage/",
+    "format": "html",
+    "purpose": "Distinguish vendor data-use statements from independent assurance"
+  }
+]
