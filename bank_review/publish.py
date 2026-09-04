@@ -57,7 +57,7 @@ def main():
     try:
         if args.sample:
             reviewer = VendorReviewer(catalog=catalog)
-            result, call = reviewer.predict.call(input=cases[0]["input"])
+            result, call = reviewer.predict.call(reviewer, input=cases[0]["input"])
             client.flush()
             recorded = client.get_call(call.id)
             trace_url = f"https://wandb.ai/{PROJECT}/weave/calls/{call.id}"
@@ -79,6 +79,10 @@ def main():
             receipt["sample_scores"] = scores
             summary += [f"[Open V1 C01 trace]({trace_url})", "Exact-rule scores: " + json.dumps(scores),
                         "A passing exact-rule score does not establish semantic correctness. Review the draft and expected findings."]
+    except Exception as exc:
+        if receipt["sample_status"] == "not_requested" and args.sample:
+            receipt["sample_status"] = f"failed before completion: {type(exc).__name__}"
+        raise
     finally:
         client.flush()
         (output_dir / "publication.json").write_text(json.dumps(receipt, indent=2), encoding="utf-8")
