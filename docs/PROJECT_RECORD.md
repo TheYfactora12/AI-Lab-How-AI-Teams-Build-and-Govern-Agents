@@ -172,3 +172,12 @@ The user's pasted OpenAI JSON-QA sample is an alternate integration reference, n
 New implementation: bank_review/gate.py, bank_review/judge.py, bank_review/evaluate.py, scripts/freeze_contract.py, tests/test_gate_and_judge.py, and .github/workflows/evaluate-v1-v2.yml. See JUDGE_RUBRIC.md and the [submission checklist](../SUBMISSION_CHECKLIST.md).
 
 V2 withheld an incorrectly supported role-test claim in C02. Overall verdict counts did not improve. C03 scope errors passed every scorer; C05 had application errors and unsupported judge reasoning. Preserve those failures as evidence for the operating decision. No 576-run project comparison, ARIA review, independent expert validation or video submission is claimed.
+
+
+## Corrected V2: contract 1.2
+
+The user requested fixes and presentation alignment after stress testing. [Correction record](../V2_CORRECTION_RECORD.md) documents shared structural validation, duplicate rejection, scope scoring, enum clarification and error-envelope judging. V2's post-generation gate also checks the two conditional scope fields.
+
+[Current comparison](../CURRENT_COMPARISON.md) links successful Actions run 33901467965 and both new Weave evaluations. Both versions have three automated passes and two blocks, now on C03 and C05, and no application errors. V2 contains C03; C02 readiness and judge interpretation remain unresolved. The 23 corrected offline probes have zero gaps; 22 assessment and six intake tests pass. These are separate measures.
+
+The current presentation guide and narration use contract 1.2. Original contract 1.1, stress failures and snapshots remain preserved. No numerical risk calibration, public-vendor model assessment or production approval is claimed.

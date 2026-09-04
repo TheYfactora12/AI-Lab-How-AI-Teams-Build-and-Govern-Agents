@@ -1,5 +1,7 @@
 # Agent Evaluation Design
 
+Current revision: contract bank-vendor-eval-v1.2. See [correction record](V2_CORRECTION_RECORD.md) for shared structural/prompt/scorer/judge changes and V2's expanded post-generation validation gate. Dataset and answer key remain unchanged. The design below preserves the first experiment's reasoning; its contract 1.1 observations describe that earlier run, not the corrected rerun.
+
 Student: Kevin Medeiros. Track: Evaluation Builder. Date: 2026-09-04.
 
 Application: Bank AI Vendor Risk Assessment: Scope and Evidence Review. AI-assisted design and interpretation; final student review remains required. This document follows the certificate template and links implementation evidence rather than reproducing the workshop scenario.

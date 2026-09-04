@@ -1,5 +1,7 @@
 # Certificate scope and acceptance map
 
+Revision note: [V2 correction record](V2_CORRECTION_RECORD.md) tracks fixes to the malformed-input, duplicate-source and C03 scope failures, plus the judge's unavailable-output handling. Historical gaps below explain why this revision was needed; current live evidence must be read separately from the original comparison.
+
 The user designated the [official certificate project](https://github.com/LorenzoWandB/PatchPilot-MasterClass/tree/main/certificate-project) as the build specification. Checked September 4, 2026. Use its [Evaluation Builder track](https://github.com/LorenzoWandB/PatchPilot-MasterClass/blob/main/certificate-project/TECHNICAL_TRACK.md) and [design template](https://github.com/LorenzoWandB/PatchPilot-MasterClass/blob/main/certificate-project/EVALUATION_DESIGN_TEMPLATE.md) to govern the submission.
 
 Our qualifying original use case is a banking consultant's vendor scope-and-evidence review assistant. The course repository supplies instructions and reference patterns; our own GitHub repository holds the implementation and artifacts.

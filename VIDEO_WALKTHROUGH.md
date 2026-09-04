@@ -1,53 +1,41 @@
-# Recording outline: 3–5 minutes in your own voice
+# Current recording outline: contract 1.2
 
-Personalize this preparation script before recording. Explain your own choices and disagreements. Show the actual files and Weave results; do not read credentials or use an AI voice. Aim for about four minutes, allowing time to open the traces.
+Use your own voice and judgment. This four-minute outline covers the corrected implementation. Keep the [current comparison](CURRENT_COMPARISON.md) open for exact results. The first experiment and its older C02 intervention are historical evidence.
 
-## 0:00–0:40 — Problem and intended user
+## 0:00–0:40: Problem
 
-Screen: PROJECT_BRIEF.md and USE_CASE_PROFILE.md.
+Screen: USE_CASE_PROFILE.md.
 
-“My project is an AI-assisted scope and evidence review for a banking security consultant. The question is whether a vendor's evidence supports the bank's intended use, and what still needs investigation. A fixed checklist can miss the context: an internal policy assistant has different risks from a system making credit decisions.
+“My project helps a banking consultant review an AI vendor's evidence for a specific intended use. I chose an internal policy assistant and fictional documents. The assistant drafts findings and questions; a person owns the final assessment. I selected the Evaluation Builder track and implemented the application in Python with Weave tracing.”
 
-“I chose a fictional community bank and vendor so I could demonstrate the workflow without using customer information. The assistant prepares a review packet. A person remains responsible for the assessment and any client report.”
+## 0:40–1:20: Define and evaluate good behavior
 
-## 0:40–1:25 — Define good behavior and evidence
+Screen: five-case dataset, EVALUATION_DESIGN.md and JUDGE_RUBRIC.md.
 
-Screen: EVALUATION_DESIGN.md, then one case in data/cases.jsonl.
+“Good behavior means selecting relevant requirements, citing the right evidence, and preserving uncertainty. We use five cases: normal evidence, a missing test, unclear scope, a retrieval timeout and conflicting statements. Two exact scorers check evidence and status rules, and an AI judge reviews evidence support, scope and follow-up quality. The same test contract applies to both versions.”
 
-“Good behavior means selecting relevant requirements, citing actual supplied passages, separating vendor assertions from observed tests, and asking specific questions when evidence is missing. Unknown information must stay unknown.
+## 1:20–2:20: Show the actual corrected V2 change
 
-“I designed five synthetic cases: normal evidence, a missing role-isolation test, ambiguous scope, a retrieval timeout and contradictory documents. Two exact scorers check reference integrity and evidence status. A live AI judge grades evidence support, scope and follow-up quality. A known exact failure blocks release even when the judge passes it.”
+Screen: current V1 and V2 C03 traces, linked in CURRENT_COMPARISON.md.
 
-## 1:25–2:15 — Show the controlled change
+“In C03, the bank's restricted-document access and credit-decision role are unknown. V1 makes unsupported scope decisions. Our corrected exact check catches that. V2 adds a post-generation validation gate: it marks those requirements as needing clarification and withholds the draft. Here are the input, the rejected scope decisions and the resulting questions.
 
-Screen: V1 C02 evaluation, then V2 C02 gate and final output.
+“The gate also rejects the malformed records and duplicate identifiers found in our offline stress tests. Shared validation, scoring and judge corrections apply to both versions. I keep this rerun separate from the original experiment.”
 
-“Both versions use the same model, prompt, dataset and scoring contract. V2 adds one evidence-validation gate after generation.
+## 2:20–3:20: Results and limitations
 
-“Here is the useful failure: V1 cited a real injection test as support for role isolation. The citation existed, but it tested the wrong requirement. The exact status scorer caught that mismatch; the AI judge missed it.
+Screen: CURRENT_COMPARISON.md.
 
-“V2's gate caught the mismatch and withheld the draft. Its exact status result changed from fail to pass. Withholding the whole draft also removes useful findings, so this is containment with a tradeoff, not a complete solution.”
+“Both versions received three automated passes and two blocks. Both produced valid assessments for all five cases in this run. The gate contained the targeted scope error, but there is no overall pass-count gain.
 
-## 2:15–3:15 — Results and evaluation weaknesses
+“Inspection still matters. In C02, both versions mark the packet ready even though the expected result calls for more evidence. The judge misses that. In C05, the agent shows contradictory sources, but the judge misinterprets the conflict. We preserve those scores and explain the disagreement; we do not claim the system is fully accurate.
 
-Screen: COMPARISON_REPORT.md result table and C03/C05 observations.
+“The corrected code passed 22 assessment tests and six intake tests. The 23 offline stress probes met their expectations. Those probes are separate from the five live model cases.”
 
-“Overall, both versions received three automated passes and two blocks. I cannot claim an overall score improvement.
+## 3:20–4:00: Operating decision
 
-“More importantly, inspecting the output showed that C03 treated an unknown credit-decision field as no credit decisions. Every scorer passed it. That means the evaluation itself needs better coverage. In the normal case, the judge also missed a mismatch with the expected review state.
+Screen: OPERATING_POLICY.md and V2_CORRECTION_RECORD.md.
 
-“Both versions failed to produce valid structured assessments for the contradiction case. Those errors were recorded explicitly. The judge then described a claim that was not in the empty output. I preserved the original scores and documented the disagreement instead of making the results look better.
+“My deliverable connects code, test cases, traces, grading rules and a documented operating decision. The assistant stays in draft-only use with human review. The consultant interprets evidence, the bank reviewer owns risk acceptance, and the technical owner can stop the workflow. Before expanding, I would improve readiness checks, calibrate the judge and obtain expert review of more cases.”
 
-“The lesson is that a passing dashboard is evidence to inspect, not permission to trust the report.”
-
-## 3:15–4:05 — Final deliverable and operating decision
-
-Screen: OPERATING_POLICY.md, then repository README.
-
-“The deliverable is this reproducible evaluation package: five cases, two versions, exact checks, a judge rubric, Weave traces, a comparison report and a proposed 30-day operating rule.
-
-“The assistant stays limited to synthetic draft preparation. Every report needs human review. The consultant owns evidence interpretation, the bank reviewer owns risk acceptance, and the technical owner can disable the workflow and return to manual review.
-
-“Before expanding, I would improve scope checking and judge calibration, obtain expert review of the answer key, and test more cases repeatedly. The project demonstrates how I would govern an assessment assistant, while making its current limitations visible.”
-
-Before upload: add your own motivation and judgment, verify all shown results, check duration and sound, and submit the recording through the course interface. No video has been created or submitted by the agent.
+Review these statements yourself before recording. Open each trace while signed in, hide credentials, check sound and readability, and submit a 3–5 minute recording in your own voice. No video or course submission has been completed by the coding agent.

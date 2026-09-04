@@ -42,14 +42,17 @@ def final_verdict(scores):
 
 class BankRiskJudge(weave.Scorer):
     model: str = MODEL
-    rubric_id: str = "bank-risk-judge-v1.1"
+    rubric_id: str = "bank-risk-judge-v1.2"
     rubric: str
     catalog: dict
 
     @weave.op()
     def score(self, input: dict, expected: dict, output: dict | None) -> dict:
-        if output is None:
-            return {"verdict": "review", "error": "Application output unavailable", "rubric_id": self.rubric_id}
+        if output is None or output.get("execution_error"):
+            criterion = {"status": "unknown", "reason": "No valid assessment is available to judge.", "evidence_refs": []}
+            return {k: dict(criterion) for k in ("evidence_support", "scope_and_risk", "follow_up_quality")} | {
+                "verdict": "review", "model_verdict": None, "rationale": "Application error requires review.",
+                "rubric_id": self.rubric_id, "judge_invoked": False}
         # Do not expose app version or gate metadata to the judge.
         blinded = {k: v for k, v in output.items() if k != "gate_record"}
         client = OpenAI(base_url="https://api.inference.wandb.ai/v1", api_key=os.environ["WANDB_API_KEY"],
