@@ -4,6 +4,8 @@ This index records the substantive project context supplied or developed in our 
 
 ## Current project
 
+Public-source extension: [intake and traceability guide](../PUBLIC_DOCUMENT_REVIEW.md), [registry](../data/public_sources.json), and [frozen download manifest](../data/public_source_manifest.json). Two public SOC 3 PDFs and one vendor AI data-use page were collected. This extension verifies provenance and does not replace the completed synthetic comparison or claim real-vendor risk ratings.
+
 Kevin challenged the initial evaluation's coverage: the workflow should measure task-level automation versus human review across application risk and evidence conditions. [Automation routing design](../AUTOMATION_ROUTING_DESIGN.md) records the clarification, 15 scenario families, proposed metrics and weighting principles. It is a next-experiment design; existing V1/V2 results are preserved, and no broader routing results are claimed.
 
 **Bank AI Vendor Risk Assessment: Scope and Evidence Review** is an Evaluation Builder certificate project. It assesses the scope and evidence needs for a fictional bank's internal AI policy assistant. The user approved the concept and the use-case-dependent approach.

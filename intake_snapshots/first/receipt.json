@@ -1,0 +1,34 @@
+{
+  "trace_url": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06cee-1c4a-79f9-8b7f-cc01ad29be0a",
+  "dataset_uri": "weave:///kevinmedeiros-masterclass/ai-lab-agent-governance/object/public-document-intake-v1:4SWk5HsTS0iUjKDIYXzZE6q7kVOGeXZUVYnNgyXFv2I",
+  "result": {
+    "checks": [
+      {
+        "status": "pass",
+        "reasons": [],
+        "assessment_permission": false
+      },
+      {
+        "status": "pass",
+        "reasons": [],
+        "assessment_permission": false
+      },
+      {
+        "status": "pass",
+        "reasons": [],
+        "assessment_permission": false
+      }
+    ],
+    "all_passed": true,
+    "build": {
+      "git_commit": "229c67798afd0af19ce4a6d5e331b9e5db46ea1b",
+      "workflow_run": "33886786883",
+      "intake_sha256": "ee14d6174272ceb30a7e969c26f7ef88ea5af3564b1745e121b5cff248a2b192",
+      "manifest_sha256": "f712733acbab62066e5c4aac90ae98bd1cffd6893e4bec0591c9d19e9ff091e7",
+      "source_registry_sha256": "c9800b3dca8fc8f478c338a75078379330ef1c1fe776b0cc3bf9123abd83da6a"
+    },
+    "meaning": "Provenance checks only; no risk rating or model evaluation"
+  },
+  "original_files_uploaded": false,
+  "model_calls": 0
+}

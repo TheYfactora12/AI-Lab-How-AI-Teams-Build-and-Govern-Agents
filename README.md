@@ -4,6 +4,8 @@ An Evaluation Builder certificate project reviewing a fictional bank's proposed 
 
 ## Review these first
 
+[Public-document intake](PUBLIC_DOCUMENT_REVIEW.md) adds three downloaded sources, frozen fingerprints, structural tests and a separate Weave provenance workflow. It includes a beginner demonstration route and clearly marks the remaining public-document assessment work.
+
 New scope clarification: [automation boundaries and scenario matrix](AUTOMATION_ROUTING_DESIGN.md) defines the next experiment: which review tasks may complete automatically, which need human judgment, and which must block. This proposed expansion has not been run.
 
 Start with the [completed comparison report](COMPARISON_REPORT.md), [evaluation design](EVALUATION_DESIGN.md), [30-day operating rule](OPERATING_POLICY.md), and [video outline](VIDEO_WALKTHROUGH.md). The [submission checklist](SUBMISSION_CHECKLIST.md) covers your remaining review and recording steps. The [original sample](REVIEW_START_HERE.md) is preserved as history.
