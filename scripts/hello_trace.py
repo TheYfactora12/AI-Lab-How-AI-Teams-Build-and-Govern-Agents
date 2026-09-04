@@ -2,7 +2,7 @@
 import os
 import weave
 
-PROJECT = "kevinmedeiros-masterclass-org/ai-lab-agent-governance"
+PROJECT = "kevinmedeiros-masterclass/ai-lab-agent-governance"
 
 
 @weave.op()
