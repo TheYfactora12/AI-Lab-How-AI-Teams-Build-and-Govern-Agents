@@ -4,6 +4,8 @@ An Evaluation Builder certificate project reviewing a fictional bank's proposed 
 
 ## Review these first
 
+Start with [the saved review package](REVIEW_START_HERE.md) for direct Weave links, the actual V1 output, and observations to discuss.
+
 1. [Project brief](PROJECT_BRIEF.md): problem, outcome, scope and completion checklist.
 2. [Use-case profile](USE_CASE_PROFILE.md): fictional bank, vendor, users and operating boundaries.
 3. [Assessment catalog](ASSESSMENT_CATALOG.md): ten requirements across seven risk areas and five cases.
@@ -17,7 +19,7 @@ All vendor documents and test records are synthetic. Claims about vendor test re
 - Five versioned input packets and separately stored expected findings.
 - A model-powered V1 with a common structured output schema.
 - Two independent deterministic scorers and pass/fail/unknown calibration tests.
-- A manual workflow to publish the dataset and optionally generate one C01 draft.
+- A manual workflow to publish the dataset and optionally generate one C01 draft. The first dataset publication and live C01 sample succeeded; the original output is saved in review_snapshots/.
 
 The live judge, V2 gate and full V1/V2 evaluation comparison are not implemented yet. A single sample is not a full evaluation. The evaluation contract and expected findings still need review.
 

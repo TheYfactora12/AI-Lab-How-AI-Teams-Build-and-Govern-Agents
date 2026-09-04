@@ -1,0 +1,32 @@
+{
+  "dataset_uri": "weave:///kevinmedeiros-masterclass/ai-lab-agent-governance/object/bank-vendor-scope-five-v1:Ew78A6FsNIIFMK8IlXgz8J6HdAX9iaeMqlUltbJRPQs",
+  "rows_verified": 5,
+  "manifest": {
+    "dataset_id": "bank-vendor-scope-five-v1.0",
+    "case_count": 5,
+    "status": "design draft; not published to Weave or evaluated",
+    "files": {
+      "assessment_catalog.json": "c7b76d6c74cdab028a9d78205798d08f75c92aac3794f6fb5f9b58067d5b3c0d",
+      "cases.jsonl": "a2eb2a9705dfff2f0344fbb549375f94a21bac3704670359612e6b39c9b5ac1a",
+      "expected_findings.json": "69774814bf7098e69f3904d6ad58b516e9d75e8186a26d3e1fdfe9463b24f91c"
+    },
+    "separation": "Only input is passed to application.predict; expected_findings and business_risk are evaluator-only. Join by case_id when publishing the versioned Weave dataset."
+  },
+  "git_commit": "688f7cd48e49e5efa0049782ee105121256018e2",
+  "sample_status": "generated_and_read_back",
+  "evaluations_run": false,
+  "judge_implemented": false,
+  "v2_implemented": false,
+  "dataset_url": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/objects/bank-vendor-scope-five-v1/versions/Ew78A6FsNIIFMK8IlXgz8J6HdAX9iaeMqlUltbJRPQs",
+  "sample_trace_url": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06a6e-a2aa-7fcf-aaa4-51c2c8cfc45f",
+  "sample_scores": {
+    "reference_integrity": {
+      "status": "pass",
+      "reason": "All inspectable exact checks passed; semantic support still requires review."
+    },
+    "status_and_routing": {
+      "status": "pass",
+      "reason": "All inspectable exact checks passed; semantic support still requires review."
+    }
+  }
+}

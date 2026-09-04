@@ -121,8 +121,9 @@ This is a proposed policy, not an approved deployment or evidence of safety.
 - [x] Create the versioned assessment catalog and fictional vendor evidence packets; see [ASSESSMENT_CATALOG.md](ASSESSMENT_CATALOG.md).
 - [x] Draft five cases and expected outcomes in data/; model runs have not occurred.
 - [ ] Review expected findings with the user and freeze the evaluation contract.
-- [x] Implement traced V1 using W&B Serverless Inference with OpenPipe/Qwen3-14B-Instruct; live access checked by the review-package workflow.
+- [x] Implement traced V1 using W&B Serverless Inference with OpenPipe/Qwen3-14B-Instruct; live C01 sample succeeded and was read back.
 - [x] Implement two deterministic scorers; ten local calibration tests pass.
+- [x] Publish and read back the five-case Weave dataset; save one actual V1 draft and observations in [REVIEW_START_HERE.md](REVIEW_START_HERE.md).
 - [ ] Finalize and implement the three-criterion AI judge.
 - [ ] Run V1 and V2 under the same evaluation contract.
 - [ ] Inspect failures and record actual results with evidence links.
