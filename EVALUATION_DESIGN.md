@@ -1,6 +1,6 @@
 # Agent Evaluation Design
 
-Current revision: contract bank-vendor-eval-v1.2. See [correction record](V2_CORRECTION_RECORD.md) for shared structural/prompt/scorer/judge changes and V2's expanded post-generation validation gate. Dataset and answer key remain unchanged. The design below preserves the first experiment's reasoning; its contract 1.1 observations describe that earlier run, not the corrected rerun.
+Current revision: contract bank-vendor-eval-v1.4. See [correction record](V2_CORRECTION_RECORD.md) for shared structural/prompt/scorer/judge changes and V2's expanded post-generation validation gate. Dataset and answer key remain unchanged. The design below preserves the first experiment's reasoning; its contract 1.1 observations describe that earlier run, not the corrected rerun.
 
 Student: Kevin Medeiros. Track: Evaluation Builder. Date: 2026-09-04.
 
@@ -53,13 +53,13 @@ Tests cover pass/fail/unknown for each scorer, plus gate withholding and verdict
 
 ## 5. Live judge
 
-Full operational definitions are in [JUDGE_RUBRIC.md](JUDGE_RUBRIC.md), rubric bank-risk-judge-v1.1. The criteria are evidence support (blocking), scope/material-risk coverage (blocking), and follow-up quality (nonblocking).
+Full operational definitions are in [JUDGE_RUBRIC.md](JUDGE_RUBRIC.md), rubric bank-risk-judge-v1.2. The criteria are evidence support (blocking), scope/material-risk coverage (blocking), and follow-up quality (nonblocking).
 
 A blocking fail produces block; any other fail or unknown produces review; all pass produces pass. A known deterministic failure always blocks regardless of model judgment. A missing/failed judge cannot silently pass. The raw model verdict and mechanically recomputed verdict are both retained. Model and rubric remain fixed across versions.
 
 ## 6. Version definition and fixed contract
 
-V1 is the model-powered baseline with the original prompt from the saved review sample. V2 adds only the post-generation evidence gate defined in [V2_CHANGE_PLAN.md](V2_CHANGE_PLAN.md). It validates test evidence and withholds the full generated narrative when a tested claim is structurally invalid. Original drafts remain in traces.
+V1 is the model-powered baseline with the original prompt from the saved review sample. V2 adds only the post-generation evidence gate defined in [V2_CHANGE_PLAN.md](V2_CHANGE_PLAN.md). It validates every citation's identity, binding, currency and exact quote, then applies extra eligibility rules to behavioral-test evidence. Invalid drafts are withheld while original generations remain in traces. Original drafts remain in traces.
 
 The first complete attempt generated schema-invalid C05 drafts in both versions, leaving empty scorer entries. That attempt is retained under evaluation_snapshots/attempt-1. Contract v1.1 adds identical explicit error handling to both applications, categorical summary counts, and a rubric instruction for unavailable drafts. The same original input cases, answer key, generation prompt and model remain in place. Both versions are rerun under v1.1; results from different contracts are not pooled. The V1-to-V2 difference within each contract remains only the gate.
 
@@ -71,7 +71,7 @@ The post-generation gate cannot establish real test authenticity, fix every sema
 
 Local tests and an offline native-Weave runner check were completed before hosted comparison. The offline runner used a saved response and made no inference calls. Local fixture behavior must not be confused with actual V1 output.
 
-The [current live comparison](CURRENT_COMPARISON.md) contains contract 1.2 case-level scores, links and limitations. Both versions received three automated passes and two blocks. V2 contained C03's unsupported scope decisions; C02 readiness and qualitative-judge limitations remain. Preserve every output snapshot. Changed wording alone does not establish a causal gate effect; inspect the recorded gate result and distinguish shared corrections from V2-only behavior.
+The [current live comparison](CURRENT_COMPARISON.md) contains contract 1.4 case-level scores, links and limitations. V1 received three passes and two blocks. V2 received three passes, one block and one review. V2 contained C03's unsupported scope and citation decisions; C02 readiness and C05 generation reliability remain unresolved. Preserve every output snapshot. Changed wording alone does not establish a causal gate effect; inspect the recorded gate result and distinguish shared corrections from V2-only behavior.
 
 ## 8. Human-in-the-loop policy
 

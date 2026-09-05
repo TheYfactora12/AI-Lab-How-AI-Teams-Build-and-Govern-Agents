@@ -8,13 +8,13 @@ An Evaluation Builder certificate project reviewing a fictional bank's proposed 
 
 **Recording the project:** open the [GitHub recording guide](GITHUB_RECORDING_GUIDE.md). It gives the exact tab order, what to click, what each screen proves, what to say, and troubleshooting steps.
 
-**Current evidence:** [contract 1.2 comparison](CURRENT_COMPARISON.md) and [V2 correction record](V2_CORRECTION_RECORD.md). Earlier comparisons and stress failures are preserved as historical evidence and are labeled in their files.
+**Current evidence:** [contract 1.4 comparison](CURRENT_COMPARISON.md) and [V2 correction record](V2_CORRECTION_RECORD.md). Earlier comparisons and stress failures are preserved as historical evidence and are labeled in their files.
 
 **Course alignment:** [certificate requirements map](CERTIFICATE_ALIGNMENT.md). Public-document intake and the broader routing matrix are supporting extensions, not completed public-vendor evaluations.
 
 ## Current project status
 
-The current automated result is **3 passes and 2 blocks for each version, with zero application errors**. V2 contains C03's unsupported scope decisions. C02 readiness classification and qualitative-judge interpretation remain unresolved. Every client-facing assessment requires human review.
+The current result is **V1: 3 passes and 2 blocks; V2: 3 passes, 1 block and 1 review**. V2 contains C03's unsupported scope and citation decisions. Its C05 generation failed schema validation and was safely withheld. C02 readiness classification remains unresolved. Every client-facing assessment requires human review.
 
 All vendor documents and test records are synthetic. Claims about vendor test results are scenario inputs, not real experiments. Our real Weave traces record the assessment agent's work on those inputs.
 
@@ -22,7 +22,7 @@ All vendor documents and test records are synthetic. Claims about vendor test re
 
 - Five versioned synthetic cases and a frozen evaluation contract.
 - Two model-powered versions differing only by an evidence gate.
-- Two independent exact scorers, a live three-criterion judge and 22 current assessment regression tests.
+- Two independent exact scorers, a live three-criterion judge and 23 current assessment regression tests.
 - Completed native Weave evaluations, unedited outputs, receipts and interpretation.
 - Notes, references, ownership policy and an own-voice recording outline.
 
@@ -30,7 +30,7 @@ The run snapshots, source fingerprints and interpretation are committed for late
 
 ## Open the saved evaluation later
 
-Open the [current GitHub Actions run](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965) or the direct V1/V2 Weave links in the current comparison. Unedited contract 1.2 results are committed in evaluation_snapshots/contract-1.2/. Earlier runs remain separately preserved as historical evidence.
+Open the [current GitHub Actions run](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33972108376) or the direct V1/V2 Weave links in the current comparison. Unedited contract 1.4 results are committed in evaluation_snapshots/contract-1.4/. Earlier runs remain separately preserved as historical evidence.
 
 The implementation uses Weave Calls/Evaluations, not Agents SDK sessions. Workflow artifacts last 90 days; committed snapshots preserve the review record independently. W&B retention depends on account settings.
 

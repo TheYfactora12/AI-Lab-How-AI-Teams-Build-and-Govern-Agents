@@ -1,0 +1,96 @@
+{
+  "contract": {
+    "contract_id": "bank-vendor-eval-v1.3",
+    "dataset_uri": "weave:///kevinmedeiros-masterclass/ai-lab-agent-governance/object/bank-vendor-scope-five-v1:Ew78A6FsNIIFMK8IlXgz8J6HdAX9iaeMqlUltbJRPQs",
+    "catalog_id": "bank-ai-scope-v1.0",
+    "scorer_set": "exact-rules-v1.1",
+    "rubric_id": "bank-risk-judge-v1.2",
+    "release_policy": "exact-fail-or-blocking-judge-fail-block; unknown-review; all-pass-human-review-only-v1.0",
+    "app_model": "OpenPipe/Qwen3-14B-Instruct",
+    "judge_model": "OpenPipe/Qwen3-14B-Instruct",
+    "temperature": 0,
+    "trials_per_case": 1,
+    "app_max_tokens": 6000,
+    "judge_max_tokens": 3000,
+    "automatic_retries": 0,
+    "planned_hosted_calls": 20,
+    "only_changed_dimension": "post_generation_evidence_gate",
+    "answer_key_provenance": "AI-assisted pre-run design; no independent expert validation claimed",
+    "file_hashes": {
+      "data/assessment_catalog.json": "c7b76d6c74cdab028a9d78205798d08f75c92aac3794f6fb5f9b58067d5b3c0d",
+      "data/cases.jsonl": "a2eb2a9705dfff2f0344fbb549375f94a21bac3704670359612e6b39c9b5ac1a",
+      "data/expected_findings.json": "69774814bf7098e69f3904d6ad58b516e9d75e8186a26d3e1fdfe9463b24f91c",
+      "bank_review/app.py": "526a223c456715324bd665f7ced9326d899bd17b4ab6fa80bab7f90031d90dbf",
+      "bank_review/schema.py": "d5895575b17ef758163a2dab6910eddcc6195607741ac69be5e5fa29932f7305",
+      "bank_review/gate.py": "6880ba7a3d5f4e0294a14c4b146463b41b77988df1c0a68bee1622e273c25abe",
+      "bank_review/scorers.py": "6500560bc24adddd2f35ab8ebc77a1d616a1025da8412813190e2cb4c662ae1b",
+      "bank_review/judge.py": "8cad0fb71acb738ba7a8ffba027d4e0ad71ce70c8f20adcabc525abee58a0318",
+      "bank_review/validation.py": "ef8dce25969cd202b4f52cd5f0efefbd2b140b5f0ea23ae8fa6932e856b28918",
+      "bank_review/publish.py": "0970eae5ffb331e266bd178922620ced3242597cca4f6c287e01f43ad1c2fc44",
+      "bank_review/evaluate.py": "67173be3300ab83e3d1343cd080d96fded8ecec1f521f7b3a24288860f4c5e0c",
+      "JUDGE_RUBRIC.md": "17cfb52353e0f5fd396f5815c2d852f5e4ed25233fc4d074cfa1dd03e80d3594",
+      "requirements.txt": "b77ed03fface2fee79f0cb83d64c0395e216260c90135266f7ae59fd7f9d5596"
+    }
+  },
+  "git_commit": "fee130884f019dbe60c725f7f153e0249ff9d3f6",
+  "workflow_run": "33971716128",
+  "runs": {
+    "v1": {
+      "trace_url": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071f5-5095-706f-ac01-81087262eeca",
+      "call_id": "01a071f5-5095-706f-ac01-81087262eeca",
+      "summary": {
+        "case_count": 5,
+        "application_errors": 1,
+        "final_verdicts": {
+          "pass": 3,
+          "block": 1,
+          "review": 1
+        },
+        "score_references": {
+          "pass": 4,
+          "unknown": 1
+        },
+        "score_status": {
+          "pass": 3,
+          "fail": 1,
+          "unknown": 1
+        },
+        "BankRiskJudge": {
+          "pass": 4,
+          "review": 1
+        },
+        "gate_rejections": 0
+      }
+    },
+    "v2": {
+      "trace_url": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071f5-c26b-77ce-91db-e035f4673790",
+      "call_id": "01a071f5-c26b-77ce-91db-e035f4673790",
+      "summary": {
+        "case_count": 5,
+        "application_errors": 1,
+        "final_verdicts": {
+          "pass": 3,
+          "block": 1,
+          "review": 1
+        },
+        "score_references": {
+          "pass": 4,
+          "unknown": 1
+        },
+        "score_status": {
+          "pass": 4,
+          "unknown": 1
+        },
+        "BankRiskJudge": {
+          "pass": 3,
+          "block": 1,
+          "review": 1
+        },
+        "gate_rejections": 3
+      }
+    }
+  },
+  "notice": "Actual model evaluations of an assessor on synthetic cases; not real vendor validation.",
+  "complete": true,
+  "errors": []
+}

@@ -1,6 +1,6 @@
 # Stress review: passing calibration does not establish robustness
 
-Historical failure report. The [correction record](V2_CORRECTION_RECORD.md) documents the fixes and a separate 23-probe rerun with zero gaps. Original outcomes below remain unchanged as before evidence.
+Historical failure report. The [correction record](V2_CORRECTION_RECORD.md) documents the fixes and a later 31-probe rerun with zero observed gaps. Original outcomes below remain unchanged as before evidence.
 
 The original 17 assessment tests and six intake tests passed again. An additional 23 offline probes produced 14 expected outcomes and nine gaps. These counts are probe outcomes, not nine independent defects or a production failure rate.
 

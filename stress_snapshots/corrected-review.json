@@ -1,10 +1,10 @@
 {
   "kind": "offline_adversarial_probes",
   "model_calls": 0,
-  "source_commit": "1d0859e07ae2ab261cae2edfe4b87338cdc57ec4",
-  "script_sha256": "02b2cf86ab188fec39a8e6ee847c8e5d4b574b87baa50525be8a29507b75005e",
+  "source_commit": "dae39aed320441beea539957af8e880b80ddd1b7",
+  "script_sha256": "4f41232708d0bce066586effa4b2fd0fa718835061bd224b7548ad90c4c68f3f",
   "frozen_contract_unchanged": true,
-  "probe_count": 23,
+  "probe_count": 31,
   "gaps": 0,
   "probes": [
     {
@@ -152,6 +152,78 @@
     },
     {
       "name": "duplicate_source_id",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "documented_wrong_vendor",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "documented_wrong_use_case",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "documented_missing_source",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "documented_bad_quote",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "documented_unavailable_source",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "documented_wrong_requirement",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "documented_stale_source",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "documented_wrong_version",
       "component": "gate",
       "expected": [
         "withheld"

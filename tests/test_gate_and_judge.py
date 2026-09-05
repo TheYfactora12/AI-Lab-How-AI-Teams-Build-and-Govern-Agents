@@ -48,6 +48,27 @@ class GateTests(unittest.TestCase):
         result = apply_evidence_gate(self.input, self.draft)
         self.assertEqual(result["findings"], self.draft["findings"])
 
+    def test_documentary_citations_respect_customer_boundary(self):
+        self.draft["findings"][0]["evidence_status"] = "documented"
+        mutations = {
+            "wrong_vendor": lambda p, o: p["evidence"][0].update(vendor_id="OTHER"),
+            "wrong_use_case": lambda p, o: p["evidence"][0].update(use_case_id="OTHER"),
+            "missing_source": lambda p, o: o["findings"][0]["citations"][0].update(evidence_id="NOPE"),
+            "bad_quote": lambda p, o: o["findings"][0]["citations"][0].update(quote="invented quote"),
+            "unavailable_source": lambda p, o: p["evidence"][0].update(retrieval_status="error"),
+            "wrong_requirement": lambda p, o: p["evidence"][0].update(requirement_ids=["OTHER"]),
+            "stale_source": lambda p, o: p["evidence"][0].update(valid_through="2026-01-01"),
+            "wrong_version": lambda p, o: p["evidence"][0].update(system_version="old"),
+        }
+        for name, mutate in mutations.items():
+            packet, draft = copy.deepcopy(self.input), copy.deepcopy(self.draft)
+            mutate(packet, draft)
+            with self.subTest(name=name):
+                result = apply_evidence_gate(packet, draft)
+                self.assertEqual(result["packet_status"], "withheld")
+                self.assertNotIn("Role isolation tested under two roles", str(result))
+                self.assertTrue(result["gate_record"]["rejected"])
+
 
 class JudgePolicyTests(unittest.TestCase):
     def test_invalid_generation_is_explicit_for_both_versions(self):

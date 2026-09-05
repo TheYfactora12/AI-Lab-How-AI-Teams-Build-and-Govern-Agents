@@ -26,8 +26,6 @@ def apply_evidence_gate(input: dict, draft: dict) -> dict:
                 scope["applicability"] = expected
                 scope_rejected.append({"requirement_id": scope["requirement_id"], "reasons": [f"Clarify intended use: {field}; original scope decision was unsupported"]})
     for finding in draft["findings"]:
-        if finding["evidence_status"] != "tested_in_scope":
-            continue
         reasons, qualifying_tests = [], 0
         for citation in finding["citations"]:
             record = records.get(citation["evidence_id"])
@@ -36,29 +34,33 @@ def apply_evidence_gate(input: dict, draft: dict) -> dict:
                 continue
             if record.get("vendor_id") != profile["vendor_id"] or record.get("use_case_id") != profile["profile_id"]:
                 reasons.append("source identity mismatch")
+            if record.get("system_version") != profile["system_version"]:
+                reasons.append("source version mismatch")
             if record.get("retrieval_status") != "available":
                 reasons.append("source retrieval is unavailable")
             passages = {p["id"]: p["text"] for p in record.get("passages", [])}
             if not citation["quote"] or citation["quote"] not in passages.get(citation["passage_id"], ""):
                 reasons.append("quoted passage is unavailable")
+            if finding["requirement_id"] not in record.get("requirement_ids", []):
+                reasons.append("source requirement mismatch")
+            try:
+                assessed = date.fromisoformat(input["assessment_date"])
+                if not date.fromisoformat(record["issued_on"]) <= assessed <= date.fromisoformat(record["valid_through"]):
+                    reasons.append("source outside review window")
+            except (KeyError, ValueError, TypeError):
+                reasons.append("source dates unavailable")
+            if finding["evidence_status"] != "tested_in_scope":
+                continue
             if record.get("evidence_type") != "observed_test_result":
                 continue
             qualifying_tests += 1
-            if record.get("system_version") != profile["system_version"]:
-                reasons.append("test version mismatch")
             if finding["requirement_id"] not in record.get("requirement_ids", []):
                 reasons.append("test requirement mismatch")
             if record.get("result") != "pass":
                 reasons.append("no passing test result")
             if not record.get("method") or not record.get("limitations"):
                 reasons.append("test method or limitations missing")
-            try:
-                assessed = date.fromisoformat(input["assessment_date"])
-                if not date.fromisoformat(record["issued_on"]) <= assessed <= date.fromisoformat(record["valid_through"]):
-                    reasons.append("test outside review window")
-            except (KeyError, ValueError, TypeError):
-                reasons.append("test dates unavailable")
-        if qualifying_tests == 0:
+        if finding["evidence_status"] == "tested_in_scope" and qualifying_tests == 0:
             reasons.append("no supplied behavioral test")
         if reasons:
             rejected.append({"requirement_id": finding["requirement_id"], "reasons": sorted(set(reasons))})

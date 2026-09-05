@@ -8,7 +8,7 @@
     "SUBMISSION_CHECKLIST.md",
     "RECORDING_CHEAT_SHEET.md"
   ],
-  "check_count": 92,
+  "check_count": 89,
   "failure_count": 0,
   "network_note": "Private W&B accessibility depends on signed-in project access. URLs are matched to the successful readback receipt; no public-access claim is made.",
   "checks": [
@@ -44,7 +44,7 @@
     },
     {
       "source": "README.md",
-      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33972108376",
       "ok": true,
       "method": "github_run_matches_completed_receipt"
     },
@@ -80,13 +80,13 @@
     },
     {
       "source": "GITHUB_RECORDING_GUIDE.md",
-      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fc-9244-721f-894e-d4bb3ecf9ec1",
       "ok": true,
       "method": "private_weave_url_matches_readback_receipt"
     },
     {
       "source": "GITHUB_RECORDING_GUIDE.md",
-      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fd-071e-7eeb-8a8f-fe0cf744302a",
       "ok": true,
       "method": "private_weave_url_matches_readback_receipt"
     },
@@ -98,7 +98,7 @@
     },
     {
       "source": "GITHUB_RECORDING_GUIDE.md",
-      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33972108376",
       "ok": true,
       "method": "github_run_matches_completed_receipt"
     },
@@ -110,7 +110,7 @@
     },
     {
       "source": "GITHUB_RECORDING_GUIDE.md",
-      "target": "evaluation_snapshots/contract-1.2/receipt.json",
+      "target": "evaluation_snapshots/contract-1.4/receipt.json",
       "ok": true,
       "method": "local_file"
     },
@@ -164,13 +164,13 @@
     },
     {
       "source": "START_DEMO_HERE.md",
-      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fc-9244-721f-894e-d4bb3ecf9ec1",
       "ok": true,
       "method": "private_weave_url_matches_readback_receipt"
     },
     {
       "source": "START_DEMO_HERE.md",
-      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fd-071e-7eeb-8a8f-fe0cf744302a",
       "ok": true,
       "method": "private_weave_url_matches_readback_receipt"
     },
@@ -188,13 +188,13 @@
     },
     {
       "source": "START_DEMO_HERE.md",
-      "target": "evaluation_snapshots/contract-1.2/v1-rows.json",
+      "target": "evaluation_snapshots/contract-1.4/v1-rows.json",
       "ok": true,
       "method": "local_file"
     },
     {
       "source": "START_DEMO_HERE.md",
-      "target": "evaluation_snapshots/contract-1.2/v2-rows.json",
+      "target": "evaluation_snapshots/contract-1.4/v2-rows.json",
       "ok": true,
       "method": "local_file"
     },
@@ -212,43 +212,37 @@
     },
     {
       "source": "CURRENT_COMPARISON.md",
-      "target": "V2_CORRECTION_RECORD.md",
-      "ok": true,
-      "method": "local_file"
-    },
-    {
-      "source": "CURRENT_COMPARISON.md",
-      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fc-9244-721f-894e-d4bb3ecf9ec1",
       "ok": true,
       "method": "private_weave_url_matches_readback_receipt"
     },
     {
       "source": "CURRENT_COMPARISON.md",
-      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fd-071e-7eeb-8a8f-fe0cf744302a",
       "ok": true,
       "method": "private_weave_url_matches_readback_receipt"
     },
     {
       "source": "CURRENT_COMPARISON.md",
-      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33972108376",
       "ok": true,
       "method": "github_run_matches_completed_receipt"
     },
     {
       "source": "CURRENT_COMPARISON.md",
-      "target": "evaluation_snapshots/contract-1.2/receipt.json",
+      "target": "evaluation_snapshots/contract-1.4/receipt.json",
       "ok": true,
       "method": "local_file"
     },
     {
       "source": "CURRENT_COMPARISON.md",
-      "target": "evaluation_snapshots/contract-1.2/v1-rows.json",
+      "target": "evaluation_snapshots/contract-1.4/v1-rows.json",
       "ok": true,
       "method": "local_file"
     },
     {
       "source": "CURRENT_COMPARISON.md",
-      "target": "evaluation_snapshots/contract-1.2/v2-rows.json",
+      "target": "evaluation_snapshots/contract-1.4/v2-rows.json",
       "ok": true,
       "method": "local_file"
     },
@@ -260,25 +254,13 @@
     },
     {
       "source": "CURRENT_COMPARISON.md",
-      "target": "COMPARISON_REPORT.md",
+      "target": "V2_CORRECTION_RECORD.md",
       "ok": true,
       "method": "local_file"
     },
     {
       "source": "CURRENT_COMPARISON.md",
-      "target": "STRESS_TEST_REPORT.md",
-      "ok": true,
-      "method": "local_file"
-    },
-    {
-      "source": "CURRENT_COMPARISON.md",
-      "target": "START_DEMO_HERE.md",
-      "ok": true,
-      "method": "local_file"
-    },
-    {
-      "source": "CURRENT_COMPARISON.md",
-      "target": "VIDEO_WALKTHROUGH.md",
+      "target": "RECORDING_CHEAT_SHEET.md",
       "ok": true,
       "method": "local_file"
     },
@@ -314,13 +296,13 @@
     },
     {
       "source": "VIDEO_WALKTHROUGH.md",
-      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fc-9244-721f-894e-d4bb3ecf9ec1",
       "ok": true,
       "method": "private_weave_url_matches_readback_receipt"
     },
     {
       "source": "VIDEO_WALKTHROUGH.md",
-      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fd-071e-7eeb-8a8f-fe0cf744302a",
       "ok": true,
       "method": "private_weave_url_matches_readback_receipt"
     },
@@ -362,13 +344,13 @@
     },
     {
       "source": "VIDEO_WALKTHROUGH.md",
-      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fc-9244-721f-894e-d4bb3ecf9ec1",
       "ok": true,
       "method": "private_weave_url_matches_readback_receipt"
     },
     {
       "source": "VIDEO_WALKTHROUGH.md",
-      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fd-071e-7eeb-8a8f-fe0cf744302a",
       "ok": true,
       "method": "private_weave_url_matches_readback_receipt"
     },
@@ -386,7 +368,7 @@
     },
     {
       "source": "VIDEO_WALKTHROUGH.md",
-      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33972108376",
       "ok": true,
       "method": "github_run_matches_completed_receipt"
     },
@@ -524,13 +506,13 @@
     },
     {
       "source": "RECORDING_CHEAT_SHEET.md",
-      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fc-9244-721f-894e-d4bb3ecf9ec1",
       "ok": true,
       "method": "private_weave_url_matches_readback_receipt"
     },
     {
       "source": "RECORDING_CHEAT_SHEET.md",
-      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fd-071e-7eeb-8a8f-fe0cf744302a",
       "ok": true,
       "method": "private_weave_url_matches_readback_receipt"
     },
@@ -542,7 +524,7 @@
     },
     {
       "source": "RECORDING_CHEAT_SHEET.md",
-      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33972108376",
       "ok": true,
       "method": "github_run_matches_completed_receipt"
     },

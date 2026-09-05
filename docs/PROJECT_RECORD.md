@@ -17,7 +17,7 @@ Kevin challenged the initial evaluation's coverage: the workflow should measure 
 - [W&B project overview](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/overview)
 - [Weave project](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave)
 
-The live judge, corrected V2 gate and five-case controlled comparison are complete. Contract 1.2 produced three automated passes and two blocks for each version with zero application errors. See the [current comparison](../CURRENT_COMPARISON.md), [evaluation design](../EVALUATION_DESIGN.md), [policy](../OPERATING_POLICY.md), and [video outline](../VIDEO_WALKTHROUGH.md). Student review and video submission remain pending. Earlier progress entries below are historical.
+The live judge, corrected V2 gate and five-case controlled comparison are complete. Contract 1.4 produced V1: three passes/two blocks and V2: three passes/one block/one review. V2 safely withheld its schema-invalid C05 output. See the [current comparison](../CURRENT_COMPARISON.md), [evaluation design](../EVALUATION_DESIGN.md), [policy](../OPERATING_POLICY.md), and [video outline](../VIDEO_WALKTHROUGH.md). Student review and video submission remain pending. Earlier progress entries below are historical.
 
 ## Project document and implementation map
 
@@ -174,10 +174,17 @@ New implementation: bank_review/gate.py, bank_review/judge.py, bank_review/evalu
 V2 withheld an incorrectly supported role-test claim in C02. Overall verdict counts did not improve. C03 scope errors passed every scorer; C05 had application errors and unsupported judge reasoning. Preserve those failures as evidence for the operating decision. No 576-run project comparison, ARIA review, independent expert validation or video submission is claimed.
 
 
-## Corrected V2: contract 1.2
+## Corrected V2: contract 1.2 (historical)
 
 The user requested fixes and presentation alignment after stress testing. [Correction record](../V2_CORRECTION_RECORD.md) documents shared structural validation, duplicate rejection, scope scoring, enum clarification and error-envelope judging. V2's post-generation gate also checks the two conditional scope fields.
 
-[Current comparison](../CURRENT_COMPARISON.md) links successful Actions run 33901467965 and both new Weave evaluations. Both versions have three automated passes and two blocks, now on C03 and C05, and no application errors. V2 contains C03; C02 readiness and judge interpretation remain unresolved. The 23 corrected offline probes have zero gaps; 22 assessment and six intake tests pass. These are separate measures.
+Historical Actions run 33901467965 and the contract 1.2 snapshots record three automated passes and two blocks for both versions with no application errors. V2 contains C03; C02 readiness and judge interpretation remained unresolved. That stage had 23 offline probes, 22 assessment tests and six intake tests.
 
-The current presentation guide and narration use contract 1.2. Original contract 1.1, stress failures and snapshots remain preserved. No numerical risk calibration, public-vendor model assessment or production approval is claimed.
+The contract 1.2 presentation guide was superseded by contract 1.4. Original contract 1.1, stress failures and snapshots remain preserved. No numerical risk calibration, public-vendor model assessment or production approval is claimed.
+
+
+## Expanded documentary boundary: contract 1.4
+
+An independent stress mutation showed that V2 checked only `tested_in_scope` citations. A wrong-vendor source could remain review-ready when the model labeled the finding `documented`. Eight documentary citation mutations were added: wrong vendor, use case, source, quote, availability, requirement, review window and system version. V2 now withholds all eight.
+
+The permanent suite contains 31 offline probes with zero observed gaps, 23 assessment regression tests and six intake tests. The hosted workflow is [run 33972108376](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33972108376). Contract 1.4 produced V1 three-pass/two-block and V2 three-pass/one-block/one-review routing. V2 C05 failed schema validation and was safely withheld, demonstrating fail-closed behavior while also exposing generation variability. The current presentation uses [CURRENT_COMPARISON.md](../CURRENT_COMPARISON.md).

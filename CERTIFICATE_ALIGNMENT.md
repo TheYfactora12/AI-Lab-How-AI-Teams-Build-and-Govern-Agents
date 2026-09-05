@@ -1,6 +1,6 @@
 # Certificate scope and acceptance map
 
-Revision note: [V2 correction record](V2_CORRECTION_RECORD.md) tracks fixes to the malformed-input, duplicate-source and C03 scope failures, plus the judge's unavailable-output handling. Historical gaps below explain why this revision was needed; current live evidence must be read separately from the original comparison.
+Revision note: [V2 correction record](V2_CORRECTION_RECORD.md) tracks the malformed-input, duplicate-source, C03 scope and documentary-citation boundary fixes. Contract 1.4 is the current evidence; earlier gaps remain historical evidence.
 
 The user designated the [official certificate project](https://github.com/LorenzoWandB/PatchPilot-MasterClass/tree/main/certificate-project) as the build specification. Checked September 4, 2026. Use its [Evaluation Builder track](https://github.com/LorenzoWandB/PatchPilot-MasterClass/blob/main/certificate-project/TECHNICAL_TRACK.md) and [design template](https://github.com/LorenzoWandB/PatchPilot-MasterClass/blob/main/certificate-project/EVALUATION_DESIGN_TEMPLATE.md) to govern the submission.
 
@@ -11,17 +11,17 @@ Our qualifying original use case is a banking consultant's vendor scope-and-evid
 | Required element | Our artifact | Current assessment |
 | --- | --- | --- |
 | Defined user, outcome, harm and human oversight | EVALUATION_DESIGN.md, PROJECT_BRIEF.md | Written; student review pending |
-| Root operation and meaningful internal calls | bank_review/app.py, Weave evaluation links in COMPARISON_REPORT.md | Implemented; student should inspect the nested trace |
+| Root operation and meaningful internal calls | bank_review/app.py, Weave evaluation links in CURRENT_COMPARISON.md | Implemented; student should inspect the nested trace |
 | Five complete versioned cases | data/cases.jsonl, expected findings, evaluation_contract.json | Published and frozen; independent answer-key review remains pending |
 | Two exact scorers with pass/fail/unknown calibration | bank_review/scorers.py, tests/test_scorers.py | Implemented and calibrated |
 | Live three-criterion judge | bank_review/judge.py, JUDGE_RUBRIC.md | Executed; observed rubric-following errors documented |
 | Two model-powered versions with one controlled change | V1 baseline and V2 evidence gate | Executed under the same contract |
-| Case-level comparison and operating decision | COMPARISON_REPORT.md, OPERATING_POLICY.md | Written with actual failures and limitations |
+| Case-level comparison and operating decision | CURRENT_COMPARISON.md, OPERATING_POLICY.md | Written with actual failures and limitations |
 | Student's own-voice walkthrough | VIDEO_WALKTHROUGH.md, SUBMISSION_CHECKLIST.md | Outline prepared; recording/upload pending |
 
 ## Acceptance gaps must remain visible
 
-Do not mark all behavior requirements satisfied merely because the workflow completed. C03's unsafe inference from unknown scope passed every scorer. C05 failed to produce a valid assessment, and the judge invented reasoning instead of honoring the unavailable-evidence rule. C01's expected review state was not matched. These failures weaken evaluation coverage and are recorded without altering the original results.
+Do not mark all behavior requirements satisfied merely because the workflow completed. In contract 1.4, V2 contains C03's unsafe scope decisions and a requirement-mismatched citation. C02's incorrect review-ready state still passes the graders. V2 C05 fails schema validation and is safely withheld, demonstrating fail-closed routing but unresolved generation reliability. C01 remains a safe over-escalation. These results are preserved without relabeling them as successes.
 
 The course allows unexpected live judgments; that does not excuse incorrect interpretation or hidden missing-evidence passes. Any remediation must freeze a new contract before rerunning both versions. The old comparison remains an auditable experiment.
 
