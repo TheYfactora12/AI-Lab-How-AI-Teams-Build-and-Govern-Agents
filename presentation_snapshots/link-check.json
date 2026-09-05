@@ -8,7 +8,7 @@
     "SUBMISSION_CHECKLIST.md",
     "RECORDING_CHEAT_SHEET.md"
   ],
-  "check_count": 70,
+  "check_count": 92,
   "failure_count": 0,
   "network_note": "Private W&B accessibility depends on signed-in project access. URLs are matched to the successful readback receipt; no public-access claim is made.",
   "checks": [
@@ -284,9 +284,141 @@
     },
     {
       "source": "VIDEO_WALKTHROUGH.md",
-      "target": "CURRENT_COMPARISON.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/RECORDING_CHEAT_SHEET.md",
       "ok": true,
-      "method": "local_file"
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/README.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/USE_CASE_PROFILE.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/EVALUATION_DESIGN.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/CURRENT_COMPARISON.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b",
+      "ok": true,
+      "method": "private_weave_url_matches_readback_receipt"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd",
+      "ok": true,
+      "method": "private_weave_url_matches_readback_receipt"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/OPERATING_POLICY.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/README.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/USE_CASE_PROFILE.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/objects/bank-vendor-scope-five-v1/versions/Ew78A6FsNIIFMK8IlXgz8J6HdAX9iaeMqlUltbJRPQs",
+      "ok": true,
+      "method": "external_reference_not_network_tested"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/EVALUATION_DESIGN.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/JUDGE_RUBRIC.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b",
+      "ok": true,
+      "method": "private_weave_url_matches_readback_receipt"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd",
+      "ok": true,
+      "method": "private_weave_url_matches_readback_receipt"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/CURRENT_COMPARISON.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/CURRENT_COMPARISON.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965",
+      "ok": true,
+      "method": "github_run_matches_completed_receipt"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/V2_CORRECTION_RECORD.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/OPERATING_POLICY.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/V2_CORRECTION_RECORD.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/GITHUB_RECORDING_GUIDE.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/SUBMISSION_CHECKLIST.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
     },
     {
       "source": "SUBMISSION_CHECKLIST.md",
