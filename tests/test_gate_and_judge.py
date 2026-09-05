@@ -57,6 +57,8 @@ class GateTests(unittest.TestCase):
             "bad_quote": lambda p, o: o["findings"][0]["citations"][0].update(quote="invented quote"),
             "unavailable_source": lambda p, o: p["evidence"][0].update(retrieval_status="error"),
             "wrong_requirement": lambda p, o: p["evidence"][0].update(requirement_ids=["OTHER"]),
+            "stale_source": lambda p, o: p["evidence"][0].update(valid_through="2026-01-01"),
+            "wrong_version": lambda p, o: p["evidence"][0].update(system_version="old"),
         }
         for name, mutate in mutations.items():
             packet, draft = copy.deepcopy(self.input), copy.deepcopy(self.draft)

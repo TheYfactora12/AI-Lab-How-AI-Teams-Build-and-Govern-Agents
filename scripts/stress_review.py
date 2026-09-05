@@ -55,6 +55,8 @@ def main():
         "documented_bad_quote": lambda p, o: o["findings"][0]["citations"][0].update(quote="invented quote"),
         "documented_unavailable_source": lambda p, o: p["evidence"][0].update(retrieval_status="error"),
         "documented_wrong_requirement": lambda p, o: p["evidence"][0].update(requirement_ids=["OTHER"]),
+        "documented_stale_source": lambda p, o: p["evidence"][0].update(valid_through="2026-01-01"),
+        "documented_wrong_version": lambda p, o: p["evidence"][0].update(system_version="old"),
     }
     for name, mutate in documentary_mutations.items():
         packet, output = copy.deepcopy(fixture.input), copy.deepcopy(documentary)
