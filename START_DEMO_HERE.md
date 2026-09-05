@@ -1,5 +1,7 @@
 # Your demonstration handoff
 
+For the shortest seven-tab route and talking points, use the [recording cheat sheet](RECORDING_CHEAT_SHEET.md).
+
 For exact GitHub clicks, tab order, screen meanings and troubleshooting, use the [GitHub recording guide](GITHUB_RECORDING_GUIDE.md). This page is the shorter readiness checklist.
 
 The corrected synthetic V1/V2 experiment (contract 1.2) and its evidence package are ready to review and display with their documented limitations. This does not certify that every acceptance behavior passes. The expanded risk-rating/routing system and public-document assessment are not completed model evaluations.

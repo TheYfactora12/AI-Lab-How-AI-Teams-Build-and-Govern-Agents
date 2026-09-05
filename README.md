@@ -4,6 +4,8 @@ An Evaluation Builder certificate project reviewing a fictional bank's proposed 
 
 ## Start here
 
+**Condensed recording notes:** use the [one-page recording cheat sheet](RECORDING_CHEAT_SHEET.md) for seven links, timing, what to point at, and what to say.
+
 **Recording the project:** open the [GitHub recording guide](GITHUB_RECORDING_GUIDE.md). It gives the exact tab order, what to click, what each screen proves, what to say, and troubleshooting steps.
 
 **Current evidence:** [contract 1.2 comparison](CURRENT_COMPARISON.md) and [V2 correction record](V2_CORRECTION_RECORD.md). Earlier comparisons and stress failures are preserved as historical evidence and are labeled in their files.

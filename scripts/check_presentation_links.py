@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FILES = [
     "README.md", "GITHUB_RECORDING_GUIDE.md", "START_DEMO_HERE.md",
     "CURRENT_COMPARISON.md", "VIDEO_WALKTHROUGH.md", "SUBMISSION_CHECKLIST.md",
+    "RECORDING_CHEAT_SHEET.md",
 ]
 REPO = "TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents"
 
