@@ -2,29 +2,17 @@
 
 An Evaluation Builder certificate project reviewing a fictional bank's proposed internal AI policy assistant. The assessment agent identifies applicable risks, distinguishes assertions from evidence and produces a draft for human review.
 
-## Review these first
+## Start here
 
-**Current corrected V2:** [contract 1.2 comparison and evidence](CURRENT_COMPARISON.md), [what changed](V2_CORRECTION_RECORD.md), and [presentation handoff](START_DEMO_HERE.md). Earlier contract 1.1 results remain historical. Current automated counts are still 3 passes / 2 blocks, with different case outcomes and documented remaining judgment errors.
+**Recording the project:** open the [GitHub recording guide](GITHUB_RECORDING_GUIDE.md). It gives the exact tab order, what to click, what each screen proves, what to say, and troubleshooting steps.
 
-**Ready to present?** Open [your demonstration handoff](START_DEMO_HERE.md) for the exact tabs, four-minute route and remaining student checklist.
+**Current evidence:** [contract 1.2 comparison](CURRENT_COMPARISON.md) and [V2 correction record](V2_CORRECTION_RECORD.md). Earlier comparisons and stress failures are preserved as historical evidence and are labeled in their files.
 
-**Guided walkthrough:** [full project breakdown with evidence links](PROJECT_EVIDENCE_WALKTHROUGH.md) explains every class step, actual results, Weave terminology and what to show in the final demonstration.
+**Course alignment:** [certificate requirements map](CERTIFICATE_ALIGNMENT.md). Public-document intake and the broader routing matrix are supporting extensions, not completed public-vendor evaluations.
 
-**Build specification:** [official certificate alignment and remaining acceptance gaps](CERTIFICATE_ALIGNMENT.md). The Evaluation Builder instructions govern the submission; public-source intake and broader routing ideas support that bounded scope.
+## Current project status
 
-[Public-document intake](PUBLIC_DOCUMENT_REVIEW.md) adds three downloaded sources, frozen fingerprints, structural tests and a separate Weave provenance workflow. It includes a beginner demonstration route and clearly marks the remaining public-document assessment work.
-
-New scope clarification: [automation boundaries and scenario matrix](AUTOMATION_ROUTING_DESIGN.md) defines the next experiment: which review tasks may complete automatically, which need human judgment, and which must block. This proposed expansion has not been run.
-
-Start with the [completed comparison report](COMPARISON_REPORT.md), [evaluation design](EVALUATION_DESIGN.md), [30-day operating rule](OPERATING_POLICY.md), and [video outline](VIDEO_WALKTHROUGH.md). The [submission checklist](SUBMISSION_CHECKLIST.md) covers your remaining review and recording steps. The [original sample](REVIEW_START_HERE.md) is preserved as history.
-
-The [project record and reference index](docs/PROJECT_RECORD.md) collects the decision history, setup notes, source references, GitHub workflow history and Weave links. [Class notes](docs/CLASS_NOTES.md) preserve the supplied image and submission requirements.
-
-1. [Project brief](PROJECT_BRIEF.md): problem, outcome, scope and completion checklist.
-2. [Use-case profile](USE_CASE_PROFILE.md): fictional bank, vendor, users and operating boundaries.
-3. [Assessment catalog](ASSESSMENT_CATALOG.md): ten requirements across seven risk areas and five cases.
-4. [Expected findings](data/expected_findings.json): draft answer key for human review.
-5. [V2 plan](V2_CHANGE_PLAN.md): deeper evidence gate as one controlled change.
+The current automated result is **3 passes and 2 blocks for each version, with zero application errors**. V2 contains C03's unsupported scope decisions. C02 readiness classification and qualitative-judge interpretation remain unresolved. Every client-facing assessment requires human review.
 
 All vendor documents and test records are synthetic. Claims about vendor test results are scenario inputs, not real experiments. Our real Weave traces record the assessment agent's work on those inputs.
 
@@ -36,7 +24,7 @@ All vendor documents and test records are synthetic. Claims about vendor test re
 - Completed native Weave evaluations, unedited outputs, receipts and interpretation.
 - Notes, references, ownership policy and an own-voice recording outline.
 
-In the current contract 1.2 comparison, both versions received three automated passes and two blocks with zero application errors. V2 contained C03's unsupported scope decisions. C02 readiness and qualitative-judge limitations remain. These scores do not establish production readiness. Student review and video recording/upload remain outstanding.
+The run snapshots, source fingerprints and interpretation are committed for later review. These results do not establish production readiness. Student review and video recording/upload remain outstanding.
 
 ## Open the saved evaluation later
 
@@ -68,4 +56,4 @@ Weave project: `kevinmedeiros-masterclass/ai-lab-agent-governance`.
 - Does the draft expose uncertainty instead of declaring the vendor approved?
 - Which failures should the one V2 gate address, and which remain separate limitations?
 
-After review: finalize rubric and contract, implement the live judge and V2 gate, run the same five-row evaluation for both versions, then prepare the 3–5 minute video in the user's own voice.
+The technical comparison, documentation and recording guide are prepared. The student still needs to inspect the selected Weave traces, review the answer-key judgments, rehearse, record a 3–5 minute walkthrough in their own voice, and upload it through the course interface.

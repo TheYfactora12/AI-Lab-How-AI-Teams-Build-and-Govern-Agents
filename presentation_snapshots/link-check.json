@@ -1,0 +1,351 @@
+{
+  "scope": [
+    "README.md",
+    "GITHUB_RECORDING_GUIDE.md",
+    "START_DEMO_HERE.md",
+    "CURRENT_COMPARISON.md",
+    "VIDEO_WALKTHROUGH.md",
+    "SUBMISSION_CHECKLIST.md"
+  ],
+  "check_count": 56,
+  "failure_count": 0,
+  "network_note": "Private W&B accessibility depends on signed-in project access. URLs are matched to the successful readback receipt; no public-access claim is made.",
+  "checks": [
+    {
+      "source": "README.md",
+      "target": "GITHUB_RECORDING_GUIDE.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "README.md",
+      "target": "CURRENT_COMPARISON.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "README.md",
+      "target": "V2_CORRECTION_RECORD.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "README.md",
+      "target": "CERTIFICATE_ALIGNMENT.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "README.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965",
+      "ok": true,
+      "method": "github_run_matches_completed_receipt"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents",
+      "ok": true,
+      "method": "repository_identity"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/README.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/USE_CASE_PROFILE.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/EVALUATION_DESIGN.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/CURRENT_COMPARISON.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b",
+      "ok": true,
+      "method": "private_weave_url_matches_readback_receipt"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd",
+      "ok": true,
+      "method": "private_weave_url_matches_readback_receipt"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/bank_review/gate.py",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965",
+      "ok": true,
+      "method": "github_run_matches_completed_receipt"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/OPERATING_POLICY.md",
+      "ok": true,
+      "method": "github_blob_matches_repository"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "evaluation_snapshots/contract-1.2/receipt.json",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "presentation_snapshots/link-check.json",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "VIDEO_WALKTHROUGH.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "GITHUB_RECORDING_GUIDE.md",
+      "target": "SUBMISSION_CHECKLIST.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "START_DEMO_HERE.md",
+      "target": "GITHUB_RECORDING_GUIDE.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "START_DEMO_HERE.md",
+      "target": "CURRENT_COMPARISON.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "START_DEMO_HERE.md",
+      "target": "USE_CASE_PROFILE.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "START_DEMO_HERE.md",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/objects/bank-vendor-scope-five-v1/versions/Ew78A6FsNIIFMK8IlXgz8J6HdAX9iaeMqlUltbJRPQs",
+      "ok": true,
+      "method": "external_reference_not_network_tested"
+    },
+    {
+      "source": "START_DEMO_HERE.md",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b",
+      "ok": true,
+      "method": "private_weave_url_matches_readback_receipt"
+    },
+    {
+      "source": "START_DEMO_HERE.md",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd",
+      "ok": true,
+      "method": "private_weave_url_matches_readback_receipt"
+    },
+    {
+      "source": "START_DEMO_HERE.md",
+      "target": "CURRENT_COMPARISON.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "START_DEMO_HERE.md",
+      "target": "OPERATING_POLICY.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "START_DEMO_HERE.md",
+      "target": "evaluation_snapshots/contract-1.2/v1-rows.json",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "START_DEMO_HERE.md",
+      "target": "evaluation_snapshots/contract-1.2/v2-rows.json",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "START_DEMO_HERE.md",
+      "target": "VIDEO_WALKTHROUGH.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "START_DEMO_HERE.md",
+      "target": "CERTIFICATE_ALIGNMENT.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "CURRENT_COMPARISON.md",
+      "target": "V2_CORRECTION_RECORD.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "CURRENT_COMPARISON.md",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b",
+      "ok": true,
+      "method": "private_weave_url_matches_readback_receipt"
+    },
+    {
+      "source": "CURRENT_COMPARISON.md",
+      "target": "https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd",
+      "ok": true,
+      "method": "private_weave_url_matches_readback_receipt"
+    },
+    {
+      "source": "CURRENT_COMPARISON.md",
+      "target": "https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965",
+      "ok": true,
+      "method": "github_run_matches_completed_receipt"
+    },
+    {
+      "source": "CURRENT_COMPARISON.md",
+      "target": "evaluation_snapshots/contract-1.2/receipt.json",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "CURRENT_COMPARISON.md",
+      "target": "evaluation_snapshots/contract-1.2/v1-rows.json",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "CURRENT_COMPARISON.md",
+      "target": "evaluation_snapshots/contract-1.2/v2-rows.json",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "CURRENT_COMPARISON.md",
+      "target": "stress_snapshots/corrected-review.json",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "CURRENT_COMPARISON.md",
+      "target": "COMPARISON_REPORT.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "CURRENT_COMPARISON.md",
+      "target": "STRESS_TEST_REPORT.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "CURRENT_COMPARISON.md",
+      "target": "START_DEMO_HERE.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "CURRENT_COMPARISON.md",
+      "target": "VIDEO_WALKTHROUGH.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "VIDEO_WALKTHROUGH.md",
+      "target": "CURRENT_COMPARISON.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "SUBMISSION_CHECKLIST.md",
+      "target": "START_DEMO_HERE.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "SUBMISSION_CHECKLIST.md",
+      "target": "CURRENT_COMPARISON.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "SUBMISSION_CHECKLIST.md",
+      "target": "PROJECT_EVIDENCE_WALKTHROUGH.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "SUBMISSION_CHECKLIST.md",
+      "target": "EVALUATION_DESIGN.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "SUBMISSION_CHECKLIST.md",
+      "target": "USE_CASE_PROFILE.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "SUBMISSION_CHECKLIST.md",
+      "target": "ASSESSMENT_CATALOG.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "SUBMISSION_CHECKLIST.md",
+      "target": "JUDGE_RUBRIC.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "SUBMISSION_CHECKLIST.md",
+      "target": "V2_CHANGE_PLAN.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "SUBMISSION_CHECKLIST.md",
+      "target": "CURRENT_COMPARISON.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "SUBMISSION_CHECKLIST.md",
+      "target": "OPERATING_POLICY.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "SUBMISSION_CHECKLIST.md",
+      "target": "VIDEO_WALKTHROUGH.md",
+      "ok": true,
+      "method": "local_file"
+    },
+    {
+      "source": "SUBMISSION_CHECKLIST.md",
+      "target": "docs/PROJECT_RECORD.md",
+      "ok": true,
+      "method": "local_file"
+    }
+  ]
+}
