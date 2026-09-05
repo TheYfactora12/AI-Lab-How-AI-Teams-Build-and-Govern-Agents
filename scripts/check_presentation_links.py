@@ -11,6 +11,7 @@ FILES = [
     "RECORDING_CHEAT_SHEET.md",
 ]
 REPO = "TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents"
+CURRENT_RECEIPT = ROOT / "evaluation_snapshots/contract-1.4/receipt.json"
 
 
 def links(path):
@@ -38,14 +39,14 @@ def main():
                     repo_path = unquote(target.split(marker, 1)[1].split("#", 1)[0])
                     ok = (ROOT / repo_path).exists()
                     method = "github_blob_matches_repository"
-                elif parsed.netloc == "github.com" and f"/{REPO}/actions/runs/33901467965" in parsed.path:
-                    receipt = json.loads((ROOT / "evaluation_snapshots/contract-1.2/receipt.json").read_text())
-                    ok = receipt["workflow_run"] == "33901467965" and receipt["complete"]
+                elif parsed.netloc == "github.com" and f"/{REPO}/actions/runs/" in parsed.path:
+                    receipt = json.loads(CURRENT_RECEIPT.read_text())
+                    ok = parsed.path.rstrip("/").endswith(f"/actions/runs/{receipt['workflow_run']}") and receipt["complete"]
                     method = "github_run_matches_completed_receipt"
                 elif parsed.netloc == "github.com" and parsed.path.rstrip("/") == f"/{REPO}":
                     ok, method = True, "repository_identity"
                 elif parsed.netloc == "wandb.ai" and "/weave/calls/" in parsed.path:
-                    receipt = json.loads((ROOT / "evaluation_snapshots/contract-1.2/receipt.json").read_text())
+                    receipt = json.loads(CURRENT_RECEIPT.read_text())
                     ok = target in {receipt["runs"][v]["trace_url"] for v in ("v1", "v2")}
                     method = "private_weave_url_matches_readback_receipt"
                 else:

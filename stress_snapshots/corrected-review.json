@@ -1,7 +1,7 @@
 {
   "kind": "offline_adversarial_probes",
   "model_calls": 0,
-  "source_commit": "5922b7df549606f7be520d317494ed1d76b5e3ac",
+  "source_commit": "dae39aed320441beea539957af8e880b80ddd1b7",
   "script_sha256": "4f41232708d0bce066586effa4b2fd0fa718835061bd224b7548ad90c4c68f3f",
   "frozen_contract_unchanged": true,
   "probe_count": 31,

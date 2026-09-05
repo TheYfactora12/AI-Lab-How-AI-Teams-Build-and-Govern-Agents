@@ -1,4 +1,4 @@
-# Current recording outline: contract 1.2
+# Current recording outline: contract 1.4
 
 Use your own voice and judgment. This four-minute outline covers the corrected implementation. For condensed talking points, open the [recording cheat sheet](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/RECORDING_CHEAT_SHEET.md). The first experiment and its older C02 intervention are historical evidence.
 
@@ -8,8 +8,8 @@ Use your own voice and judgment. This four-minute outline covers the corrected i
 2. [Use-case profile](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/USE_CASE_PROFILE.md)
 3. [Evaluation design](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/EVALUATION_DESIGN.md)
 4. [Current comparison](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/CURRENT_COMPARISON.md)
-5. [Current V1 evaluation in Weave](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b)
-6. [Current V2 evaluation in Weave](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd)
+5. [Current V1 evaluation in Weave](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fc-9244-721f-894e-d4bb3ecf9ec1)
+6. [Current V2 evaluation in Weave](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fd-071e-7eeb-8a8f-fe0cf744302a)
 7. [Operating policy](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/OPERATING_POLICY.md)
 
 ## 0:00–0:40: Problem
@@ -26,21 +26,21 @@ Screen: [five-case dataset in Weave](https://wandb.ai/kevinmedeiros-masterclass/
 
 ## 1:20–2:20: Show the actual corrected V2 change
 
-Screen: [current V1 C03 evaluation](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b), then [current V2 C03 evaluation](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd). Use the [current comparison](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/CURRENT_COMPARISON.md) to identify what to find.
+Screen: [current V1 C03 evaluation](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fc-9244-721f-894e-d4bb3ecf9ec1), then [current V2 C03 evaluation](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fd-071e-7eeb-8a8f-fe0cf744302a). Use the [current comparison](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/CURRENT_COMPARISON.md) to identify what to find.
 
 “In C03, the bank's restricted-document access and credit-decision role are unknown. V1 makes unsupported scope decisions. Our corrected exact check catches that. V2 adds a post-generation validation gate: it marks those requirements as needing clarification and withholds the draft. Here are the input, the rejected scope decisions and the resulting questions.
 
-“The gate also rejects the malformed records and duplicate identifiers found in our offline stress tests. Shared validation, scoring and judge corrections apply to both versions. I keep this rerun separate from the original experiment.”
+“The gate also rejects malformed records, duplicate identifiers and eight documentary citation-boundary mutations found during independent stress testing. Shared validation, scoring and judge corrections apply to both versions. I keep this rerun separate from the original experiment.”
 
 ## 2:20–3:20: Results and limitations
 
-Screen: [current comparison and result table](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/CURRENT_COMPARISON.md). Optional evidence: [successful GitHub Actions run](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965) and [corrected stress review](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/V2_CORRECTION_RECORD.md).
+Screen: [current comparison and result table](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/CURRENT_COMPARISON.md). Optional evidence: [successful GitHub Actions run](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33972108376) and [corrected stress review](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/V2_CORRECTION_RECORD.md).
 
-“Both versions received three automated passes and two blocks. Both produced valid assessments for all five cases in this run. The gate contained the targeted scope error, but there is no overall pass-count gain.
+“V1 received three passes and two blocks. V2 received three passes, one block and one review. In C03, V2 contained the targeted scope error and a requirement-mismatched citation.
 
-“Inspection still matters. In C02, both versions mark the packet ready even though the expected result calls for more evidence. The judge misses that. In C05, the agent shows contradictory sources, but the judge misinterprets the conflict. We preserve those scores and explain the disagreement; we do not claim the system is fully accurate.
+“Inspection still matters. In C02, both versions mark the packet ready even though the expected result calls for more evidence. The judge misses that. In C05, V1 produced an unresolved assessment but the judge reasoning was unreliable, while V2 produced schema-invalid output. V2 safely withheld it and skipped the judge. This proves fail-closed routing, while also showing that model generation is not perfectly repeatable.
 
-“The corrected code passed 22 assessment tests and six intake tests. The 23 offline stress probes met their expectations. Those probes are separate from the five live model cases.”
+“The corrected code passed 23 assessment tests and six intake tests. The 31 offline stress probes met their expectations. Those probes are separate from the five live model cases.”
 
 ## 3:20–4:00: Operating decision
 

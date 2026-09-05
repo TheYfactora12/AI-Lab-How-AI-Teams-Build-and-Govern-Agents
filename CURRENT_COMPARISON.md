@@ -1,58 +1,64 @@
-# Current V1/V2 comparison: corrected validation, remaining judgment limits
+# Current V1/V2 comparison: documentary boundaries and fail-closed behavior
 
-**Presentation decision: draft-only use with human review.** The corrected V2 catches the observed unknown-scope error and withholds the assessment. It handles the tested malformed-input and duplicate-source cases safely. It is not a fully reliable autonomous reviewer.
+**Presentation decision: draft-only use with human review.** Contract 1.4 shows that V2 contains the tested unknown-scope and citation-boundary problems. It also shows that model generation can still fail. The workflow routes invalid output to review instead of releasing it.
 
-This is contract **bank-vendor-eval-v1.2**, separate from the original contract 1.1. Both versions were rerun on the same five original synthetic cases, using the same updated shared prompt, scorers and judge. The only difference within this pair is V2's post-generation validation gate. Read the [change record](V2_CORRECTION_RECORD.md) for attribution.
+This is contract **bank-vendor-eval-v1.4**. V1 and V2 used the same five synthetic cases, prompt, model, exact scorers and judge. V2 alone adds the post-generation validation gate. Earlier contracts remain historical evidence and are not pooled into these counts.
 
 ## Open the current evidence
 
-- [Current V1 evaluation](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b)
-- [Current V2 evaluation](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd)
-- [Successful execution](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965)
-- [Receipt and source fingerprints](evaluation_snapshots/contract-1.2/receipt.json)
-- [Original V1 outputs and scores](evaluation_snapshots/contract-1.2/v1-rows.json), [V2 outputs and scores](evaluation_snapshots/contract-1.2/v2-rows.json)
+- [Current V1 evaluation](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fc-9244-721f-894e-d4bb3ecf9ec1)
+- [Current V2 evaluation](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a071fd-071e-7eeb-8a8f-fe0cf744302a)
+- [Successful GitHub Actions execution](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33972108376)
+- [Receipt and source fingerprints](evaluation_snapshots/contract-1.4/receipt.json)
+- [V1 outputs and scores](evaluation_snapshots/contract-1.4/v1-rows.json), [V2 outputs and scores](evaluation_snapshots/contract-1.4/v2-rows.json)
+- [31-probe offline stress result](stress_snapshots/corrected-review.json)
 
-## What matters
+## What happened
 
-| Case | V1 automated verdict | V2 automated verdict | Inspection and next action |
+| Case | V1 verdict | V2 verdict | Inspection and meaning |
 | --- | --- | --- | --- |
-| C01: normal packet | Pass | Pass | Both still return needs_evidence instead of the expected draft-review state. Review unnecessary escalation. |
-| C02: missing role test | Pass | Pass | Both now use documentary evidence instead of substituting the wrong test. However, ready_for_human_review conflicts with the expected needs_evidence state. The graders miss this readiness issue. |
-| C03: unknown scope | Block | Block | V1's scope error is now caught by the exact scorer. V2 corrects the two affected scope fields to needs_clarification and withholds the draft. Its exact status check passes, but the judge blocks. |
+| C01: normal packet | Pass | Pass | Both return `needs_evidence` although the answer key expects a review-ready draft. This is safe over-escalation. |
+| C02: missing role test | Pass | Pass | Both return `ready_for_human_review` although the answer key expects `needs_evidence`. The graders still miss this readiness error. |
+| C03: unknown scope | Block | Block | V1 makes unsupported scope decisions. V2 withholds the draft and records three rejections: two unknown-scope decisions and one requirement-mismatched citation. |
 | C04: retrieval timeout | Pass | Pass | Both disclose the unavailable evidence and request follow-up. |
-| C05: contradictory evidence | Block | Block | Both now produce valid assessments and show the contradiction. The judge still misreads what the evidence establishes. Human adjudication is required. |
+| C05: contradictory evidence | Block | Review | V1 produces a valid unresolved assessment, but the judge blocks it with unreliable reasoning that calls the disclosed conflict invented and incorrectly says V1 withheld the draft. V2's separate generation is schema-invalid; the error envelope withholds it and the judge is not invoked. |
 
-Both versions have **3 automated passes and 2 blocks**, but these are different blocked cases from the old comparison. Both have **zero application errors** in this run. V2's gate rejects two scope decisions within **one case**, C03; this is not two failed cases. These counts do not establish production error rates.
+V1 has **3 passes and 2 blocks with zero application errors**. V2 has **3 passes, 1 block and 1 review with one application error**. These are assessment-quality routing results, not vendor approvals or production error rates.
 
-## The improvement to demonstrate: C03
+## What the stress test found and fixed
 
-1. Open current V1 and locate C03. Inspect restricted_documents=null and credit_decisions=null in the input profile.
-2. Show V1's scope: it treats SEC-01 as applicable and FAIR-02 as not_applicable. The corrected exact scorer reports that these decisions contradict the intended-use fields.
-3. Open current V2 C03. Its gate_record contains both rejected scope decisions.
-4. Show needs_clarification on those scope entries, the withheld packet, and the questions requesting the bank's intended use.
-5. Explain that the original generated narrative remains in the generation trace. Withholding prevents those unsupported conclusions from being used, but also removes useful coverage.
+The first 23-probe suite passed, but an independent test changed a cited record from `tested_in_scope` to `documented`. Before this correction, eight bad documentary-evidence variants could reach `ready_for_human_review`: wrong vendor, wrong use case, missing source, invented quote, unavailable source, wrong requirement binding, stale evidence and wrong system version.
 
-This supports a targeted containment claim. It does not prove that all scope judgments or narrative claims are correct. The gate currently maps two conditional requirements; it is not a full general-purpose risk framework.
+V2 now applies source identity, use-case, version, availability, requirement, date-window and exact-quote checks to every cited finding. The permanent offline suite contains **31 probes with zero observed gaps**. The checks made no model calls and are not 31 additional evaluation cases.
 
-## Judge results require interpretation
+This verifies the tested rules. It does not prove source authenticity, semantic truth, resistance to every malformed input or production reliability.
 
-V2 C03's judge says requirements were excluded even though the final scope marks them needs_clarification. It also calls a missing-evidence finding invented evidence. Those criticisms are unreliable. Reduced coverage from whole-packet withholding is still a real limitation.
+## The C03 demonstration
 
-C05 contains both a contractual no-training statement and a conflicting vendor assertion. The judge treats the contradiction as if it makes the statement about the contract unsupported. A contradictory assertion does not erase what the supplied contract says. Both sources need reconciliation; the agent should not decide actual vendor behavior from this packet alone. Preserve the raw block and have a reviewer adjudicate it.
+1. Open V1 C03 and show `restricted_documents=null` and `credit_decisions=null`.
+2. Show V1 treating those unknown fields as definite scope decisions. The exact status scorer blocks them.
+3. Open V2 C03 and expand `gate_record`.
+4. Show the three rejected findings, `packet_status: withheld`, clarification questions and mandatory human review.
+5. Explain that the original model draft stays visible in the trace for audit, while the released packet is withheld.
 
-The new error-envelope precondition returns unknown/review without a model invocation when an assessment is unavailable. Regression tests verify that path. All five live assessments were valid this time, so that fallback was not exercised in this hosted run.
+The third rejection is a USE-01 finding citing evidence bound to a different requirement. This is direct hosted evidence that the expanded citation gate operated in a real run.
 
-## Verification and fairness
+## Limits that must be stated
 
-- 22 assessment regression tests passed in the hosted workflow; six intake tests passed locally.
-- 23 offline adversarial probes met their expectations; [raw results](stress_snapshots/corrected-review.json) preserve the distinction between component probes and saved-output replay.
-- Inputs and answer key stayed identical to the original dataset.
-- Shared changes included structural validation, scope scoring, an enum clarification and the judge error precondition. Improvements across contracts cannot be attributed solely to V2.
-- The C02 wrong-test behavior from the first comparison did not recur in either version. Do not present that old event as the current V2 intervention result.
-- This is one live trial per case. No independent expert validation, automatic vendor approval or numerical risk calibration is claimed.
+- There is one hosted trial per case. Temperature zero does not guarantee identical hosted outputs.
+- V2 C05 failed schema validation while V1 C05 succeeded. The fail-closed path worked, but generation reliability remains unresolved.
+- C02's readiness error still passes both exact checks and the AI judge.
+- V1 C05 shows that the judge can misread a correctly disclosed contradiction; its model verdict and mechanically enforced verdict also disagree.
+- The rule set covers this fictional internal-policy-assistant use case; it is not a complete banking GRC framework.
+- The answer key is AI-assisted and has not received independent expert validation.
+- All outputs remain drafts for human review. No automatic vendor approval or risk acceptance is authorized.
 
-## Presentation use
+## Verification status
 
-Use this report for current counts and links. Use [the earlier comparison](COMPARISON_REPORT.md) and [original stress report](STRESS_TEST_REPORT.md) only as historical evidence explaining why changes were needed. The [current demonstration handoff](START_DEMO_HERE.md) and [recording outline](VIDEO_WALKTHROUGH.md) follow this revision.
+- 23 assessment regression tests passed.
+- Six intake tests passed.
+- 31 offline adversarial probes met their stated expectations.
+- The hosted workflow completed and read both Weave evaluation summaries back successfully.
+- Contract 1.3 is preserved as an intermediate run that exposed generation variability; contract 1.4 is the current presentation evidence.
 
-The operating rule remains human-reviewed drafts only. Next work should close the readiness-state checks and calibrate qualitative judging, then freeze another contract and rerun both versions. Do not label these residual issues fixed.
+Use this page for current counts and links. Use [the correction record](V2_CORRECTION_RECORD.md) for the change history and [the recording cheat sheet](RECORDING_CHEAT_SHEET.md) for the four-minute explanation.
