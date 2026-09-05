@@ -46,6 +46,20 @@ def main():
         mutate(packet)
         record(name, "status_scorer", lambda p=packet: evidence_status_and_routing(p, draft)["status"], ["fail", "unknown"])
         record(name, "gate", lambda p=packet: apply_evidence_gate(p, draft)["packet_status"], ["withheld"])
+    documentary = copy.deepcopy(draft)
+    documentary["findings"][0]["evidence_status"] = "documented"
+    documentary_mutations = {
+        "documented_wrong_vendor": lambda p, o: p["evidence"][0].update(vendor_id="OTHER"),
+        "documented_wrong_use_case": lambda p, o: p["evidence"][0].update(use_case_id="OTHER"),
+        "documented_missing_source": lambda p, o: o["findings"][0]["citations"][0].update(evidence_id="NOPE"),
+        "documented_bad_quote": lambda p, o: o["findings"][0]["citations"][0].update(quote="invented quote"),
+        "documented_unavailable_source": lambda p, o: p["evidence"][0].update(retrieval_status="error"),
+        "documented_wrong_requirement": lambda p, o: p["evidence"][0].update(requirement_ids=["OTHER"]),
+    }
+    for name, mutate in documentary_mutations.items():
+        packet, output = copy.deepcopy(fixture.input), copy.deepcopy(documentary)
+        mutate(packet, output)
+        record(name, "gate", lambda p=packet, o=output: apply_evidence_gate(p, o)["packet_status"], ["withheld"])
     for name, field, value in [("null_finding", "findings", [None]), ("empty_findings", "findings", []),
                                 ("unauthorized_approval", "pilot_approved", True)]:
         output = copy.deepcopy(draft)

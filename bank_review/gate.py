@@ -26,8 +26,6 @@ def apply_evidence_gate(input: dict, draft: dict) -> dict:
                 scope["applicability"] = expected
                 scope_rejected.append({"requirement_id": scope["requirement_id"], "reasons": [f"Clarify intended use: {field}; original scope decision was unsupported"]})
     for finding in draft["findings"]:
-        if finding["evidence_status"] != "tested_in_scope":
-            continue
         reasons, qualifying_tests = [], 0
         for citation in finding["citations"]:
             record = records.get(citation["evidence_id"])
@@ -41,6 +39,10 @@ def apply_evidence_gate(input: dict, draft: dict) -> dict:
             passages = {p["id"]: p["text"] for p in record.get("passages", [])}
             if not citation["quote"] or citation["quote"] not in passages.get(citation["passage_id"], ""):
                 reasons.append("quoted passage is unavailable")
+            if finding["requirement_id"] not in record.get("requirement_ids", []):
+                reasons.append("source requirement mismatch")
+            if finding["evidence_status"] != "tested_in_scope":
+                continue
             if record.get("evidence_type") != "observed_test_result":
                 continue
             qualifying_tests += 1
@@ -58,7 +60,7 @@ def apply_evidence_gate(input: dict, draft: dict) -> dict:
                     reasons.append("test outside review window")
             except (KeyError, ValueError, TypeError):
                 reasons.append("test dates unavailable")
-        if qualifying_tests == 0:
+        if finding["evidence_status"] == "tested_in_scope" and qualifying_tests == 0:
             reasons.append("no supplied behavioral test")
         if reasons:
             rejected.append({"requirement_id": finding["requirement_id"], "reasons": sorted(set(reasons))})
