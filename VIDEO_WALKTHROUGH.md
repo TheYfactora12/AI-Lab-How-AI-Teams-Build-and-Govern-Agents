@@ -1,22 +1,32 @@
 # Current recording outline: contract 1.2
 
-Use your own voice and judgment. This four-minute outline covers the corrected implementation. Keep the [current comparison](CURRENT_COMPARISON.md) open for exact results. The first experiment and its older C02 intervention are historical evidence.
+Use your own voice and judgment. This four-minute outline covers the corrected implementation. For condensed talking points, open the [recording cheat sheet](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/RECORDING_CHEAT_SHEET.md). The first experiment and its older C02 intervention are historical evidence.
+
+## Open these links before recording
+
+1. [Repository README](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/README.md)
+2. [Use-case profile](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/USE_CASE_PROFILE.md)
+3. [Evaluation design](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/EVALUATION_DESIGN.md)
+4. [Current comparison](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/CURRENT_COMPARISON.md)
+5. [Current V1 evaluation in Weave](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b)
+6. [Current V2 evaluation in Weave](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd)
+7. [Operating policy](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/OPERATING_POLICY.md)
 
 ## 0:00–0:40: Problem
 
-Screen: USE_CASE_PROFILE.md.
+Screen: [README project status](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/README.md), then [use-case profile](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/USE_CASE_PROFILE.md).
 
 “My project helps a banking consultant review an AI vendor's evidence for a specific intended use. I chose an internal policy assistant and fictional documents. The assistant drafts findings and questions; a person owns the final assessment. I selected the Evaluation Builder track and implemented the application in Python with Weave tracing.”
 
 ## 0:40–1:20: Define and evaluate good behavior
 
-Screen: five-case dataset, EVALUATION_DESIGN.md and JUDGE_RUBRIC.md.
+Screen: [five-case dataset in Weave](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/objects/bank-vendor-scope-five-v1/versions/Ew78A6FsNIIFMK8IlXgz8J6HdAX9iaeMqlUltbJRPQs), [evaluation design](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/EVALUATION_DESIGN.md), and [judge rubric](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/JUDGE_RUBRIC.md).
 
 “Good behavior means selecting relevant requirements, citing the right evidence, and preserving uncertainty. We use five cases: normal evidence, a missing test, unclear scope, a retrieval timeout and conflicting statements. Two exact scorers check evidence and status rules, and an AI judge reviews evidence support, scope and follow-up quality. The same test contract applies to both versions.”
 
 ## 1:20–2:20: Show the actual corrected V2 change
 
-Screen: current V1 and V2 C03 traces, linked in CURRENT_COMPARISON.md.
+Screen: [current V1 C03 evaluation](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7e-b22d-7497-a050-15150061f01b), then [current V2 C03 evaluation](https://wandb.ai/kevinmedeiros-masterclass/ai-lab-agent-governance/weave/calls/01a06d7f-274c-7f26-8385-6c4dabf64fbd). Use the [current comparison](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/CURRENT_COMPARISON.md) to identify what to find.
 
 “In C03, the bank's restricted-document access and credit-decision role are unknown. V1 makes unsupported scope decisions. Our corrected exact check catches that. V2 adds a post-generation validation gate: it marks those requirements as needing clarification and withholds the draft. Here are the input, the rejected scope decisions and the resulting questions.
 
@@ -24,7 +34,7 @@ Screen: current V1 and V2 C03 traces, linked in CURRENT_COMPARISON.md.
 
 ## 2:20–3:20: Results and limitations
 
-Screen: CURRENT_COMPARISON.md.
+Screen: [current comparison and result table](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/CURRENT_COMPARISON.md). Optional evidence: [successful GitHub Actions run](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/actions/runs/33901467965) and [corrected stress review](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/V2_CORRECTION_RECORD.md).
 
 “Both versions received three automated passes and two blocks. Both produced valid assessments for all five cases in this run. The gate contained the targeted scope error, but there is no overall pass-count gain.
 
@@ -34,8 +44,8 @@ Screen: CURRENT_COMPARISON.md.
 
 ## 3:20–4:00: Operating decision
 
-Screen: OPERATING_POLICY.md and V2_CORRECTION_RECORD.md.
+Screen: [operating policy](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/OPERATING_POLICY.md) and [V2 correction record](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/V2_CORRECTION_RECORD.md).
 
 “My deliverable connects code, test cases, traces, grading rules and a documented operating decision. The assistant stays in draft-only use with human review. The consultant interprets evidence, the bank reviewer owns risk acceptance, and the technical owner can stop the workflow. Before expanding, I would improve readiness checks, calibrate the judge and obtain expert review of more cases.”
 
-Review these statements yourself before recording. Open each trace while signed in, hide credentials, check sound and readability, and submit a 3–5 minute recording in your own voice. No video or course submission has been completed by the coding agent.
+Review these statements yourself before recording. Use the [GitHub navigation guide](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/GITHUB_RECORDING_GUIDE.md) if a screen is unfamiliar, and finish with the [submission checklist](https://github.com/TheYfactora12/AI-Lab-How-AI-Teams-Build-and-Govern-Agents/blob/main/SUBMISSION_CHECKLIST.md). Open each trace while signed in, hide credentials, check sound and readability, and submit a 3–5 minute recording in your own voice. No video or course submission has been completed by the coding agent.
