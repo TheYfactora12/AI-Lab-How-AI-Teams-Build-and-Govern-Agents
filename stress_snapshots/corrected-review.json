@@ -1,10 +1,10 @@
 {
   "kind": "offline_adversarial_probes",
   "model_calls": 0,
-  "source_commit": "d3ded5c063ce3fb74f375e4567ab30a73e2263a2",
-  "script_sha256": "c87f4c551459e2dd77a26a4bccae05b1eb4a133a701a6dd2d1b157b8c36e8573",
+  "source_commit": "5922b7df549606f7be520d317494ed1d76b5e3ac",
+  "script_sha256": "4f41232708d0bce066586effa4b2fd0fa718835061bd224b7548ad90c4c68f3f",
   "frozen_contract_unchanged": true,
-  "probe_count": 29,
+  "probe_count": 31,
   "gaps": 0,
   "probes": [
     {
@@ -206,6 +206,24 @@
     },
     {
       "name": "documented_wrong_requirement",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "documented_stale_source",
+      "component": "gate",
+      "expected": [
+        "withheld"
+      ],
+      "actual": "withheld",
+      "result": "meets_expectation"
+    },
+    {
+      "name": "documented_wrong_version",
       "component": "gate",
       "expected": [
         "withheld"
